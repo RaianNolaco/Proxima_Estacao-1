@@ -13,8 +13,6 @@
     <title>Index_proxima_estação</title>
 </head>
 <body>
-	
-	
 		<%@include file= "hearder.jsp" %>
 		<%@include file= "sidnav.jsp" %>
 		<main class="principal">

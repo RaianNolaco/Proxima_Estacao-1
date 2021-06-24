@@ -9,12 +9,10 @@ import connection.ConnectionFactory;
 
 public class UsuarioDAO {
 		
-	
 	private Connection con = null;
 	
-	
 	public boolean inserirUsuario(Usuario usuario) {
-		String sql = "INSERT INTO usuario (id_usuario , nome, sobrenome, apelido, email, senha, numero, id_status, data_nascimento, cpf)"
+		String sql = "INSERT INTO usuario (nome, sobrenome, apelido, email, senha, numero, id_status, data_nascimento, cpf)"
 				+ "VALUES (?,?,?,?,?,?,?,?,?,?)";
 		
 		con = ConnectionFactory.getConnection();
