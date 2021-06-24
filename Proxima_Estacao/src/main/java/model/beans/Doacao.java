@@ -2,19 +2,19 @@ package model.beans;
 
 public class Doacao{
 	
-	private int   id_doacao;
-	private float quantidade;
-	private int   id_artista;
-	private int   id_usuario;
-	private int   id_forma_pag;
+	private int               id_doacao;
+	private float             quantidade;
+	private Artista           id_artista;
+	private Usuario           id_usuario;
+	private Forma_pagamento   id_forma_pag;
 	
 	
-	public Doacao(int id_doacao, float quantidade, int id_artista, int id_usuario, int id_forma_pag) {
+	public Doacao(int id_doacao, float quantidade, Artista id_artista, Usuario id_usuario, Forma_pagamento id_forma_pag) {
 		super();
-		this.id_doacao = id_doacao;
-		this.quantidade = quantidade;
-		this.id_artista = id_artista;
-		this.id_usuario = id_usuario;
+		this.id_doacao    = id_doacao;
+		this.quantidade   = quantidade;
+		this.id_artista   = id_artista;
+		this.id_usuario   = id_usuario;
 		this.id_forma_pag = id_forma_pag;
 	}
 
@@ -45,32 +45,32 @@ public class Doacao{
 	}
 
 
-	public int getId_artista() {
+	public Artista getId_artista() {
 		return id_artista;
 	}
 
 
-	public void setId_artista(int id_artista) {
+	public void setId_artista(Artista id_artista) {
 		this.id_artista = id_artista;
 	}
 
 
-	public int getId_usuario() {
+	public Usuario getId_usuario() {
 		return id_usuario;
 	}
 
 
-	public void setId_usuario(int id_usuario) {
+	public void setId_usuario(Usuario id_usuario) {
 		this.id_usuario = id_usuario;
 	}
 
 
-	public int getId_forma_pag() {
+	public Forma_pagamento getId_forma_pag() {
 		return id_forma_pag;
 	}
 
 
-	public void setId_forma_pag(int id_forma_pag) {
+	public void setId_forma_pag(Forma_pagamento id_forma_pag) {
 		this.id_forma_pag = id_forma_pag;
 	}
 	

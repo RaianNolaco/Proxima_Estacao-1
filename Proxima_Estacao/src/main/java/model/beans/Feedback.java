@@ -6,10 +6,10 @@ public class Feedback{
 	private String titulo; 
 	private String comentario;
 	private char   gostei; 
-	private int    id_usuario;
-	private int    id_publicacao;
+	private Usuario    id_usuario;
+	private Publicacao    id_publicacao;
 	
-	public Feedback(int id_feedback, String titulo, String comentario, char gostei, int id_usuario, int id_publicacao) {
+	public Feedback(int id_feedback, String titulo, String comentario, char gostei, Usuario id_usuario, Publicacao id_publicacao) {
 		super();
 		this.id_feedback = id_feedback;
 		this.titulo = titulo;
@@ -56,19 +56,19 @@ public class Feedback{
 		this.gostei = gostei;
 	}
 
-	public int getId_usuario() {
+	public Usuario getId_usuario() {
 		return id_usuario;
 	}
 
-	public void setId_usuario(int id_usuario) {
+	public void setId_usuario(Usuario id_usuario) {
 		this.id_usuario = id_usuario;
 	}
 
-	public int getId_publicacao() {
+	public Publicacao getId_publicacao() {
 		return id_publicacao;
 	}
 
-	public void setId_publicacao(int id_publicacao) {
+	public void setId_publicacao(Publicacao id_publicacao) {
 		this.id_publicacao = id_publicacao;
 	}
 	

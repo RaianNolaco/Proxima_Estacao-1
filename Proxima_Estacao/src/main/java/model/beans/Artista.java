@@ -2,12 +2,12 @@ package model.beans;
 
 public class Artista{
 	
-	private int    id_artista;
-	private String descricao;
-	private int    id_usuario; 
-	private String rede_social;
+	private int     id_artista;
+	private String  descricao;
+	private Usuario id_usuario; 
+	private String  rede_social;
 	
-	public Artista(int id_artista, String descricao, int id_usuario, String rede_social) {
+	public Artista(int id_artista, String descricao, Usuario id_usuario, String rede_social) {
 		super();
 		this.id_artista = id_artista;
 		this.descricao = descricao;
@@ -36,11 +36,11 @@ public class Artista{
 		this.descricao = descricao;
 	}
 
-	public int getId_usuario() {
+	public Usuario getId_usuario() {
 		return id_usuario;
 	}
 
-	public void setId_usuario(int id_usuario) {
+	public void setId_usuario(Usuario id_usuario) {
 		this.id_usuario = id_usuario;
 	}
 

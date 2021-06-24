@@ -9,7 +9,7 @@ public class Publicacao{
 	private char    conteudo_NSFW;
 	private String  descricao; 
 	private int     views;
-	private int     id_artista;
+	private Artista     id_artista;
 	
 	
 	public Publicacao() {
@@ -18,7 +18,7 @@ public class Publicacao{
 	}
 	
 	public Publicacao(int id_publicacao, String titulo, String thumb, String conteudo, char conteudo_NSFW,
-			String descricao, int views, int id_artista) {
+			String descricao, int views, Artista id_artista) {
 		super();
 		this.id_publicacao = id_publicacao;
 		this.titulo = titulo;
@@ -72,10 +72,10 @@ public class Publicacao{
 	public void setViews(int views) {
 		this.views = views;
 	}
-	public int getId_artista() {
+	public Artista getId_artista() {
 		return id_artista;
 	}
-	public void setId_artista(int id_artista) {
+	public void setId_artista(Artista id_artista) {
 		this.id_artista = id_artista;
 	}
 	
