@@ -26,15 +26,5 @@ public class ConnectionFactory {
 		}
 	}
 	
-	public static void closeConnection(Connection con) {
-		
-		if(con != null) {
-			try {
-				con.close();
-			} catch (SQLException e) {
-				System.err.println("Erro: " + e);
-			}
-		}
-		
-	}
+}
 	
