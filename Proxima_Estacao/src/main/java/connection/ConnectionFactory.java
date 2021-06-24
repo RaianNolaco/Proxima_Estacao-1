@@ -12,6 +12,7 @@ public class ConnectionFactory {
 	private static final String USER = "root";
 	private static final String PASS = "";
 	
+	
 	//Método de conexão
 	public static Connection getConnection() {
 		try {
