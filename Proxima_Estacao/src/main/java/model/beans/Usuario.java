@@ -4,6 +4,8 @@ import java.util.Date;
 
 public class Usuario {
 	
+	//atraarta
+	
 	private int    idUsuario;
 	private String nomeUsuario;
 	private String sobrenomeUsuario;
