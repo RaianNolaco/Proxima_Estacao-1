@@ -1,0 +1,223 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: linear-gradient(180deg, #181818, #181818d8) ;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    position: relative;
+    grid-template-columns: 75px auto auto;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: "sidnav header header" "sidnav main main";
+}
+
+
+/*-------------------------cabecalho-------------------------*/
+
+.cabecalho{
+    grid-area: header;
+    width: 100%;
+    display: flex;
+    right: 0px;
+    justify-content: center;
+    height: 54px;
+    align-items: center;
+    background: #161515;
+    position: fixed;
+    z-index: 1;
+}
+.cabecalho div{
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+.cabecalho .boxLogo{
+    margin-left: 15px;
+}
+.cabecalho .boxLogo img {
+    width: 100px;
+}
+.cabecalho .boxtexto{
+    width: auto;
+    position: relative;
+}
+.boxtexto i {
+    position: absolute;
+    left: 15px;
+}
+.cabecalho .boxtexto input{
+    width: 500px;
+    height: 40px;
+    border-radius: 20px;
+    outline-style: none;
+    padding: 0 35px;
+    border: 1px solid;
+}
+.cabecalho .boxtexto input:focus{
+    border: 1px solid purple;
+    box-shadow: inset 0 0 5px 0 purple;
+}
+.cabecalho .boxIcones{
+    position: absolute;
+    right: 10px;
+    height: 100%;
+}
+.cabecalho .boxIcones ul{
+    display: flex;
+    list-style: none;
+    align-items: center;
+    height: 100%;
+    width: 115px;
+}
+.cabecalho .boxIcones ul li{
+    margin-left: 20px;
+    height: 100%;
+    width: 50px;
+    display: flex;
+    align-items: center;
+}
+.cabecalho .boxIcones ul li a {
+    font-size: 20px;
+    color: aliceblue;
+}
+.cabecalho .boxIcones ul li a img{
+    width: 27px;
+    border-radius: 100%;
+    transition: 0.5s;
+}
+.cabecalho .boxIcones ul li a:hover> img{
+    width: 36px;
+}
+
+/*-------------------------sidnav-------------------------*/
+
+.sidnav{
+    grid-area: sidnav;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 75px;
+    background: #161515;
+    position: fixed;
+    height: 100%;
+    top: 0px;
+    z-index: 2;
+}
+
+.sidnav input{
+    margin-top: 10px;
+    z-index: -1;
+    opacity: 0;
+}
+.sidnav label{
+    z-index: -1;
+    opacity: 0;
+}
+.sidnav ul {
+    margin-top: 10px;
+    list-style: none;
+    height: 100%;
+}
+.sidnav ul li{
+    display: flex;
+    margin-top: 50px;
+    justify-content: center;
+}
+.sidnav ul li a{
+    font-size: 30px;
+    color: antiquewhite;
+}
+.sidnav ul li a img{
+    width: 100%;
+}
+
+/*-------------------------principal-------------------------*/
+
+.principal{
+    grid-area: main;
+    min-height: 100vh;
+    max-height: auto;
+    width: 100%;
+    margin-top: 54px;
+    padding: 30px;
+}
+/*-------------------------Home-------------------------*/
+
+.home{
+
+}
+.home div{
+    width: 100%;
+    height: 400px;
+    background: azure;
+    display: flex;
+}
+.home div article{
+    background: #181818;
+    width: 60px;
+    height: 70px;
+}
+/*-------------------------Caixa de perfil-------------------------*/
+.principal .caixaDePerfil{
+    height: 340px;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-bottom: 0.7px solid whitesmoke;
+    margin-left: 60px;
+}
+.principal .caixaDePerfil .imagem{
+    height: 240px;
+    width: 140px;
+    margin-right: 30px;
+}
+.principal .caixaDePerfil .imagem img{
+    border-radius: 100%;
+    width: 100%;
+}
+.principal .Perfil{
+    display: flex;
+    height: 50%;
+    flex-direction: column;
+    align-items: self-start;
+    margin-right: 40px;
+}
+.principal .Perfil h2{
+    font-size: 2rem;
+    color: antiquewhite;
+}
+.principal .Perfil h3{
+    color: antiquewhite;
+}
+.principal .Perfil p{
+    color: antiquewhite;
+} 
+.principal .edicao{
+    background: aquamarine;
+    margin-bottom: 160px;
+}
+.principal .edicao a {
+    text-decoration: none;
+    color: #181818;
+}
+.principal .caixaDePub {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: auto auto auto;
+}
+.principal .caixaDePub div{
+    width: 200px;
+    height: 240px;
+    padding: 7px;
+}
+.principal .caixaDePub div img{
+    width: 100%;
+    height: 100%;
+}

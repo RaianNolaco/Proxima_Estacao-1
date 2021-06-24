@@ -1,0 +1,142 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;600;700&display=swap');
+
+body {
+    display: block;
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: "header header header" "sidnav main main" "sidnav footer footer";
+}
+
+a{
+    text-decoration: none;
+}
+
+header{
+    background-color: rgb(19, 19, 19);
+    height: 90px;
+    width: 100%;
+    border-bottom: 1px solid rgb(white, white, white);
+}
+nav{
+    height: 90px;
+    display: flex;
+    justify-content: center;
+}
+header{
+    grid-area: header;
+}
+main{
+    grid-area: main;
+}
+footer{
+    grid-area: footer;
+}
+
+
+/*Menus-Styles*/
+.nav_list {
+    display: flex;
+    background-color: rgb(19, 19, 19);
+    overflow: hidden;
+  }
+  
+.nav_list a{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 200;
+    float: left;
+    color: #6d6777;
+    text-align: center;
+    padding: 14px;
+    padding-bottom: 30px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+
+.nav_list li{
+    padding-left: 32px;
+    padding-right: 5px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    text-align: -webkit-match-parent;
+}
+
+.nav_list a:hover {
+    transition: 180ms;
+    border-bottom: 2px solid rgb(149, 83, 216);
+    color: rgb(177, 177, 177);
+}
+
+.nav_list a.active {
+    font-weight: 700;
+    border-bottom: 2px solid rebeccapurple;
+    color: white;
+}
+
+
+/*-------------------------sidnva-------------------------*/
+
+.barra{
+    grid-area: sidnav;
+}
+
+/*-------------------------Footer-------------------------*/
+
+
+
+/*Footer1*/
+.styles_footer1{
+    height:90px;
+    background-color: rgb(19, 19, 19);
+    border-top: 1px solid white;
+}
+.styles_container_footer1{
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+}
+.redes_sociais_links p{
+    margin-bottom: 10px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 200;
+    font-size: 10px;
+    color: rgb(177, 177, 177);
+}
+
+
+/*Footer2*/
+.styles_footer2{
+    height:90px;
+    background-color: rgb(19, 19, 19);
+    border-top: 1px solid white;
+}
+
+.styles_footer .styles_container_footer2 p{
+    width: 100px;
+    display: flex;
+    justify-content: end;
+}
+
+.styles_container_footer2{
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    
+}
+
+.copyright_footer2 p{
+    margin-bottom: 10px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 200;
+    font-size: 10px;
+    color: rgb(177, 177, 177);
+}
