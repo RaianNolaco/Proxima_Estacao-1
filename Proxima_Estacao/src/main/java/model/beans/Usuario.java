@@ -15,10 +15,9 @@ public class Usuario {
 	private Date   data_nascimento;
 	private String cpf;
 	
-	public Usuario(int idUsuario, String nomeUsuario, String sobrenomeUsuario, String apelido, String email,
+	public Usuario(String nomeUsuario, String sobrenomeUsuario, String apelido, String email,
 	   Status idStatus, String senha, String numero, Date data_nascimento, String cpf) {
 		super();
-		this.idUsuario = idUsuario;
 		this.nomeUsuario = nomeUsuario;
 		this.sobrenomeUsuario = sobrenomeUsuario;
 		this.apelido = apelido;
