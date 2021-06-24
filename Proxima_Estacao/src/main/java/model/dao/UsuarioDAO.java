@@ -30,9 +30,11 @@ public class UsuarioDAO {
 			stmt.setString(6,  usuario.getSenha());
 			stmt.setString(7,  usuario.getNumero());
 			stmt.setInt   (8,  usuario.getIdStatus().getId_status());
-			stmt.setDate  (9,  usuario.getData_nascimento());
+			stmt.setDate  (9,  new java.sql.Date(usuario.getData_nascimento().getTime()));
 			stmt.setString(10, usuario.getCpf());
 			stmt.executeUpdate();
+			con.close();
+			stmt.close();
             return true;
 			
 		} catch (SQLException e) {
@@ -40,6 +42,8 @@ public class UsuarioDAO {
 			return false;
 	    }
 		
-		System.out.println("Teste da porra menor kk");
+		
+	
+}
 	
 }
