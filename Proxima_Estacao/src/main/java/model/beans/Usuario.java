@@ -1,5 +1,7 @@
 package model.beans;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Usuario {
@@ -15,8 +17,9 @@ public class Usuario {
 	private Date   data_nascimento;
 	private String cpf;
 	
+	
 	public Usuario(String nomeUsuario, String sobrenomeUsuario, String apelido, String email,
-	   Status idStatus, String senha, String numero, Date data_nascimento, String cpf) {
+	   Status idStatus, String senha, String numero, String data_nascimento, String cpf) {
 		super();
 		this.nomeUsuario = nomeUsuario;
 		this.sobrenomeUsuario = sobrenomeUsuario;
@@ -25,15 +28,26 @@ public class Usuario {
 		this.idStatus = idStatus;
 		this.senha = senha;
 		this.numero = numero;
-		this.data_nascimento = data_nascimento;
+		this.data_nascimento = converteData(data_nascimento);
 		this.cpf = cpf;
 	}
 
 	public Usuario() {
 		super();
-		// TODO Auto-generated constructor stub
-	}
 
+	}
+	
+	public Date converteData(String data) {
+		SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
+		Date dataFormatada = null;
+		try {
+			dataFormatada = formatador.parse(data);
+		} catch (ParseException e) {
+			System.err.print("Erro ao formatar");
+		}
+		return dataFormatada;
+	}
+	
 	public int getIdUsuario() {
 		return idUsuario;
 	}
