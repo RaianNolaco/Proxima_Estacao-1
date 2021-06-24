@@ -1,5 +1,4 @@
 package connection;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -19,7 +18,7 @@ public class ConnectionFactory {
 			Class.forName(DRIVER);
 			return DriverManager.getConnection(URL, USER, PASS);
 		}catch (ClassNotFoundException | SQLException e) {
-			throw new RuntimeException("Erro na conexão com o banco!", e);
+			throw new RuntimeException("Erro na conexão com o banco cara!", e);
 		}
 	}
 	
