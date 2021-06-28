@@ -6,7 +6,7 @@ import java.util.Date;
 
 public class Usuario {
 	
-	private int    idUsuario;
+	private    int idUsuario;
 	private String nomeUsuario;
 	private String sobrenomeUsuario;
 	private String apelido;
@@ -14,7 +14,7 @@ public class Usuario {
 	private Status idStatus;
 	private String senha;
 	private String numero;
-	private Date   data_nascimento;
+	private   Date data_nascimento;
 	private String cpf;
 	
 	
@@ -34,7 +34,6 @@ public class Usuario {
 
 	public Usuario() {
 		super();
-
 	}
 	
 	public Date converteData(String data) {

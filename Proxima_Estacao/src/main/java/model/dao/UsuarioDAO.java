@@ -8,13 +8,10 @@ import model.beans.Usuario;
 import connection.ConnectionFactory;
 
 public class UsuarioDAO {
-		
-	
 	private Connection con = null;
-	
-	
+	//metodo responsável 
 	public boolean inserirUsuario(Usuario usuario) {
-		String sql = "INSERT INTO usuario (id_usuario , nome, sobrenome, apelido, email, senha, numero, id_status, data_nascimento, cpf)"
+		String sql = "INSERT INTO usuario (nome, sobrenome, apelido, email, senha, numero, id_status, data_nascimento, cpf)"
 				+ "VALUES (?,?,?,?,?,?,?,?,?,?)";
 		
 		con = ConnectionFactory.getConnection();
@@ -41,9 +38,6 @@ public class UsuarioDAO {
 			System.err.println("Erro: " +e);
 			return false;
 	    }
-		
-		
-	
 }
 	
 }
