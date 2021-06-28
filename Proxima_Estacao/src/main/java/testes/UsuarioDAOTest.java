@@ -13,9 +13,10 @@ class UsuarioDAOTest {
 
 	@Test
 	public void testeBanco() {
-
 		ConnectionFactory.getConnection();
 	}
+	
+	
 	
 
 

@@ -7,9 +7,8 @@ public class Artista{
 	private Usuario id_usuario; 
 	private String  rede_social;
 	
-	public Artista(int id_artista, String descricao, Usuario id_usuario, String rede_social) {
+	public Artista(String descricao, Usuario id_usuario, String rede_social) {
 		super();
-		this.id_artista = id_artista;
 		this.descricao = descricao;
 		this.id_usuario = id_usuario;
 		this.rede_social = rede_social;
