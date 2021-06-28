@@ -15,7 +15,6 @@ class ArtistaDAOTest {
 		   
 		   Artista artista = new   Artista("O melhor tocador de Ocarina do Brasil", usuario ,"Facebook: ArtistaEmpadão");
 		   
-		   
 		   if(dao.inserirArtista(artista)) {
 			   System.out.println("Artista salvo com sucesso!");
 		   }else {
