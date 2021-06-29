@@ -23,14 +23,12 @@ public class ArtistaDAO {
 			stmt.setInt	  (2, artista.getId_usuario().getIdUsuario());
 			stmt.setString(3, artista.getRede_social());
 			stmt.execute();
-			
-			stmt.close();
-			con.close();
-		
 			return true;
 		} catch (SQLException e) {
 			System.err.println("Erro ao inserir o artista!");
 			return false;
+		} finally {
+			ConnectionFactory.closeConnection(con, stmt);
 		}
 		
 	}
