@@ -20,14 +20,16 @@ public class GrupoDAO {
 		PreparedStatement stmt = null;
 		
 		try {
-			
+
 			stmt = con.prepareStatement(sql);
 			stmt.setString(1,grupo.getNome_grupo());
 			stmt.setString(2,grupo.getTag_grupo());
 			stmt.setString(3,grupo.getDescricao_grupo());
-			stmt.execute();
-			
+		    stmt.execute();
 			return true;
+			
+			
+			//aaaaaaaaaaaaaaaaaaaaaaaaaaa
 			
 		}catch(SQLException e){
 			
