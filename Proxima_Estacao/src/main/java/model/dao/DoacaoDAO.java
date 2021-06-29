@@ -12,7 +12,7 @@ public class DoacaoDAO {
 
 	public boolean inserirDoacao(Doacao doacao){
 		
-		String sql = "INSERT INTO doacao (quantidade,id_artista,id_usuario,id_form_pag) VALUES (?,?,?,?)";
+		String sql = "INSERT INTO doacao (valor,id_artista,id_usuario,id_forma_pag) VALUES (?,?,?,?)";
 		
 		con =  ConnectionFactory.getConnection();
 		

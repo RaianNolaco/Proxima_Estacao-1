@@ -18,7 +18,6 @@ class DoacaoDAOTest {
 		
 		DoacaoDAO dao = new DoacaoDAO();
 		
-		
 		Artista artista = new Artista();
 		artista.setId_artista(1);
 		
