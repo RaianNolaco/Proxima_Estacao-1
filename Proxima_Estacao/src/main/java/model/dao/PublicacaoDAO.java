@@ -30,7 +30,6 @@ public class PublicacaoDAO {
 			stmt.setInt(7, pub.getId_artista().getId_artista());
 			stmt.execute();
 			return true;
-
 		} catch (SQLException e) {
 			System.err.println("Erro: " + e);
 			return false;
