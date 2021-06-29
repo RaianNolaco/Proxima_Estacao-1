@@ -15,7 +15,7 @@ public class ArtistaDAO {
 	public boolean inserirArtista(Artista artista) {
 		String sql ="INSERT INTO artista(descricao, id_usuario, rede_social) VALUES (?,?,?)";
 		con = ConnectionFactory.getConnection();
-		PreparedStatement stmt = null;
+		PreparedStatement stmt 	= null;
 		
 		try {
 			stmt = con.prepareStatement(sql);
