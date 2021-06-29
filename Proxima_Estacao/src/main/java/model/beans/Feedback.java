@@ -9,9 +9,9 @@ public class Feedback{
 	private Usuario    id_usuario;
 	private Publicacao    id_publicacao;
 	
-	public Feedback(int id_feedback, String titulo, String comentario, char gostei, Usuario id_usuario, Publicacao id_publicacao) {
+	public Feedback( String titulo, String comentario, char gostei, Usuario id_usuario, Publicacao id_publicacao) {
 		super();
-		this.id_feedback = id_feedback;
+
 		this.titulo = titulo;
 		this.comentario = comentario;
 		this.gostei = gostei;

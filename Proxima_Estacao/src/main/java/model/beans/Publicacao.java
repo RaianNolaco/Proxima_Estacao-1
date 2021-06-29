@@ -17,10 +17,10 @@ public class Publicacao{
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Publicacao(int id_publicacao, String titulo, String thumb, String conteudo, char conteudo_NSFW,
+	public Publicacao(String titulo, String thumb, String conteudo, char conteudo_NSFW,
 			String descricao, int views, Artista id_artista) {
 		super();
-		this.id_publicacao = id_publicacao;
+	
 		this.titulo = titulo;
 		this.thumb = thumb;
 		this.conteudo = conteudo;

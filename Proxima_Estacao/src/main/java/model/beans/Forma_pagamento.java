@@ -11,9 +11,9 @@ public class Forma_pagamento{
 		// TODO Auto-generated constructor stub
 	}
 
-	public Forma_pagamento(int id_forma_pag, String nome) {
+	public Forma_pagamento(String nome) {
 		super();
-		this.id_forma_pag = id_forma_pag;
+	
 		this.nome = nome;
 	}
 	

@@ -25,6 +25,8 @@ public class ConnectionFactory {
 		}
 	}
 
+	
+	//Método para fechar o conectio, statementi e resultset
 	public static void closeConnection(Connection con) {
 
 		if (con != null) {

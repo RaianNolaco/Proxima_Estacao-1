@@ -13,10 +13,9 @@ public class Grupo{
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Grupo(int id_grupo, String nome_grupo, String tag_grupo, String descricao_grupo){
+	public Grupo(String nome_grupo, String tag_grupo, String descricao_grupo){
 		
 		super();
-		this.id_grupo = id_grupo;
 		this.nome_grupo = nome_grupo;
 		this.tag_grupo = tag_grupo;
 		this.descricao_grupo = descricao_grupo;

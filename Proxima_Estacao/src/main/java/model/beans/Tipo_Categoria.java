@@ -13,9 +13,8 @@ public class Tipo_Categoria{
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Tipo_Categoria(int id_tipo_categoria, String nome_categoria) {
+	public Tipo_Categoria( String nome_categoria) {
 		super();
-		this.id_tipo_categoria = id_tipo_categoria;
 		this.nome_categoria = nome_categoria;
 	}
 	

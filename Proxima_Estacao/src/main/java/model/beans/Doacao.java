@@ -9,9 +9,9 @@ public class Doacao{
 	private Forma_pagamento   id_forma_pag;
 	
 	
-	public Doacao(int id_doacao, float quantidade, Artista id_artista, Usuario id_usuario, Forma_pagamento id_forma_pag) {
+	public Doacao(float quantidade, Artista id_artista, Usuario id_usuario, Forma_pagamento id_forma_pag) {
 		super();
-		this.id_doacao    = id_doacao;
+		
 		this.quantidade   = quantidade;
 		this.id_artista   = id_artista;
 		this.id_usuario   = id_usuario;
