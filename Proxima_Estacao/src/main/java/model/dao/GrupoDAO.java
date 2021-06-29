@@ -27,9 +27,7 @@ public class GrupoDAO {
 			stmt.setString(3,grupo.getDescricao_grupo());
 		    stmt.execute();
 			return true;
-			
-			
-			
+						
 			
 		}catch(SQLException e){
 			
