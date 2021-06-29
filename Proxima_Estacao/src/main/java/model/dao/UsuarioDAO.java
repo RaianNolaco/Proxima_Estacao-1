@@ -37,7 +37,7 @@ public class UsuarioDAO {
 			System.err.println("Erro: " +e);
 			return false;
 	    } finally {
-	    	
+	    	ConnectionFactory.closeConnection(con, stmt);
 	    }
 }
 	
