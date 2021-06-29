@@ -1,5 +1,7 @@
 package testes;
 
+import static org.junit.Assert.fail;
+
 import org.junit.jupiter.api.Test;
 import model.beans.Artista;
 import model.beans.Usuario;
@@ -18,7 +20,7 @@ class ArtistaDAOTest {
 		   if(dao.inserirArtista(artista)) {
 			   System.out.println("Artista salvo com sucesso!");
 		   }else {
-			   System.out.println("Erro");
+			   fail("Erro");
 		   }
 		
 		   
