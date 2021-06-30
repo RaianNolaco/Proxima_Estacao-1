@@ -9,11 +9,12 @@ import model.beans.Publicacao;
 import model.dao.PublicacaoDAO;
 
 class PublicacaoDAOTest {
-
+	PublicacaoDAO dao = new PublicacaoDAO();
+	
 	@Test
 	public void inserirPublicacao() {
 		
-		PublicacaoDAO dao = new PublicacaoDAO();
+	
 		Artista artista = new Artista();
 		artista.setId_artista(1);
 		
@@ -25,7 +26,20 @@ class PublicacaoDAOTest {
 		}else {
 			fail("Erro ao inserir ao publicação");
 		}
+	}
+	
+	@Test
+	public void listarPublicacoes() {
 		
+		for (Publicacao pub : dao.listarPublicacao()) {
+			System.out.println("\nId: " + pub.getId_publicacao()
+			+ "\nThumb: " + pub.getThumb()
+            + "\nConteudo: "+ pub.getConteudo()
+            + "\nNSFW: " + pub.getConteudo_NSFW()
+            + "\nDescricao: " + pub.getDescricao()
+            + "\nViews: " + pub.getViews()
+            + "\nArtista: " + pub.getId_artista().getId_artista());
+		}
 		
 		
 	}
