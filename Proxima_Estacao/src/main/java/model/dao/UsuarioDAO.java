@@ -22,7 +22,7 @@ public class UsuarioDAO {
 	public boolean inserirUsuario(Usuario usuario) {
 		String sql = "INSERT INTO usuario (nome, sobrenome, apelido, email, senha, numero, id_status, data_nascimento, cpf)"
 				+ "VALUES (?,?,?,?,?,?,?,?,?)";
-		
+
 		PreparedStatement stmt = null;
 		try {
 			stmt = con.prepareStatement(sql);
@@ -37,7 +37,7 @@ public class UsuarioDAO {
 			stmt.setString(9, usuario.getCpf());
 			stmt.executeUpdate();
 			return true;
-		}catch (SQLException e) {
+		} catch (SQLException e) {
 			System.err.println("Erro ao inserir o usuario" + e);
 			return false;
 		} finally {
@@ -51,19 +51,15 @@ public class UsuarioDAO {
 		String sql = "SELECT * FROM usuario";
 
 		PreparedStatement stmt = null;
-
-		ResultSet rs = null;
-
+		ResultSet 			rs = null;
 		List<Usuario> usuarios = new ArrayList<Usuario>();
 
 		try {
 			stmt = con.prepareStatement(sql);
 			rs = stmt.executeQuery(sql);
-
 			while (rs.next()) {
 				Usuario usuario = new Usuario();
 				Status status = new Status();
-				
 				usuario.setIdUsuario(rs.getInt("id_usuario"));
 				usuario.setNomeUsuario(rs.getString("nome"));
 				usuario.setSobrenomeUsuario(rs.getString("sobrenome"));
@@ -75,7 +71,6 @@ public class UsuarioDAO {
 				usuario.setData_nascimento(rs.getDate("data_nascimento"));
 				usuario.setCpf(rs.getString("cpf"));
 				usuario.setIdStatus(status);
-
 				usuarios.add(usuario);
 
 			}
