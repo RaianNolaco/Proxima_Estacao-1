@@ -2,7 +2,10 @@ package model.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import connection.ConnectionFactory;
 import model.beans.Grupo;
@@ -10,38 +13,69 @@ import model.beans.Grupo;
 public class GrupoDAO {
 
 	private Connection con = null;
-	
-	public boolean inserirGrupo(Grupo grupo){
-		
+
+	public GrupoDAO() {
+		con = ConnectionFactory.getConnection();
+	}
+
+	public boolean inserirGrupo(Grupo grupo) {
+
 		String sql = "INSERT INTO grupo(nome_grupo,tag_grupo,descricao_grupo) VALUES (?,?,?)";
-		
-		con  = ConnectionFactory.getConnection();
-		
+
 		PreparedStatement stmt = null;
-		
+
 		try {
 			stmt = con.prepareStatement(sql);
-			stmt.setString(1,grupo.getNome_grupo());
-			stmt.setString(2,grupo.getTag_grupo());
-			stmt.setString(3,grupo.getDescricao_grupo());
-		    stmt.execute();
+			stmt.setString(1, grupo.getNome_grupo());
+			stmt.setString(2, grupo.getTag_grupo());
+			stmt.setString(3, grupo.getDescricao_grupo());
+			stmt.execute();
 			return true;
-		
 
-		}catch(SQLException e){
-			
+		} catch (SQLException e) {
+
 			System.out.println("Erro ao criar o grupo");
-			
+
 			return false;
+
+		} finally {
+			ConnectionFactory.closeConnection(con, stmt);
+		}
+
+	}
+
+	public List<Grupo> listarGrupos() {
+		String sql = "SELECT * FROM grupo";
+		PreparedStatement stmt = null;
+		
+		
+		ResultSet rs = null;
+		List<Grupo> grupos = new ArrayList<Grupo>();
+	
+		try {
 			
-		}finally{
+			stmt = con.prepareStatement(sql);
+			rs = stmt.executeQuery(sql);
 			
+			while (rs.next()) {
+				Grupo grupo = new Grupo();
+				
+				grupo.setId_grupo(rs.getInt("id_grupo"));
+				grupo.setNome_grupo(rs.getString("nome_grupo"));
+				grupo.setTag_grupo(rs.getString("tag_grupo"));
+				grupo.setDescricao_grupo(rs.getString("descricao_grupo"));;
+				grupos.add(grupo);
+				
+			}
 			
-				ConnectionFactory.closeConnection(con, stmt);
-			
+		} catch (SQLException e) {
+			System.err.println("Erro ao listar os grupos!");
+			return null;
+		} finally {
+			ConnectionFactory.closeConnection(con, stmt, rs);
 		}
 		
-		
-	} 
+		return grupos;
+	}
 	
 }
