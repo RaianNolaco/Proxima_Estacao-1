@@ -33,7 +33,7 @@ public class ConnectionFactory {
 			try {
 				con.close();
 			} catch (SQLException e) {
-				System.err.println("Erro: " + e);
+				System.err.println("Erro ao fechar o banco: " + e);
 			}
 		}
 
@@ -45,7 +45,7 @@ public class ConnectionFactory {
 			try {
 				stmt.close();
 			} catch (SQLException e) {
-				System.err.println("Erro: " + e);
+				System.err.println("Erro ao fechar o banco: "  + e);
 			}
 			
 			closeConnection(con);
@@ -59,7 +59,7 @@ public class ConnectionFactory {
 			try {
 				rs.close();
 			} catch (SQLException e) {
-				System.err.println("Erro: " + e);
+				System.err.println("Erro ao fechar o banco: "  + e);
 			}
 		closeConnection(con,stmt);
 		}
