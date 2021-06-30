@@ -37,6 +37,7 @@ public class UsuarioDAO {
 			stmt.setString(9, usuario.getCpf());
 			stmt.executeUpdate();
 			return true;
+			
 		} catch (SQLException e) {
 			System.err.println("Erro ao inserir o usuario" + e);
 			return false;

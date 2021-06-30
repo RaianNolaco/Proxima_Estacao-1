@@ -10,10 +10,10 @@ import model.beans.Usuario;
 import model.dao.FeedbackDAO;
 
 class FeedbackDAOTest {
-
-	@Test
+	FeedbackDAO dao = new FeedbackDAO();
+	/*@Test
 	public void inserirFeedback() {
-		FeedbackDAO dao = new FeedbackDAO();
+		
 		Usuario usuario = new Usuario();
 		Publicacao publi = new Publicacao();
 		
@@ -28,6 +28,21 @@ class FeedbackDAOTest {
 			System.out.println("Feedback inserido com sucesso!");
 		}else {
 			fail("Erro ao inserir o feedback!");
+		}
+		
+	}*/
+	
+	
+	@Test
+	public void listarFeeds() {
+		
+		for(Feedback feed: dao.listarFeedbacks()) {
+			System.out.println("\nTitulo: " + feed.getTitulo()
+							 + "\nComentario: " + feed.getComentario()
+							 + "\nGostei: " + feed.getGostei()
+							 + "\nUsuario: " + feed.getId_usuario().getIdUsuario()
+							 + "\nPublicação: " + feed.getId_publicacao().getId_publicacao()
+			                  );
 		}
 		
 	}
