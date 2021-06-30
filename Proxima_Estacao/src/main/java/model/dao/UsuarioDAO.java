@@ -73,7 +73,6 @@ public class UsuarioDAO {
 				usuario.setCpf(rs.getString("cpf"));
 				usuario.setIdStatus(status);
 				usuarios.add(usuario);
-
 			}
 
 		} catch (SQLException e) {
@@ -86,6 +85,7 @@ public class UsuarioDAO {
 		return usuarios;
 	}
 	
+	//Método responsável por atualizar o ususario
 	public boolean alterarUsuario(Usuario usuario) {
 		
 		String sql = "UPDATE usuario SET nome = ?, sobrenome = ?, apelido = ?, email = ?, senha = ?, numero = ?, id_status = ?, data_nascimento = ?, cpf = ?"
@@ -116,6 +116,7 @@ public class UsuarioDAO {
 		
 	}
 	
+	//Método responsável por deletar o usuario
 	public boolean deletarUsuario(Usuario usuario) {
 		String sql = "DELETE FROM usuario WHERE id_usuario = ? ";
 		PreparedStatement stmt = null;
@@ -132,5 +133,4 @@ public class UsuarioDAO {
 			ConnectionFactory.closeConnection(con,stmt);
 		}
 	}
-
 }
