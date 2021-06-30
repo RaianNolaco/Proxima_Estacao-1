@@ -11,7 +11,8 @@ import model.dao.FeedbackDAO;
 
 class FeedbackDAOTest {
 	FeedbackDAO dao = new FeedbackDAO();
-	/*@Test
+	
+	@Test
 	public void inserirFeedback() {
 		
 		Usuario usuario = new Usuario();
@@ -30,7 +31,7 @@ class FeedbackDAOTest {
 			fail("Erro ao inserir o feedback!");
 		}
 		
-	}*/
+	}
 	
 	
 	@Test

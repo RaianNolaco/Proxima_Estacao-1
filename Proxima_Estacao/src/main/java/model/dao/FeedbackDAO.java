@@ -10,7 +10,6 @@ import java.util.List;
 import connection.ConnectionFactory;
 import model.beans.Feedback;
 import model.beans.Publicacao;
-import model.beans.Status;
 import model.beans.Usuario;
 
 public class FeedbackDAO {
