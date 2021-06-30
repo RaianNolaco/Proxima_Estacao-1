@@ -37,7 +37,7 @@ public class UsuarioDAO {
 			stmt.setString(9, usuario.getCpf());
 			stmt.executeUpdate();
 			return true;
-			
+
 		} catch (SQLException e) {
 			System.err.println("Erro ao inserir o usuario" + e);
 			return false;
@@ -52,7 +52,7 @@ public class UsuarioDAO {
 		String sql = "SELECT * FROM usuario";
 
 		PreparedStatement stmt = null;
-		ResultSet 			rs = null;
+		ResultSet rs = null;
 		List<Usuario> usuarios = new ArrayList<Usuario>();
 
 		try {
@@ -84,6 +84,36 @@ public class UsuarioDAO {
 		}
 
 		return usuarios;
+	}
+	
+	public boolean alterarUsuario(Usuario usuario) {
+		
+		String sql = "UPDATE usuario SET nome = ?, sobrenome = ?, apelido = ?, email = ?, senha = ?, numero = ?, id_status = ?, data_nascimento = ?, cpf = ?"
+				+ "WHERE id_usuario = ?";
+
+		PreparedStatement stmt = null;
+		try {
+			stmt = con.prepareStatement(sql);
+			stmt.setString(1, usuario.getNomeUsuario());
+			stmt.setString(2, usuario.getSobrenomeUsuario());
+			stmt.setString(3, usuario.getApelido());
+			stmt.setString(4, usuario.getEmail());
+			stmt.setString(5, usuario.getSenha());
+			stmt.setString(6, usuario.getNumero());
+			stmt.setInt(7, usuario.getIdStatus().getId_status());
+			stmt.setDate(8, new java.sql.Date(usuario.getData_nascimento().getTime()));
+			stmt.setString(9, usuario.getCpf());
+			stmt.setInt(10, usuario.getIdUsuario());
+			stmt.executeUpdate();
+			return true;
+
+		} catch (SQLException e) {
+			System.err.println("Erro ao inserir o usuario" + e);
+			return false;
+		} finally {
+			ConnectionFactory.closeConnection(con, stmt);
+		}
+		
 	}
 
 }
