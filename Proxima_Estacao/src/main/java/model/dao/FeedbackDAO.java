@@ -75,6 +75,8 @@ public class FeedbackDAO {
 		}catch(SQLException e) {
 			System.err.print("Erro ao listar todos os feedbacks!");
 			return null;
+		}finally {
+			ConnectionFactory.closeConnection(con, stmt,rs);
 		}
 		
 		return feeds;
