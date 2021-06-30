@@ -40,6 +40,7 @@ public class RecompensaDAO {
 				recompensa.setNome(rs.getString("nome"));
 				recompensa.setDescricao(rs.getString("descricao"));
 				recompensa.setEmblema(rs.getString("emblema"));
+				recompensas.add(recompensa);
 				
 			}
 			

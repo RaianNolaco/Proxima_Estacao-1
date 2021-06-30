@@ -82,6 +82,7 @@ public class DoacaoDAO {
 	    		doacao.setId_usuario(usuario);
 	    		forma_pag.setId_forma_pag(rs.getInt("id_forma_pag"));
 	    		doacao.setId_forma_pag(forma_pag);
+	    		doacoes.add(doacao);
 	    		
 	    	}
 	    	
