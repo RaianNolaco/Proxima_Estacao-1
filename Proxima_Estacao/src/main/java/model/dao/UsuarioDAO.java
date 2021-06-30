@@ -115,5 +115,22 @@ public class UsuarioDAO {
 		}
 		
 	}
+	
+	public boolean deletarUsuario(Usuario usuario) {
+		String sql = "DELETE FROM usuario WHERE id_usuario = ? ";
+		PreparedStatement stmt = null;
+		
+		try {
+			stmt = con.prepareStatement(sql);
+			stmt.setInt(1, usuario.getIdUsuario());
+			stmt.executeUpdate();
+			return true;
+		} catch (SQLException e) {
+			System.err.println("Erro: " +e);
+			return false;
+		}finally {
+			ConnectionFactory.closeConnection(con,stmt);
+		}
+	}
 
 }

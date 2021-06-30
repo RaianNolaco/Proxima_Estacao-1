@@ -12,8 +12,9 @@ import model.dao.UsuarioDAO;
 class UsuarioDAOTest {
 	UsuarioDAO dao = new UsuarioDAO();
 	Status status = new Status();
+	Usuario usuario = new Usuario();
 
-	/*@Test
+	@Test
 	@Ignore
 	public void InserirUsuario() {
 		status.setId_status(1);
@@ -24,9 +25,9 @@ class UsuarioDAOTest {
 			fail("Deu erro");
 		}
 
-	}*/
+	}
 
-	/*@Test
+	@Test
 	public void todosUsuarios() {
 
 		for (Usuario usuario : dao.listarUsuarios()) {
@@ -37,11 +38,11 @@ class UsuarioDAOTest {
 					+ "\nStatus: " + usuario.getIdStatus().getId_status() + "\nData de Nascimento: "
 					+ usuario.getData_nascimento() + "\nCPF: " + usuario.getCpf());
 		}
-	}*/
+	}
 
 	@Test
 	@Ignore
-	public void attUsuario() {
+	public void atualizarUsuario() {
 		status.setId_status(1);
 		Usuario usuario = new Usuario("Raian", "Nolaço", "Raio", "R", status, "Cra", "7654453", "17/07/2002", "7656521");
 		usuario.setIdUsuario(5);
@@ -52,5 +53,19 @@ class UsuarioDAOTest {
 		}
 
 	}
+	
+	@Test
+	@Ignore
+	public void deletarUsuario() {
+		usuario.setIdUsuario(11);
+		if (dao.deletarUsuario(usuario)) {
+			System.out.println("deu certo");
+		} else {
+			fail("Deu erro");
+		}
+
+	}
+	
+	
 
 }
