@@ -22,9 +22,8 @@ public class UsuarioDAO {
 	public boolean inserirUsuario(Usuario usuario) {
 		String sql = "INSERT INTO usuario (nome, sobrenome, apelido, email, senha, numero, id_status, data_nascimento, cpf)"
 				+ "VALUES (?,?,?,?,?,?,?,?,?)";
-
+		
 		PreparedStatement stmt = null;
-
 		try {
 			stmt = con.prepareStatement(sql);
 			stmt.setString(1, usuario.getNomeUsuario());
@@ -44,7 +43,6 @@ public class UsuarioDAO {
 		} finally {
 			ConnectionFactory.closeConnection(con, stmt);
 		}
-
 	}
 
 	// metodo responsável por retornar todos os usuarios do banco de dados

@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 import connection.ConnectionFactory;
 import model.beans.Publicacao;
-import model.beans.Usuario;
+
 
 public class PublicacaoDAO {
 	private Connection con = null;

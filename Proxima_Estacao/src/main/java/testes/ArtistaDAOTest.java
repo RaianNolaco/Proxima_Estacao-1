@@ -8,9 +8,11 @@ import model.beans.Usuario;
 import model.dao.ArtistaDAO;
 
 class ArtistaDAOTest {
-	@Test
+	ArtistaDAO     dao = new ArtistaDAO();
+	
+	/*@Test
 	public void inserirArtista() {
-		ArtistaDAO     dao = new ArtistaDAO();
+	
 		   
 		   Usuario usuario = new    Usuario();
 		   usuario.setIdUsuario(4);
@@ -25,5 +27,24 @@ class ArtistaDAOTest {
 		
 		   
 
+	}*/
+	
+	@Test
+	public void listraTodosArtistas() {
+		
+		for(Artista artista: dao.listarArtistas()) {
+			
+			System.out.println  ("\nID Artista :  " + artista.getId_artista()
+								+"\nDescrição  :  " + artista.getDescricao()
+								+"\nID Usuario :  " + artista.getId_usuario().getIdUsuario()
+								+"\nRede social:  " + artista.getRede_social()
+					            );
+			
+		}
+		
+		
 	}
+	
+	
+	
 }

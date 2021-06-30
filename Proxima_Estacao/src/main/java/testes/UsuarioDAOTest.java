@@ -3,7 +3,7 @@ package testes;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import model.beans.Status;
 import model.beans.Usuario;
@@ -15,9 +15,8 @@ class UsuarioDAOTest {
 	Status status = new Status();
 
 	
-	
 	@Test
-
+	@Ignore 
 	public void InserirUsuario() {
 		status.setId_status(1);
 		Usuario usuario = new Usuario("William", "Araujo", "Will", "w", status, "zees", "76543", "17/07/2002",
