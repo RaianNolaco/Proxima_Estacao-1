@@ -81,4 +81,21 @@ public class FeedbackDAO {
 		return feeds;
 	}
 
+	  public boolean alterarFeedback(){
+		  
+		  String sql =  "UPDATE feedback SET titulo = ?, comentario = ?, gostei = ? WHERE id_feedback";
+		  
+		  PreparedStatement stmt = null;
+		  
+		  try {
+			
+			  
+			  
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		  
+	  }
+	
+	
 }
