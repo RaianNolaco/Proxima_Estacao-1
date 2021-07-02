@@ -47,7 +47,7 @@ public class ArtistaDAO {
 		List<Artista> artistas = new ArrayList<Artista>();
 
 		try {
-			
+
 			stmt = con.prepareStatement(sql);
 			rs = stmt.executeQuery(sql);
 
@@ -72,6 +72,63 @@ public class ArtistaDAO {
 
 		return artistas;
 
+	}
+
+	// Update artista
+	public boolean elterarArtista(Artista artista) {
+
+		String sql = "UPDADE artista SET descricao =?, rede_social = ? WHERE id_artista = ?";
+
+		PreparedStatement stmt = null;
+
+		try {
+			stmt = con.prepareStatement(sql);
+
+			stmt.setString(1, artista.getDescricao());
+			stmt.setString(2, artista.getRede_social());
+			stmt.setInt(3, artista.getId_artista());
+			stmt.executeUpdate();
+
+			return true;
+
+		} catch (SQLException e) {
+
+			System.err.println("Erro ao atualizar dados");
+			return false;
+
+		} finally {
+
+			ConnectionFactory.closeConnection(con, stmt);
+
+		}
+
+	}
+	
+	
+	//Excluir artista
+	public boolean deletarArtista(Artista artista) {
+			String sql = "DELETE FROM artista WHERE id_artista = ?";
+			
+			PreparedStatement stmt = null;
+			
+			try {
+				
+				stmt = con.prepareStatement(sql);
+				
+				stmt.setInt(1, artista.getId_artista());
+				stmt.executeUpdate();
+				
+				return true;
+				
+			} catch (SQLException e) {
+				
+				System.err.println("Erro ao tentar excluir arista!");
+				return false;
+				
+			}finally {
+				ConnectionFactory.closeConnection(con,stmt);
+			}
+			
 	}
 
 }
