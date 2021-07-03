@@ -19,13 +19,11 @@ public class FeedbackDAO {
 	public FeedbackDAO() {
 		con = ConnectionFactory.getConnection();
 	}
-	
+
 	public boolean inserirFeedback(Feedback feed) {
-		
-		
 
 		String sql = "INSERT into feedback (titulo, comentario, gostei, id_usuario, id_publicacao) values (?,?,?,?,?)";
-		
+
 		PreparedStatement stmt = null;
 		try {
 			stmt = con.prepareStatement(sql);
@@ -45,22 +43,22 @@ public class FeedbackDAO {
 		}
 
 	}
-	
-	public List<Feedback> listarFeedbacks(){
+
+	public List<Feedback> listarFeedbacks() {
 		String sql = "SELECT * FROM feedback";
 
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
 		List<Feedback> feeds = new ArrayList<Feedback>();
-		
+
 		try {
 			stmt = con.prepareStatement(sql);
 			rs = stmt.executeQuery(sql);
 			while (rs.next()) {
-				Feedback feed  = new Feedback();
-				Usuario 	u  = new Usuario();
+				Feedback feed = new Feedback();
+				Usuario u = new Usuario();
 				Publicacao pub = new Publicacao();
-				
+
 				feed.setTitulo(rs.getString("titulo"));
 				feed.setComentario(rs.getString("comentario"));
 				feed.setGostei(rs.getString("gostei").charAt(0));
@@ -71,31 +69,70 @@ public class FeedbackDAO {
 				feeds.add(feed);
 
 			}
-		}catch(SQLException e) {
+		} catch (SQLException e) {
 			System.err.print("Erro ao listar todos os feedbacks!");
 			return null;
-		}finally {
-			ConnectionFactory.closeConnection(con, stmt,rs);
+		} finally {
+			ConnectionFactory.closeConnection(con, stmt, rs);
 		}
-		
+
 		return feeds;
 	}
 
-	  public boolean alterarFeedback(){
-		  
-		  String sql =  "UPDATE feedback SET titulo = ?, comentario = ?, gostei = ? WHERE id_feedback";
-		  
-		  PreparedStatement stmt = null;
-		  
-		  try {
+	public boolean alterarFeedback(Feedback feed) {
+
+		String sql = "UPDATE feedback SET titulo = ?, comentario = ?, gostei = ? WHERE id_feedback";
+
+		PreparedStatement stmt = null;
+
+		try {
+			stmt = con.prepareStatement(sql);
+
+			stmt.setString(1, feed.getTitulo());
+			stmt.setString(2, feed.getComentario());
+			stmt.setString(3,feed.getGostei());
+			stmt.setInt(4, feed.getId_feedback());
+			stmt.executeUpdate();
 			
-			  
-			  
+			return true;
+
 		} catch (Exception e) {
-			// TODO: handle exception
+
+			System.err.println("Erro ao atualizar dado");
+			return false;
+
+		} finally {
+
+			ConnectionFactory.closeConnection(con, stmt);
+
 		}
-		  
-	  }
-	
-	
+
+	}
+
+	public boolean deleteFeedback(Feedback feed) {
+
+		String sql = "DELETE FROM feedback WHERE id_feedback";
+
+		PreparedStatement stmt = null;
+
+		try {
+			
+			stmt = con.prepareStatement(sql);
+			
+			stmt.setInt(1,feed.getId_feedback());
+			stmt.executeUpdate();
+			
+			return true;
+
+		} catch (SQLException e) {
+			System.err.println("Erro ao tentar excluir seu feedback");
+			return false;
+		} finally {
+
+			ConnectionFactory.closeConnection(con,stmt);
+			
+		}
+
+	}
+
 }
