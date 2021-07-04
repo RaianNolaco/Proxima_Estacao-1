@@ -103,32 +103,31 @@ public class ArtistaDAO {
 		}
 
 	}
-	
-	
-	//Excluir artista
+
+	// Excluir artista
 	public boolean deletarArtista(Artista artista) {
-			String sql = "DELETE FROM artista WHERE id_artista = ?";
-			
-			PreparedStatement stmt = null;
-			
-			try {
-				
-				stmt = con.prepareStatement(sql);
-				
-				stmt.setInt(1, artista.getId_artista());
-				stmt.executeUpdate();
-				
-				return true;
-				
-			} catch (SQLException e) {
-				
-				System.err.println("Erro ao tentar excluir arista!");
-				return false;
-				
-			}finally {
-				ConnectionFactory.closeConnection(con,stmt);
-			}
-			
+		String sql = "DELETE FROM artista WHERE id_artista = ?";
+
+		PreparedStatement stmt = null;
+
+		try {
+
+			stmt = con.prepareStatement(sql);
+
+			stmt.setInt(1, artista.getId_artista());
+			stmt.executeUpdate();
+
+			return true;
+
+		} catch (SQLException e) {
+
+			System.err.println("Erro ao tentar excluir arista!");
+			return false;
+
+		} finally {
+			ConnectionFactory.closeConnection(con, stmt);
+		}
+
 	}
 
 }
