@@ -1,8 +1,14 @@
 <header class="cabecalho">
-            
+
+    <div class="boxLogo">
+        <a href="homeK.html">
+            <img src="../image/train.png" alt="">
+         </a>
+    </div>
+        
     <div class="boxtexto">
         <i class="fas fa-search"></i>
-        <input type="text" id="txtBusca" placeholder="pesquisar...">
+        <input type="text" id="txtBusca">
     </div>
 
     <div class="boxIcones">
