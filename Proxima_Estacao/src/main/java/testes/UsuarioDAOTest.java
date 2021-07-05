@@ -1,7 +1,12 @@
 package testes;
 
 import static org.junit.jupiter.api.Assertions.*;
+
+import javax.servlet.jsp.tagext.TryCatchFinally;
+
 import org.junit.jupiter.api.Test;
+
+import jdk.internal.org.objectweb.asm.tree.TryCatchBlockNode;
 import model.beans.Status;
 import model.beans.Usuario;
 import model.dao.UsuarioDAO;
@@ -68,9 +73,6 @@ class UsuarioDAOTest {
 			System.out.println("ID " + usuario.getIdUsuario());
 		}else{
 			System.err.println("Usuario não encontrado!");
-		};		
+		}
 	 }
-	
-	
-
 }

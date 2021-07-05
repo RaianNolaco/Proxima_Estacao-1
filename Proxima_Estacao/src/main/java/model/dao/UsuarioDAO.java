@@ -146,7 +146,6 @@ public class UsuarioDAO {
 			stmt.setString(1, usuario.getEmail());
 			stmt.setString(2, usuario.getSenha());
 			rs = stmt.executeQuery();
-			
 			if(rs.next()) {
 				usuario.setIdUsuario(rs.getInt("id_usuario"));
 			}else {
