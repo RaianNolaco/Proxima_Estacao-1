@@ -1,12 +1,8 @@
 package testes;
 
 import static org.junit.jupiter.api.Assertions.*;
-
 import javax.servlet.jsp.tagext.TryCatchFinally;
-
 import org.junit.jupiter.api.Test;
-
-import jdk.internal.org.objectweb.asm.tree.TryCatchBlockNode;
 import model.beans.Status;
 import model.beans.Usuario;
 import model.dao.UsuarioDAO;
