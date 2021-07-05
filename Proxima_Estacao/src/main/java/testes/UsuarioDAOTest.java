@@ -1,10 +1,7 @@
 package testes;
 
 import static org.junit.jupiter.api.Assertions.*;
-
-import org.junit.Ignore;
 import org.junit.jupiter.api.Test;
-
 import model.beans.Status;
 import model.beans.Usuario;
 import model.dao.UsuarioDAO;
@@ -18,15 +15,16 @@ class UsuarioDAOTest {
 	@Ignore
 	public void InserirUsuario() {
 		status.setId_status(1);
-		Usuario usuario = new Usuario("William", "Araujo", "Will", "w", status, "zees", "76543", "17/07/2002", "76521");
+		Usuario usuario = new Usuario("Teste", "Teste", "T", "1", status, "1", "4343242", "17/07/2002", "535354");
 		if (dao.inserirUsuario(usuario)) {
 			System.out.println("deu certo");
 		} else {
 			fail("Deu erro");
 		}
 	}
-
-	@Test
+	
+	*/
+	/*@Test
 	public void todosUsuarios() {
 		for (Usuario usuario : dao.listarUsuarios()) {
 			System.out.println("Id: " + usuario.getIdUsuario() + "\nNome: " + usuario.getNomeUsuario() + "\nSobrenome: "
@@ -36,7 +34,6 @@ class UsuarioDAOTest {
 					+ usuario.getData_nascimento() + "\nCPF: " + usuario.getCpf());
 		}
 	}*/
-
 	/*@Test
 	@Ignore
 	public void atualizarUsuario() {
@@ -50,8 +47,7 @@ class UsuarioDAOTest {
 		}
 
 	}*/
-	
-	@Test
+	/*@Test
 	@Ignore
 	public void deletarUsuario() {
 		usuario.setIdUsuario(4);
@@ -61,7 +57,18 @@ class UsuarioDAOTest {
 			fail("Deu erro");
 		}
 
-	}
+	}*/
+		
+	 @Test
+	 public void testaLogin() {
+		usuario.setEmail("w");
+		usuario.setSenha("ze767hes");
+		if(dao.login(usuario)) {
+			System.out.println("ID " + usuario.getIdUsuario());
+		}else{
+			fail("Errooooooooooooooooooooooooooooooooooooo");
+		};		
+	 }
 	
 	
 

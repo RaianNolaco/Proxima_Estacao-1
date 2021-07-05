@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,6 +27,7 @@ public class UsuarioDAO {
 		PreparedStatement stmt = null;
 		try {
 			stmt = con.prepareStatement(sql);
+			
 			stmt.setString(1, usuario.getNomeUsuario());
 			stmt.setString(2, usuario.getSobrenomeUsuario());
 			stmt.setString(3, usuario.getApelido());
@@ -35,6 +37,7 @@ public class UsuarioDAO {
 			stmt.setInt(7, usuario.getIdStatus().getId_status());
 			stmt.setDate(8, new java.sql.Date(usuario.getData_nascimento().getTime()));
 			stmt.setString(9, usuario.getCpf());
+			
 			stmt.executeUpdate();
 			return true;
 
@@ -84,10 +87,10 @@ public class UsuarioDAO {
 
 		return usuarios;
 	}
-	
-	//Método responsável por atualizar o ususario
+
+	// Método responsável por atualizar o ususario
 	public boolean alterarUsuario(Usuario usuario) {
-		
+
 		String sql = "UPDATE usuario SET nome = ?, sobrenome = ?, apelido = ?, email = ?, senha = ?, numero = ?, id_status = ?, data_nascimento = ?, cpf = ?"
 				+ "WHERE id_usuario = ?";
 
@@ -113,24 +116,48 @@ public class UsuarioDAO {
 		} finally {
 			ConnectionFactory.closeConnection(con, stmt);
 		}
-		
+
 	}
-	
-	//Método responsável por deletar o usuario
+
+	// Método responsável por deletar o usuario
 	public boolean deletarUsuario(Usuario usuario) {
-		String sql = "DELETE FROM usuario WHERE id_usuario = ? ";
+		String sql = "DELETE FROM usuario WHERE id_usuario = ?";
 		PreparedStatement stmt = null;
-		
+
 		try {
 			stmt = con.prepareStatement(sql);
 			stmt.setInt(1, usuario.getIdUsuario());
 			stmt.executeUpdate();
 			return true;
 		} catch (SQLException e) {
-			System.err.println("Erro: " +e);
+			System.err.println("Erro: " + e);
 			return false;
-		}finally {
-			ConnectionFactory.closeConnection(con,stmt);
+		} finally {
+			ConnectionFactory.closeConnection(con, stmt);
 		}
+	}
+
+	public boolean login(Usuario usuario) {
+		String sql = "SELECT * FROM usuario WHERE email = ? AND senha = ?";
+		PreparedStatement stmt = null;
+		ResultSet 			rs = null;
+		try {
+			stmt = con.prepareStatement(sql);
+			stmt.setString(1, usuario.getEmail());
+			stmt.setString(2, usuario.getSenha());
+			rs = stmt.executeQuery();
+			
+			if(rs.next()) {
+				usuario.setIdUsuario(rs.getInt("id_usuario"));
+			}else {
+				return false;
+			}
+			
+		} catch (Exception e) {
+			System.err.println("Erro: " + e);
+		} finally {
+			ConnectionFactory.closeConnection(con,stmt,rs);
+		}
+		return true;
 	}
 }

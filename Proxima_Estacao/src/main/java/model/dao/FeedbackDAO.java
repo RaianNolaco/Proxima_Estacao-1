@@ -80,31 +80,22 @@ public class FeedbackDAO {
 	}
 
 	public boolean alterarFeedback(Feedback feed) {
-
 		String sql = "UPDATE feedback SET titulo = ?, comentario = ?, gostei = ? WHERE id_feedback";
-
 		PreparedStatement stmt = null;
-
 		try {
 			stmt = con.prepareStatement(sql);
-
 			stmt.setString(1, feed.getTitulo());
 			stmt.setString(2, feed.getComentario());
-			stmt.setString(3,feed.getGostei());
-			stmt.setInt(4, feed.getId_feedback());
+			stmt.setString(3, String.valueOf(feed.getGostei()));
+			stmt.setInt	  (4, feed.getId_feedback());
 			stmt.executeUpdate();
-			
 			return true;
 
 		} catch (Exception e) {
-
 			System.err.println("Erro ao atualizar dado");
 			return false;
-
 		} finally {
-
 			ConnectionFactory.closeConnection(con, stmt);
-
 		}
 
 	}
