@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href='../image/logo-removebg-preview.png' type="image/x-icon">
+    <script src="../js/loading.js"></script>
+    <link rel="stylesheet" href="../html/login.html">
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="pace.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-bez@1.0.11/src/jquery.bez.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+    <title>O trem esta chegando...</title>
+</head>
+<body class="loading">
+
+    <div id="preloader">
+        <div class="p">O trem ja está chegando</div>
+    </div>
+
+    <script>
+
+    paceOptions = {
+    ajax: true,
+    document: true,
+    eventLag: false
+    };
+
+    Pace.on('done', function() {
+    $('.p').delay(3000).animate({top: '30%', opacity: '0'}, 3000, $.bez([0.19,1,0.22,1]));
+
+
+    $('#preloader').delay(4000).animate({top: '-100%'}, 2000, $.bez([0.19,1,0.22,1]));
+
+    TweenMax.from(".title", 2, {
+         delay: 1.8,
+              y: 10,
+              opacity: 0,
+              ease: Expo.easeInOut
+        })
+   });
+
+  </script>
+</body>
+</html>
