@@ -24,6 +24,7 @@ class UsuarioDAOTest {
 	}
 	
 	*/
+		
 	/*@Test
 	public void todosUsuarios() {
 		for (Usuario usuario : dao.listarUsuarios()) {
@@ -62,11 +63,11 @@ class UsuarioDAOTest {
 	 @Test
 	 public void testaLogin() {
 		usuario.setEmail("w");
-		usuario.setSenha("ze767hes");
+		usuario.setSenha("zees");
 		if(dao.login(usuario)) {
 			System.out.println("ID " + usuario.getIdUsuario());
 		}else{
-			fail("Errooooooooooooooooooooooooooooooooooooo");
+			System.err.println("Usuario não encontrado!");
 		};		
 	 }
 	

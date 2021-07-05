@@ -25,8 +25,7 @@ public class ConnectionFactory {
 		}
 	}
 
-	
-	//Método para fechar o conectio, statementi e resultset
+	// Método para fechar o conectio, statementi e resultset
 	public static void closeConnection(Connection con) {
 
 		if (con != null) {
@@ -45,25 +44,24 @@ public class ConnectionFactory {
 			try {
 				stmt.close();
 			} catch (SQLException e) {
-				System.err.println("Erro ao fechar o banco: "  + e);
+				System.err.println("Erro ao fechar o banco: " + e);
 			}
-			
 			closeConnection(con);
 		}
 
 	}
 
 	public static void closeConnection(Connection con, PreparedStatement stmt, ResultSet rs) {
-		
-		if(rs != null) {
+
+		if (rs != null) {
 			try {
 				rs.close();
 			} catch (SQLException e) {
-				System.err.println("Erro ao fechar o banco: "  + e);
+				System.err.println("Erro ao fechar o banco: " + e);
 			}
-		closeConnection(con,stmt);
+			closeConnection(con, stmt);
 		}
 
 	}
-	
+
 }
