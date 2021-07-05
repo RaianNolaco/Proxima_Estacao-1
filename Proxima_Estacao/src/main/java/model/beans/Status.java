@@ -22,9 +22,8 @@ public class Status {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-	public Status(int id_status, String descricao) {
+	public Status(String descricao) {
 		super();
-		this.id_status = id_status;
 		this.descricao = descricao;
 	}
 	

@@ -11,9 +11,9 @@ public class Categoria{
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Categoria(int id_categoria, String nome_categoria, Tipo_Categoria id_tipo_categoria) {
+	public Categoria(String nome_categoria, Tipo_Categoria id_tipo_categoria) {
 		super();
-		this.id_categoria = id_categoria;
+		
 		this.nome_categoria = nome_categoria;
 		this.id_tipo_categoria = id_tipo_categoria;
 	}

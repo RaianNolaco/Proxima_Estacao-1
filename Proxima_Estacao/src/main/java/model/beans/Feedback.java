@@ -2,16 +2,15 @@ package model.beans;
 
 public class Feedback{
 	
-	private int    id_feedback;
-	private String titulo; 
-	private String comentario;
-	private char   gostei; 
-	private Usuario    id_usuario;
-	private Publicacao    id_publicacao;
+	private int    		id_feedback;
+	private String		titulo;	
+	private String 		comentario;
+	private boolean     gostei; 
+	private Usuario     id_usuario;
+	private Publicacao  id_publicacao;
 	
-	public Feedback(int id_feedback, String titulo, String comentario, char gostei, Usuario id_usuario, Publicacao id_publicacao) {
-		super();
-		this.id_feedback = id_feedback;
+	public Feedback( String titulo,String comentario, boolean gostei, Usuario id_usuario, Publicacao id_publicacao) {
+		
 		this.titulo = titulo;
 		this.comentario = comentario;
 		this.gostei = gostei;
@@ -31,7 +30,7 @@ public class Feedback{
 	public void setId_feedback(int id_feedback) {
 		this.id_feedback = id_feedback;
 	}
-
+	
 	public String getTitulo() {
 		return titulo;
 	}
@@ -48,11 +47,11 @@ public class Feedback{
 		this.comentario = comentario;
 	}
 
-	public char getGostei() {
+	public boolean getGostei() {
 		return gostei;
 	}
 
-	public void setGostei(char gostei) {
+	public void setGostei(boolean gostei) {
 		this.gostei = gostei;
 	}
 

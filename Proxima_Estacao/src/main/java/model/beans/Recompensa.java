@@ -7,9 +7,8 @@ public class Recompensa{
 	private String descricao;
 	private String emblema;
 	
-	public Recompensa(int id_recompensa, String nome, String descricao, String emblema) {
+	public Recompensa( String nome, String descricao, String emblema) {
 		super();
-		this.id_recompensa = id_recompensa;
 		this.nome = nome;
 		this.descricao = descricao;
 		this.emblema = emblema;
