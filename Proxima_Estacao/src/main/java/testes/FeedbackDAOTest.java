@@ -23,7 +23,7 @@ class FeedbackDAOTest {
 		
 		
 		Feedback feed = new Feedback
-				("Que publicacao legal", "Gostei muito de ver esta publicacao cara haha", 'S', usuario, publi);
+				("hihi","Gostei muito de ver esta publicacao cara haha", true, usuario, publi);
 		
 		if(dao.inserirFeedback(feed)) {
 			System.out.println("Feedback inserido com sucesso!");

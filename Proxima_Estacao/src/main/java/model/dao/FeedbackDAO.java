@@ -22,14 +22,14 @@ public class FeedbackDAO {
 
 	public boolean inserirFeedback(Feedback feed) {
 
-		String sql = "INSERT into feedback (titulo, comentario, gostei, id_usuario, id_publicacao) values (?,?,?,?,?)";
+		String sql = "INSERT into feedback (titulo,comentario, gostei, id_usuario, id_publicacao) values (?,?,?,?,?)";
 
 		PreparedStatement stmt = null;
 		try {
 			stmt = con.prepareStatement(sql);
 			stmt.setString(1, feed.getTitulo());
 			stmt.setString(2, feed.getComentario());
-			stmt.setString(3, String.valueOf(feed.getGostei()));
+			stmt.setBoolean(3, feed.getGostei());
 			stmt.setInt(4, feed.getId_usuario().getIdUsuario());
 			stmt.setInt(5, feed.getId_publicacao().getId_publicacao());
 			stmt.execute();
@@ -58,10 +58,10 @@ public class FeedbackDAO {
 				Feedback feed = new Feedback();
 				Usuario u = new Usuario();
 				Publicacao pub = new Publicacao();
-
+				
 				feed.setTitulo(rs.getString("titulo"));
 				feed.setComentario(rs.getString("comentario"));
-				feed.setGostei(rs.getString("gostei").charAt(0));
+				feed.setGostei(rs.getBoolean("gostei"));
 				u.setIdUsuario(rs.getInt("id_usuario"));
 				pub.setId_publicacao(rs.getInt("id_publicacao"));
 				feed.setId_usuario(u);
@@ -86,7 +86,7 @@ public class FeedbackDAO {
 			stmt = con.prepareStatement(sql);
 			stmt.setString(1, feed.getTitulo());
 			stmt.setString(2, feed.getComentario());
-			stmt.setString(3, String.valueOf(feed.getGostei()));
+			stmt.setBoolean(3, feed.getGostei());
 			stmt.setInt	  (4, feed.getId_feedback());
 			stmt.executeUpdate();
 			return true;
