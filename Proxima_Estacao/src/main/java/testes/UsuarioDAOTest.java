@@ -1,7 +1,12 @@
 package testes;
 
 import static org.junit.jupiter.api.Assertions.*;
+
+import javax.servlet.jsp.tagext.TryCatchFinally;
+
 import org.junit.jupiter.api.Test;
+
+import jdk.internal.org.objectweb.asm.tree.TryCatchBlockNode;
 import model.beans.Status;
 import model.beans.Usuario;
 import model.dao.UsuarioDAO;
@@ -24,6 +29,7 @@ class UsuarioDAOTest {
 	}
 	
 	*/
+		
 	/*@Test
 	public void todosUsuarios() {
 		for (Usuario usuario : dao.listarUsuarios()) {
@@ -62,14 +68,11 @@ class UsuarioDAOTest {
 	 @Test
 	 public void testaLogin() {
 		usuario.setEmail("w");
-		usuario.setSenha("ze767hes");
+		usuario.setSenha("zees");
 		if(dao.login(usuario)) {
 			System.out.println("ID " + usuario.getIdUsuario());
 		}else{
-			fail("Errooooooooooooooooooooooooooooooooooooo");
-		};		
+			System.err.println("Usuario não encontrado!");
+		}
 	 }
-	
-	
-
 }
