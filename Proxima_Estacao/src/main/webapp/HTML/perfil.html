@@ -1,67 +1,210 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/styleK.css">
-    <script src="https://kit.fontawesome.com/babea0d443.js" crossorigin="anonymous"></script>
-    <link rel="icon" href='../image/logo-removebg-preview.png' type="image/x-icon">
-    <title>Index_proxima_</title>
-</head>
-<body>
-    <header class="cabecalho">
-        <div class="boxLogo">
-            <a href="homeK.html">
-               <img src="../image/logo-removebg-preview.png" alt="">
-            </a>
-        </div>
-            
-        <div class="boxtexto">
-            <input type="text" id="txtBusca" placeholder="pesquisar...">
-        </div>
-
-        <div class="boxIcones">
-            <ul>
-                <li>
-                    <a href="">
-                        <i class="fas fa-cloud-sun"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                       <img src="../image/Kepler.jpg" alt="">
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </header>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="theme-color" content="#9d4edd">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/styleK.css">
+        <script src="https://kit.fontawesome.com/babea0d443.js" crossorigin="anonymous"></script>
+        <link rel="icon" href='../image/logo-removebg-preview.png' type="image/x-icon">
+        <title>Index_proxima_estação</title>
+        <script src="../jswiil.js"></script>
+    </head>
+    <body>
+        <header class="cabecalho">
+    
+            <div class="boxLogo">
+                <a href="homeK.html">
+                    <img src="../image/train.png" alt="">
+                 </a>
+            </div>
+                
+            <div class="boxtexto">
+                <form action="" class="search-bar" >
+                    <input type="search" id="txtBusca" class="search-text">
+                </form>
+                <i class="fas fa-search"></i>
+            </div>
+    
+            <div class="boxIcones">
+                <ul>
+                    <li>
+                        <a href="">
+                            <i class="fas fa-cloud-sun"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <span  onclick="showCaixa()">
+                            <img src="../image/Kepler.jpg" alt="">
+                        </span>
+    
+                        <div id="CaixaDeCoc">
+                            <ul>
+                                <li>
+                                    <a href="perfil.html">
+                                        Perfil
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        configurações
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        adicionar contas
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    <a href="">
+                                        Suporte
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        Feedback
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        privacidade e segurança
+                                    </a>
+                                </li>
+                            </ul>
+                            <div>
+                                <h5>PROXIMA ESTAÇÃO</h5>
+                                <h6>2021 - Proa</h6>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </header>
 
     <nav class="sidnav">
-        <input type = "checkbox" id = "check">
-        <label for = "check">
-            <i class="fas fa-align-justify"></i>
-        </label>
 
         <ul>
             <li>
                 <a href="">
-                    <i class="fas fa-map-marker-alt"></i>
+                    <img src="../image/terra.png" alt="">
                 </a>
             </li>
             <li>
-                <a href="">
-                    <i class="fas fa-bell"></i>
+                <button onclick="showN()">
+                    <img src="../image/notificacao.png" alt="">
+                </button>
+                <div id="caixaDeNot">
+                    <article class="caixaDeNot_Box">
+                        <div></div>
+                        <h3>notificações</h3>
+                        <div></div>
+                        <h3>Missões</h3>
+                    </article>
+                    <div class="conteudo">
+                        <picture>
+                            <img src="../image/medalha_de_fogo" alt="">
+                        </picture>
+                        <div class="Missao">
+                            <h6>
+                                0/1
+                            </h6>
+                            <h5>
+                                 Pegando Fogo!
+                            </h5>
+                            <p>
+                                Conquiste <span>5 seguidores</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="conteudo">
+                        <picture>
+                            <img src="../image/medalha_de_feed_cheio" alt="">
+                        </picture>
+
+                        <div class="Missao">
+                            <h6>
+                                0/1
+                            </h6>
+                            <h5>
+                                 Pegando Fogo!
+                            </h5>
+                            <p>
+                                Conquiste <span>5 seguidores</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="conteudo">
+                        <picture>
+                            <img src="../image/dinheiro.png" alt="">
+                        </picture>
+
+                        <div class="Missao">
+                            <h6>
+                                0/1
+                            </h6>
+                            <h5>
+                                 Pegando Fogo!
+                            </h5>
+                            <p>
+                                Conquiste <span>5 seguidores</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <a href="homeK.html">
+                    <img src="../image/home.png" alt="">
                 </a>
             </li>
             <li>
-                <a href="">
-                    <i class="fas fa-home"></i>
-                </a>
+                <button onclick="showP()">
+                    <img src="../image/plus.png" alt="">
+                </button>
+                <div id="caixaDeAdd">
+                    <button onclick="showP()">
+                        <i class="far fa-times-circle"></i>
+                    </button>
+                    <h2>
+                        Faça uma publicação
+                    </h2>
+                    <form method="POST" class="add">
+                        <label for="file">
+                            <p>
+                                digite algo
+                            </p>
+
+                            <hr>
+            
+                            <img src="../image/plus.png" alt="">
+                        </label>
+                        <input type="file" name="uploadfile" id="file" required>
+            
+                        <fieldset class="grupo" >
+                            <input type="checkbox" name="Musica" id=" Musica">
+                            <label for="Musica">Musica</label>
+                            <input type="checkbox" name="Dança" id=" Dança">
+                            <label for="Dança">Dança</label>
+                            <input type="checkbox" name="Teatro" id=" Teatro">
+                            <label for="Teatro">Teatro</label>
+                            <input type="checkbox" name="Cinema" id="Cinema">
+                            <label for="Cinema">Cinema</label>
+                            <input type="checkbox" name="Literatura" id="Literatura">
+                            <label for="Literatura">Literatura</label>
+                            <input type="checkbox" name="artes_visuais" id="artes_visuais">
+                            <label for="artes_visuais">Artes Visuais</label>
+                        </fieldset>
+                        <input type="submit" value="enviar">
+                        <input type="reset" value="cancelar">
+                    </form>
+                </div>
             </li>
             <li>
                 <a href="">
-                    <i class="fas fa-bookmark"></i>
+                   <img src="../image/bookmark.png" alt="">
                 </a>
             </li>
         </ul>
@@ -71,6 +214,8 @@
         <div class="caixaDePerfil">
             <div class="imagem">
                 <img src="../image/Kepler.jpg" alt="">
+                    
+                <img src="../image/gradiente.png" class="border" alt="">
             </div>
 
             <div class="Perfil">
@@ -78,11 +223,11 @@
                     Kepilyn V
                 </h2>
                 <h3>
-                    6 publicações | 666 seguidores | 77 admiradores
+                    6 publicações | 666 admiradores | 77 admirados
                 </h3>
 
                 <p>
-                    Prazer , sou mais conhecido como V, sou fotografo amador
+                    Prazer, sou mais conhecido como V, sou fotografo amador
                 </p>
             </div>
 
@@ -91,6 +236,28 @@
                     editar Perfil
                 </a>
             </div>
+
+            <div class="caixaDeLinks">
+                <div>
+                    <a href="https://www.instagram.com/eunylipek/" target="_blank">
+                        <img src="../image/instagram-icone-icon-1.png" alt="">
+                    </a>
+                </div>
+                <div>
+                    <a href="">
+                        <img src="../image/Paypal.jpg" alt="">
+                    </a>
+                </div>
+                <div>
+                    <a href="">
+                        <img src="../image/Picpay.png" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="linha">
+            <hr>
         </div>
 
         <div class="caixaDePub">

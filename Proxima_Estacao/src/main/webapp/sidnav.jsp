@@ -1,4 +1,4 @@
-<nav class="sidnav">
+<<nav class="sidnav">
     <input type = "checkbox" id = "check">
     <label for = "check">
         <i class="fas fa-align-justify"></i>
@@ -6,13 +6,18 @@
 
     <ul>
         <li>
-            <a href="homeK.html">
-                <img src="../image/train.png" alt="">
-             </a>
+            <a href="">
+                <img src="../image/terra.png" alt="">
+            </a>
         </li>
         <li>
             <a href="">
-                <i class="fas fa-map-marker-alt"></i>
+                <img src="../image/notificacao.png" alt="">
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <img src="../image/home.png" alt="">
             </a>
         </li>
         <li>
@@ -22,21 +27,13 @@
         </li>
         <li>
             <a href="">
-                <i class="fas fa-bell"></i>
-                <i class="fas fa-play"></i>
-                <i class="fas fa-heart"></i>
-                <i class="fas fa-plus-circle"></i>
-            </a>
-        </li>
-        <li>
-            <a href="">
-                <i class="fas fa-home"></i>
-            </a>
-        </li>
-        <li>
-            <a href="">
-                <i class="fas fa-bookmark"></i>
+               <img src="../image/bookmark.png" alt="">
             </a>
         </li>
     </ul>
+    <div class="btnSaida">
+        <a href="">
+            <img src="" alt="">
+        </a>
+    </div>
 </nav>
