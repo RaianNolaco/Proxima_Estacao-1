@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,21 +13,27 @@
 </head>
 <body class="pagina_login">
 
-    <div class="login">
-        <h1>Crie sua conta</h1>
+    <p>
+        Seja bem-vindo, passageiro... 
+        <br>
+        Acomode-se no seu acento e aproveite a viajem.
+    </p>
 
-        <form>
-            <input type="text" name="" placeholder="Seu E-mail">
-            <input type="password" name="" placeholder="Sua senha">
+    <div class="login">
+        <h1>Logue  em sua conta,</h1>
+
+        <form action="homeK.html" method="POST">
+            <input type="email" name="" placeholder="Seu E-mail" maxlength="60" required>
+            <input type="password" name="" placeholder="Sua senha" maxlength="15" required >
             <div>
                 <a href="#">Esqueci minha senha</a>
             </div>
             
             <div class="logar">
-                    <a href="../html/loading.html"><input type="button" value="Login"></a>
+                    <input type="submit" value="Login">
             </div>
             
-            <a href="../html/cadastro.html">Não é passageiro? <span>Registre-se</span></a>
+            <p class="por">Não é passageiro? <a href="../html/cadastro.html">Registre-se</a></p>
         </form>
     </div>
 </body>
