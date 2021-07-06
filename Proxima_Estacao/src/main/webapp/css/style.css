@@ -725,12 +725,22 @@ form [placeholder]{
   border-radius: 11px;
   margin-bottom: 1px;
 }
-
-
 .cadastrar input[type = submit]:hover{
   cursor:pointer;
   background-image: linear-gradient(75deg, #413012, #ffc953 );
 }
+
+@media screen and (max-width: 426px){
+  .rc-anchor-error-message {
+    color: #ff0000;
+    font-family: Roboto,helvetica,arial,sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: normal;
+    padding: 0 10px;
+  }
+}
+
 
 
 /*Pagina de login*/
@@ -831,7 +841,6 @@ form [placeholder="Seu E-mail"], [placeholder="Sua senha"]{
 
 @media screen and (max-width: 426px){
   .pagina_login p {
-    margin-top: 30px;
     font-size: 13px;
     line-height: 15px;
   }
@@ -844,28 +853,15 @@ form [placeholder="Seu E-mail"], [placeholder="Sua senha"]{
     height: auto;
   }
   .login h1 {
-    margin: 0;
-    padding-top: 0;
-    padding-left: 0;
-    padding-bottom: 20px;
-    font-weight: bold;
-    text-transform: uppercase;
-    text-align: inherit;
     font-size: 20px;
   }
   .login input[type="email"], .login input[type="password"] {
-    border-radius: 20px;
-    background: #3E3E3E;
-    outline: none;
     height: 48px;
-    color: white;
-    font-size: 16px;
   }
   .login input[type = submit] {
     height: 50px;
 }
   .login a {
-    font-family: 'Raleway';
     font-size: 18px;
     color: #ffffff;
   }
