@@ -480,10 +480,10 @@ body{
     padding: 0 50px;
     margin: 10px 0px;
 }
-.home .caixaDeFeed .publicação{
+.home .caixaDeFeed .publicacao{
     position: relative;
 }
-.home .caixaDeFeed .publicação .headerDaPub{
+.home .caixaDeFeed .publicacao .headerDaPub{
     padding-left: 30px;
     padding-right: 20px;
     padding-top: 15px;
@@ -491,48 +491,48 @@ body{
     display: flex;
     justify-content: space-between;
 }
-.home .caixaDeFeed .publicação .headerDaPub .FotoDePerfil{
+.home .caixaDeFeed .publicacao .headerDaPub .FotoDePerfil{
     width: 10%;
     position: relative;
 }
-.home .caixaDeFeed .publicação .headerDaPub .FotoDePerfil img{
+.home .caixaDeFeed .publicacao .headerDaPub .FotoDePerfil img{
     width: 100%;
     border-radius: 50%;
     cursor: pointer;
 }
-.home .caixaDeFeed .publicação .headerDaPub .FotoDePerfil img:hover ~ .miniCaixa{
+.home .caixaDeFeed .publicacao .headerDaPub .FotoDePerfil img:hover ~ .miniCaixa{
     display: block;
 }
-.home .caixaDeFeed .publicação .headerDaPub .headerNome{
+.home .caixaDeFeed .publicacao .headerDaPub .headerNome{
     width: 90%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     margin-left: 2px;
 }
-.home .caixaDeFeed .publicação .headerDaPub .headerNome h3{
+.home .caixaDeFeed .publicacao .headerDaPub .headerNome h3{
     width: 100%;
     color: white;
     margin-bottom: 5px;
     font-size: 18px;
     padding: 0px 8px;
 }
-.home .caixaDeFeed .publicação .headerDaPub .headerNome .descricao{
+.home .caixaDeFeed .publicacao .headerDaPub .headerNome .descricao{
     color: white;
     position: relative;
 }
-.home .caixaDeFeed .publicação .headerDaPub .headerNome .descricao p {
+.home .caixaDeFeed .publicacao .headerDaPub .headerNome .descricao p {
     font-size: 100%;
     width: 80%;
     padding: 0px 8px;
 }
-.home .caixaDeFeed .publicação .headerDaPub .headerNome #categorias{
+.home .caixaDeFeed .publicacao .headerDaPub .headerNome #categorias{
     margin-top: 2px;
     height: auto;
     margin-top: 10px;
     margin-bottom: 3px;
 } 
-.home .caixaDeFeed .publicação .headerDaPub .headerNome #categorias a{
+.home .caixaDeFeed .publicacao .headerDaPub .headerNome #categorias a{
     color: white;
     border: 1px solid #4476D9;
     padding: 5px;
@@ -540,7 +540,7 @@ body{
     text-decoration: none;
     margin-right: 5px;
 }
-.home .caixaDeFeed .publicação .headerDaPub .headerNome i {
+.home .caixaDeFeed .publicacao .headerDaPub .headerNome i {
     position: absolute;
     right: 20px;
     top: 18px;
@@ -616,31 +616,29 @@ body{
     width: 100%;
     color: white;
 }
-.home .caixaDeFeed .publicação .PubImagem{
+.home .caixaDeFeed .publicacao .PubImagem{
     padding: 10px 55px;
 }
-.home .caixaDeFeed .publicação .PubImagem img{
+.home .caixaDeFeed .publicacao .PubImagem img{
     width: 100%;
     border-radius: 12px; 
 }
-.home .caixaDeFeed .publicação .botões{
+.home .caixaDeFeed .publicacao .botoes{
     height: 30px;
     display: flex;
     justify-content: center;
     margin-top: 20px;
 }
-.home .caixaDeFeed .publicação .botões i {
+.home .caixaDeFeed .publicacao .botoes i {
     font-size: 21px;
     color: #878787;
     width: 50%;
     display: block;
     text-align: center;
 }
-.home .caixaDeFeed .publicação .botões .caixaDeCompartilhar{
+.home .caixaDeFeed .publicacao .botoes .caixaDeCompartilhar{
     display: none;
 }
-
-
 
 .miniCaixa{
     position: absolute;
@@ -935,24 +933,24 @@ body{
         width: 100%;
         background: none;
     }    
-    .home .caixaDeFeed .publicação .headerDaPub {
+    .home .caixaDeFeed .publicacao .headerDaPub {
         padding: 10px 10px;
     }
-    .home .caixaDeFeed .publicação .headerDaPub .FotoDePerfil {
+    .home .caixaDeFeed .publicacao .headerDaPub .FotoDePerfil {
         width: 15%;
     }
-    .home .caixaDeFeed .publicação .headerDaPub .headerNome i {
+    .home .caixaDeFeed .publicacao .headerDaPub .headerNome i {
         margin-right: 5px;
         font-size: 20px;
     }
-    .home .caixaDeFeed .publicação .PubImagem {
+    .home .caixaDeFeed .publicacao .PubImagem {
         padding: 2px 20px;
     }
-    .home .caixaDeFeed .publicação .PubImagem img {
+    .home .caixaDeFeed .publicacao .PubImagem img {
         width: 100%;
         border-radius: 10px;
     }
-    .home .caixaDeFeed .publicação .botões i {
+    .home .caixaDeFeed .publicacao .botoes i {
         width: 106px;
         display: block;
     }

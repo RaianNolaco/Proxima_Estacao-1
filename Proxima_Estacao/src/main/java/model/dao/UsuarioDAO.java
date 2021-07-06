@@ -141,6 +141,7 @@ public class UsuarioDAO {
 		String sql = "SELECT * FROM usuario WHERE email = ? AND senha = ?";
 		PreparedStatement stmt = null;
 		ResultSet 			rs = null;
+		con = ConnectionFactory.getConnection();
 		try {
 			stmt = con.prepareStatement(sql);
 			stmt.setString(1, usuario.getEmail());
