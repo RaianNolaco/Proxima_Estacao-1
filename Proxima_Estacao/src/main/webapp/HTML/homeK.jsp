@@ -9,11 +9,8 @@
     
     	<%PublicacaoDAO pubdao = new PublicacaoDAO(); %>
     	<%Artista artista = new Artista(); %>
-    	<%Publicacao pub = new Publicacao(); %>
     	<%Usuario usuario = new Usuario(); %>
-		<%for (Publicacao pub2: pubdao.listarPublicacao()){%>
-			<%pub = pub2;%>
-		<%}%> 
+		
    
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -260,6 +257,9 @@
                 <hr>
             </div>
 
+
+			<!-- Aqui William -->
+			<%for (Publicacao pub: pubdao.listarPublicacao()){%>
             <section class="caixaDeFeed">
                 <div class="centro">
                     <div class="publicacao">
@@ -392,7 +392,8 @@
                         <hr>
                     </div>
                 </div>
-            </section>
+            </section> <!-- Até aqui kkkkkkkkkk -->
+            <%}%> 
         </section>
     </main>
      <script src="https://kit.fontawesome.com/babea0d443.js" crossorigin="anonymous"></script>
