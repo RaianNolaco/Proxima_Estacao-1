@@ -10,7 +10,7 @@
     	<%PublicacaoDAO pubdao = new PublicacaoDAO(); %>
     	<%Artista artista = new Artista(); %>
     	<%Usuario usuario = new Usuario(); %>
-		
+		<%usuario.setIdUsuario(9);%>
    
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -259,7 +259,9 @@
 
 
 			<!-- Aqui William -->
-			<%for (Publicacao pub: pubdao.listarPublicacao()){%>
+			<%
+			
+			for (Publicacao pub: pubdao.listarPublicacaoSeguidor(usuario)){%>
             <section class="caixaDeFeed">
                 <div class="centro">
                     <div class="publicacao">
@@ -372,7 +374,7 @@
                         </div>
 
                         <div class="PubImagem">
-                            <img src="../image/descubra/Designer Clothes, Shoes & Bags for Women _ SSENSE.jpg" alt="">
+                            <img src="<%=pub.getConteudo()%>" alt="">
                         </div>
 
                         <div class="botoes">

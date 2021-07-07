@@ -6,10 +6,12 @@ import org.junit.jupiter.api.Test;
 
 import model.beans.Artista;
 import model.beans.Publicacao;
+import model.beans.Usuario;
 import model.dao.PublicacaoDAO;
 
 class PublicacaoDAOTest {
 	PublicacaoDAO dao = new PublicacaoDAO();
+	Usuario usuario = new Usuario();
 	
 	/*@Test
 	public void inserirPublicacao() {
@@ -29,15 +31,16 @@ class PublicacaoDAOTest {
 	}*/
 	
 	@Test
-	public void listarPublicacoes() {
+	public void listarPublicacaoSeguidor() {
 		
 		Publicacao pub = new Publicacao();
+		usuario.setIdUsuario(2);
 		
-		for (Publicacao pub2 : dao.listarPublicacao()) {
+		for (Publicacao pub2 : dao.listarPublicacaoSeguidor(usuario)) {
 			System.out.println(
-			  "\nFoto: " + pub2.getId_artista().getId_usuario().getFotoPerfil()
-            + "\nApelido: "+ pub2.getId_artista().getId_usuario().getApelido()
-            + "\nConteudo: " + pub2.getConteudo()
+			  "\nFoto: " +      pub2.getId_artista().getId_usuario().getFotoPerfil()
+            + "\nApelido: "+    pub2.getId_artista().getId_usuario().getApelido()
+            + "\nConteudo: " +  pub2.getConteudo()
             + "\nDescricao: " + pub2.getDescricao());	
 		}
 	

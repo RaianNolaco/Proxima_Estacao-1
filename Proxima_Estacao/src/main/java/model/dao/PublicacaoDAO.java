@@ -45,7 +45,12 @@ public class PublicacaoDAO {
 	}
 
 	public List<Publicacao> listarPublicacao() {
-		String sql = "select * from vw_post_user";
+		String sql = "SELECT DISTINCT vw_post_user.foto_perfil, vw_post_user.apelido, vw_post_user.conteudo, vw_post_user.descricao FROM seguidores"
+				+ " JOIN   publicacao "  
+				+ " JOIN   vw_post_user "
+				+ " ON    seguidores.id_artista = vw_post_user.id_artista" 
+				+ " AND    publicacao.id_artista = seguidores.id_artista"
+				+ " WHERE  seguidores.id_usuario = 2 ";
 
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
@@ -77,6 +82,48 @@ public class PublicacaoDAO {
 		}
 		return publicacoes;
 	}
+	
+	public List<Publicacao> listarPublicacaoSeguidor(Usuario usuario) {
+		String sql = "SELECT DISTINCT vw_post_user.foto_perfil, vw_post_user.apelido, vw_post_user.conteudo, vw_post_user.descricao FROM seguidores"
+				+ " JOIN   publicacao "  
+				+ " JOIN   vw_post_user "
+				+ " ON    seguidores.id_artista   = vw_post_user.id_artista" 
+				+ " AND    publicacao.id_artista  = seguidores.id_artista"
+				+ " WHERE  seguidores.id_usuario  =" + usuario.getIdUsuario();
+
+		PreparedStatement stmt = null;
+		ResultSet           rs = null;
+		List<Publicacao> publicacoes = new ArrayList<Publicacao>();
+
+		try {
+			stmt = con.prepareStatement(sql);
+			rs = stmt.executeQuery(sql);
+
+			while (rs.next()) {
+				Publicacao pub = new Publicacao();
+				Artista art = new Artista();
+				usuario = new Usuario();
+				
+				usuario.setFotoPerfil(rs.getString(1));
+				usuario.setApelido(rs.getString(2));
+				art.setId_usuario(usuario);
+				pub.setId_artista(art);
+				pub.setConteudo(rs.getString(3));
+				pub.setDescricao(rs.getString(4));
+				publicacoes.add(pub);
+			}
+
+		} catch (SQLException e) {
+			System.err.println("Erro ao listar as publicações!" + e);
+			return null;
+		} finally {
+			ConnectionFactory.closeConnection(con, stmt, rs);
+		}
+		return publicacoes;
+	}
+	
+	
+	
 
 	// update publicação
 	public boolean alterarPublicacao(Publicacao publicacao) {
