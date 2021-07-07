@@ -59,12 +59,17 @@ public class UsuarioController extends HttpServlet {
 		
 		usuario.setEmail(request.getParameter("usuarioEmail"));
 		usuario.setSenha(request.getParameter("usuarioSenha"));
+
+		
 		
 		if(dao.login(usuario)){
 			System.out.println(usuario.getEmail());
 			response.sendRedirect("publicacoes");
 		}else{
-			System.out.println("ERRRROOOO");
+			   System.out.println("<script type=\"text/javascript\">");
+			   System.out.println("alert('User or password incorrect');");
+			   System.out.println("location='index.jsp';");
+			   System.out.println("</script>");
 		}	
 	}
 	
