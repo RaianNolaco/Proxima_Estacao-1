@@ -29,7 +29,7 @@ public class PublicacaoDAO {
 			stmt = con.prepareStatement(sql);
 			stmt.setString(1, pub.getThumb());
 			stmt.setString(2, pub.getConteudo());
-			stmt.setString(3, String.valueOf(pub.getConteudo_NSFW()));
+			stmt.setBoolean(3, pub.getConteudo_NSFW());
 			stmt.setString(4, pub.getDescricao());
 			stmt.setInt(5, pub.getViews());
 			stmt.setInt(6, pub.getId_artista().getId_artista());
@@ -61,7 +61,7 @@ public class PublicacaoDAO {
 				pub.setId_publicacao(rs.getInt("id_publicacao"));
 				pub.setThumb(rs.getString("thumb"));
 				pub.setConteudo(rs.getString("conteudo"));
-				pub.setConteudo_NSFW(rs.getString("conteudo_sensi").charAt(0));
+				pub.setConteudo_NSFW(rs.getBoolean("conteudo_sensi"));
 				pub.setDescricao(rs.getString("descricao"));
 				pub.setViews(rs.getInt("visualizacao"));
 				art.setId_artista(rs.getInt("id_artista"));

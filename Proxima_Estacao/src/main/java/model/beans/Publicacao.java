@@ -5,7 +5,7 @@ public class Publicacao {
 	private int id_publicacao;
 	private String thumb;
 	private String conteudo;
-	private char conteudo_NSFW;
+	private boolean conteudo_NSFW;
 	private String descricao;
 	private int views;
 	private Artista id_artista;
@@ -15,7 +15,7 @@ public class Publicacao {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Publicacao(String thumb, String conteudo, char conteudo_NSFW, String descricao, int views,
+	public Publicacao(String thumb, String conteudo, boolean conteudo_NSFW, String descricao, int views,
 			Artista id_artista) {
 		super();
 
@@ -51,11 +51,11 @@ public class Publicacao {
 		this.conteudo = conteudo;
 	}
 
-	public char getConteudo_NSFW() {
+	public boolean getConteudo_NSFW() {
 		return conteudo_NSFW;
 	}
 
-	public void setConteudo_NSFW(char conteudo_NSFW) {
+	public void setConteudo_NSFW(boolean conteudo_NSFW) {
 		this.conteudo_NSFW = conteudo_NSFW;
 	}
 
