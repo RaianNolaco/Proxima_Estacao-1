@@ -11,7 +11,7 @@ import model.dao.PublicacaoDAO;
 class PublicacaoDAOTest {
 	PublicacaoDAO dao = new PublicacaoDAO();
 	
-	@Test
+	/*@Test
 	public void inserirPublicacao() {
 		
 	
@@ -19,29 +19,34 @@ class PublicacaoDAOTest {
 		artista.setId_artista(1);
 		
 		Publicacao pub = new Publicacao
-				("404NotFound", "404NotFound", 'N', "Essa foi uma publicacao para meus fãs #Culturo", 3,artista);
+				("404NotFound", "404NotFound", false, "Essa foi uma publicacao para meus fãs #Culturo", 3,artista);
 
 		if(dao.inserirPublicacao(pub)) {
 			System.out.println("Publicacao inserida com sucesso!");
 		}else {
 			fail("Erro ao inserir ao publicação");
 		}
-	}
+	}*/
 	
 	@Test
 	public void listarPublicacoes() {
 		
-		for (Publicacao pub : dao.listarPublicacao()) {
-			System.out.println("\nId: " + pub.getId_publicacao()
-			+ "\nThumb: " + pub.getThumb()
-            + "\nConteudo: "+ pub.getConteudo()
-            + "\nNSFW: " + pub.getConteudo_NSFW()
-            + "\nDescricao: " + pub.getDescricao()
-            + "\nViews: " + pub.getViews()
-            + "\nArtista: " + pub.getId_artista().getId_artista());
+		Publicacao pub = new Publicacao();
+		
+		for (Publicacao pub2 : dao.listarPublicacao()) {
+			System.out.println(
+			  "\nFoto: " + pub2.getId_artista().getId_usuario().getFotoPerfil()
+            + "\nApelido: "+ pub2.getId_artista().getId_usuario().getApelido()
+            + "\nConteudo: " + pub2.getConteudo()
+            + "\nDescricao: " + pub2.getDescricao());	
 		}
-		
-		
+	
+	
 	}
+	
+
+	
+	
+	
 
 }

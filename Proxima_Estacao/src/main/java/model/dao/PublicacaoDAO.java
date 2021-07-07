@@ -10,6 +10,7 @@ import java.util.List;
 import connection.ConnectionFactory;
 import model.beans.Artista;
 import model.beans.Publicacao;
+import model.beans.Usuario;
 
 public class PublicacaoDAO {
 	private Connection con = null;
@@ -32,7 +33,7 @@ public class PublicacaoDAO {
 			stmt.setBoolean(3, pub.getConteudo_NSFW());
 			stmt.setString(4, pub.getDescricao());
 			stmt.setInt(5, pub.getViews());
-			stmt.setInt(6, pub.getId_artista().getId_artista());
+			stmt.setInt(6, pub.getId_artista().getId_usuario().getIdUsuario());
 			stmt.execute();
 			return true;
 		} catch (SQLException e) {
@@ -44,7 +45,7 @@ public class PublicacaoDAO {
 	}
 
 	public List<Publicacao> listarPublicacao() {
-		String sql = "SELECT * FROM publicacao";
+		String sql = "select * from vw_post_user";
 
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
@@ -57,20 +58,19 @@ public class PublicacaoDAO {
 			while (rs.next()) {
 				Publicacao pub = new Publicacao();
 				Artista art = new Artista();
-
-				pub.setId_publicacao(rs.getInt("id_publicacao"));
-				pub.setThumb(rs.getString("thumb"));
-				pub.setConteudo(rs.getString("conteudo"));
-				pub.setConteudo_NSFW(rs.getBoolean("conteudo_sensi"));
-				pub.setDescricao(rs.getString("descricao"));
-				pub.setViews(rs.getInt("visualizacao"));
-				art.setId_artista(rs.getInt("id_artista"));
+				Usuario usuario = new Usuario();
+				
+				usuario.setFotoPerfil(rs.getString(1));
+				usuario.setApelido(rs.getString(2));
+				art.setId_usuario(usuario);
 				pub.setId_artista(art);
+				pub.setConteudo(rs.getString(3));
+				pub.setDescricao(rs.getString(4));
 				publicacoes.add(pub);
 			}
 
 		} catch (SQLException e) {
-			System.err.println("Erro ao listar as publicações!");
+			System.err.println("Erro ao listar as publicações!" + e);
 			return null;
 		} finally {
 			ConnectionFactory.closeConnection(con, stmt, rs);
@@ -78,56 +78,55 @@ public class PublicacaoDAO {
 		return publicacoes;
 	}
 
-	//update publicação
+	// update publicação
 	public boolean alterarPublicacao(Publicacao publicacao) {
-			String sql  = "UPDATE publicacao SET thumb = ?,descricao = ? WHERE id_publicacao = ?";
-		
-			PreparedStatement stmt =  null;
-			
+		String sql = "UPDATE publicacao SET thumb = ?,descricao = ? WHERE id_publicacao = ?";
+
+		PreparedStatement stmt = null;
+
 		try {
-			
+
 			stmt = con.prepareStatement(sql);
-			
-			stmt.setString(1,publicacao.getThumb());
-			stmt.setString(2,publicacao.getDescricao());
-			stmt.setInt(3,publicacao.getId_publicacao());
+
+			stmt.setString(1, publicacao.getThumb());
+			stmt.setString(2, publicacao.getDescricao());
+			stmt.setInt(3, publicacao.getId_publicacao());
 			stmt.executeUpdate();
-			
+
 			return true;
-			
+
 		} catch (SQLException e) {
 			System.err.println("Erro ao tentar atualizar dados!");
 			return false;
 		} finally {
-			ConnectionFactory.closeConnection(con,stmt);
+			ConnectionFactory.closeConnection(con, stmt);
 		}
 
 	}
-	
-	
-	public boolean deletarPublicacao(Publicacao publicacao){
+
+	public boolean deletarPublicacao(Publicacao publicacao) {
 		String sql = "DELETE FROM publicacao WHERE id_publicacao = ?";
-		
+
 		PreparedStatement stmt = null;
-		
+
 		try {
-			
+
 			stmt = con.prepareStatement(sql);
-			
-			stmt.setInt(1,publicacao.getId_publicacao());
+
+			stmt.setInt(1, publicacao.getId_publicacao());
 			stmt.executeUpdate();
-			
+
 			return true;
-					
+
 		} catch (SQLException e) {
 			System.err.println("Erro ao tentar excluir publicação");
 			return false;
 		} finally {
-			
-			ConnectionFactory.closeConnection(con,stmt);
-			
+
+			ConnectionFactory.closeConnection(con, stmt);
+
 		}
-		
+
 	}
 
 }

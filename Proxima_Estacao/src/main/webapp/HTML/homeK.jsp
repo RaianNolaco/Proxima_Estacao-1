@@ -1,5 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="ISO-8859-1"%>
+    
+    <%@ page import= "model.beans.Usuario"  %> 
+    <%@ page import= "model.beans.Publicacao"  %> 
+    <%@ page import= "model.beans.Artista"  %> 
+    <%@ page import= "model.dao.PublicacaoDAO" %>  
+    <%@ page import= "java.util.ArrayList"  %>
+    
+    	<%PublicacaoDAO pubdao = new PublicacaoDAO(); %>
+    	<%Artista artista = new Artista(); %>
+    	<%Publicacao pub = new Publicacao(); %>
+    	<%Usuario usuario = new Usuario(); %>
+		<%for (Publicacao pub2: pubdao.listarPublicacao()){%>
+			<%pub = pub2;%>
+		<%}%> 
+   
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -250,7 +265,7 @@
                     <div class="publicacao">
                         <div class="headerDaPub">
                             <div class="FotoDePerfil">
-                                <img src="../image/Captura de tela 2021-05-27 225422 let.png" alt="">
+                                <img src="<%=pub.getId_artista().getId_usuario().getFotoPerfil()%>" alt="">
                                 <div class="miniCaixa">
                                    <header class="miniCaixaHeader">
                                         <div class="caixaDeFoto">
@@ -259,7 +274,7 @@
                                         <div class="miniHeaderNome">
 
                                             <h3>
-                                                LetVader
+                                                <%=pub.getId_artista().getId_usuario().getApelido()%>
                                             </h3>
 
                                         </div>
@@ -309,11 +324,11 @@
                             </div>
                             <div class="headerNome">
                                 <h3>
-                                    LetVader
+                                    <%=pub.getId_artista().getId_usuario().getApelido()%>
                                 </h3>
                                 <div class="descricao">
                                     <p id="descricao">
-                                        Amanha tem lançamento da minha nova musica
+                                        <%=pub.getDescricao()%>
                                     </p>
                                     <div id="categorias">
                                         <a href="">

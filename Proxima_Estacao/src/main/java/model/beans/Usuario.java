@@ -7,6 +7,7 @@ import java.util.Date;
 public class Usuario {
 	
 	private    int idUsuario;
+	private String fotoPerfil;
 	private String nomeUsuario;
 	private String sobrenomeUsuario;
 	private String apelido;
@@ -47,6 +48,14 @@ public class Usuario {
 		return dataFormatada;
 	}
 	
+	public String getFotoPerfil() {
+		return fotoPerfil;
+	}
+
+	public void setFotoPerfil(String fotoPerfil) {
+		this.fotoPerfil = fotoPerfil;
+	}
+
 	public int getIdUsuario() {
 		return idUsuario;
 	}

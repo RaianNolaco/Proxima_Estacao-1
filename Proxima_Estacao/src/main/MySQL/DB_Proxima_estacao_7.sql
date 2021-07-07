@@ -66,8 +66,6 @@ CREATE TABLE artista(
     id_usuario  SMALLINT     NOT NULL,
     -- seguidores  INT, -- Os seguidores sera um select 
     rede_social VARCHAR(200),
-    
-    
     CONSTRAINT pk_id_artista PRIMARY KEY (id_artista),
     CONSTRAINT fk_id_usuario_artista FOREIGN KEY (id_usuario) REFERENCES usuario (id_usuario)
 );
@@ -112,10 +110,10 @@ CREATE TABLE publicacao(
     conteudo_sensi  boolean       NOT NULL,
     descricao       VARCHAR (500) ,
     visualizacao    INT,
-    id_artista	    SMALLINT,
+    id_usuario	    SMALLINT,
 	
     CONSTRAINT pk_id_publicacao PRIMARY KEY (id_publicacao),
-    CONSTRAINT fk_id_artista_publicacao FOREIGN KEY (id_artista) REFERENCES artista (id_artista)
+    CONSTRAINT fk_id_artista_publicacao FOREIGN KEY (id_usuario) REFERENCES artista (id_usuario)
  );
 -- tabela midia
 
