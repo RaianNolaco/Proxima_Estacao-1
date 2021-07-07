@@ -2,6 +2,8 @@ package testes;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.ArrayList;
+
 import org.junit.jupiter.api.Test;
 
 import model.beans.Artista;
@@ -34,7 +36,7 @@ class PublicacaoDAOTest {
 	public void listarPublicacaoSeguidor() {
 		
 		Publicacao pub = new Publicacao();
-		usuario.setIdUsuario(2);
+		usuario.setIdUsuario(null);
 		
 		for (Publicacao pub2 : dao.listarPublicacaoSeguidor(usuario)) {
 			System.out.println(
@@ -43,7 +45,8 @@ class PublicacaoDAOTest {
             + "\nConteudo: " +  pub2.getConteudo()
             + "\nDescricao: " + pub2.getDescricao());	
 		}
-	
+		
+
 	
 	}
 	

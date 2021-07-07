@@ -9,6 +9,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import com.mysql.cj.Session;
 
 import model.beans.Publicacao;
 import model.beans.Usuario;
@@ -22,6 +25,7 @@ public class UsuarioController extends HttpServlet {
 	Usuario usuario = new Usuario();
 	UsuarioDAO  dao = new UsuarioDAO();
 	PublicacaoDAO  pudao = new PublicacaoDAO();
+	 	
 	
     public UsuarioController() {
        super();
@@ -32,10 +36,9 @@ public class UsuarioController extends HttpServlet {
 		
 	}
 	
-	
-    
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String action = request.getServletPath();
+		
 		System.out.println(action);
 		
 		if(action.equals("/loginUsuario")) {
@@ -56,15 +59,18 @@ public class UsuarioController extends HttpServlet {
 
 	protected void loginUsuario(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException{
+		HttpSession session = request.getSession();	
 		
 		usuario.setEmail(request.getParameter("usuarioEmail"));
 		usuario.setSenha(request.getParameter("usuarioSenha"));
 		
 		if(dao.login(usuario)){
-			System.out.println(usuario.getEmail());
-			response.sendRedirect("publicacoes");
+			session.setAttribute("idUsuario", usuario.getIdUsuario());
+			response.sendRedirect("HTML/loading.html");
 		}else{
-			System.out.println("ERRRROOOO");
+			System.out.println(usuario.getEmail());
+			response.sendRedirect("HTML/login.html");
+			System.out.println("ERRRROOOO");	
 		}	
 	}
 	
