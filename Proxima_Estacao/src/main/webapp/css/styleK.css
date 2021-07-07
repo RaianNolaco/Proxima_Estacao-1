@@ -244,7 +244,10 @@ body{
     background: rgb(254,215,116);
     background: linear-gradient(121deg, rgba(254,215,116,1) 0%, rgba(166,139,83,1) 50%, rgba(88,72,54,1) 100%);
 }
-.sidnav ul li #caixaDeNot .conteudo{
+.sidnav ul li #caixaDeNot #conteudoM {
+    display: none;
+}
+.sidnav ul li #caixaDeNot #conteudoM .conteudo{
     height: 100%;
     padding: 20px;
     display: flex;
@@ -253,27 +256,27 @@ body{
     border-bottom: 1px solid white;
     margin-top: 10px;
 }
-.sidnav ul li #caixaDeNot .conteudo .Missao{
+.sidnav ul li #caixaDeNot #conteudoM .conteudo .Missao{
     display: block;
     width: 75%;
     color: white;
 }
-.sidnav ul li #caixaDeNot .conteudo picture{
+.sidnav ul li #caixaDeNot #conteudoM .conteudo picture{
     height: 100%;
 }
-.sidnav ul li #caixaDeNot .conteudo picture img{
+.sidnav ul li #caixaDeNot #conteudoM .conteudo picture img{
     width: 100px;
 }
-.sidnav ul li #caixaDeNot .conteudo .Missao h5{
+.sidnav ul li #caixaDeNot #conteudoM .conteudo .Missao h5{
     font-size: 20px;
     text-align: center;
     margin-bottom: 5px;
 }
-.sidnav ul li #caixaDeNot .conteudo .Missao h6{
+.sidnav ul li #caixaDeNot #conteudoM .conteudo .Missao h6{
     font-size: 20px;
     text-align: end;
 }
-.sidnav ul li #caixaDeNot .conteudo .Missao p{
+.sidnav ul li #caixaDeNot #conteudoM .conteudo .Missao p{
     font-size: 19px;
     font-weight: 600;
     padding-left: 10px;
@@ -833,7 +836,7 @@ body{
 
 @keyframes add{
     to{
-        left:190%;
+        left:120%;
     }
 }
 @keyframes configurações {

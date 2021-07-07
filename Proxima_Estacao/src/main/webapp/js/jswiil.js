@@ -61,4 +61,13 @@ function showD () {
     {
         denu.style.display = "none";
     }
-}  
+} 
+function mit() {
+    var missa = document.getElementsById("conteudoM");
+    if (missa.style.display != "flex") {
+        missa.style.display = "flex"
+    }
+    else{
+        missa.style.display = "none"
+    }
+} 
