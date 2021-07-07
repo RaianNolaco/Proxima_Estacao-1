@@ -10,7 +10,7 @@
     	<%PublicacaoDAO pubdao = new PublicacaoDAO(); %>
     	<%Artista artista = new Artista(); %>
     	<%Usuario usuario = new Usuario(); %>
-		<%usuario.setIdUsuario(9);%>
+		<%usuario.setIdUsuario(7);%>
    
 <!DOCTYPE html>
 <html lang="pt-br">
