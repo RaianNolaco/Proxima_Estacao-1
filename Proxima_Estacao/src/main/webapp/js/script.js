@@ -88,7 +88,7 @@ function displayResults(weather) {
     date.innerText = dateBuilder(now);
 
     let iconName = weather.weather[0].icon;
-    container_img.innerHTML = `<img src="./icons/${iconName}.png">`;
+    container_img.innerHTML = `<img src="../icons/${iconName}.png">`;
 
     let temperature = `${Math.round(weather.main.temp)}`
     temp_number.innerHTML = temperature;

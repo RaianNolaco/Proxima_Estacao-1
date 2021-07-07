@@ -63,11 +63,14 @@ function showD () {
     }
 } 
 function mit() {
-    var missa = document.getElementsById("conteudoM");
-    if (missa.style.display != "flex") {
-        missa.style.display = "flex"
+    var mis = document.getElementById("ConteudoM");
+    var noti = document.getElementById("ConteudoN");
+    if (mis.style.display != "contents" && noti.style.display === "contents"){
+        mis.style.display = "contents";
+        noti.style.display = "none"
     }
     else{
-        missa.style.display = "none"
+        mis.style.display = "none";
+        noti.style.display = "contents"
     }
 } 

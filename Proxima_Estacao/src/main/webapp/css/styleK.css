@@ -7,7 +7,7 @@
 }
 
 body{
-    background: linear-gradient(180deg, #181818 100%, #181818 0%) ;
+    background: #0E0E0E;
     height: 100%;
     width: 100%;
     display: grid;
@@ -17,7 +17,19 @@ body{
     grid-template-areas: "sidnav header header" "sidnav main main";
     font-family: raleway;
 }
+::-webkit-scrollbar {
+    width: 10px;
+}
+  
+::-webkit-scrollbar-thumb{
+    background: rgb(116, 116, 116); 
+    border-radius: 10px;
+}
 
+::-webkit-scrollbar-track{
+    background:rgb(32, 32, 32);
+
+}
 
 /*-------------------------cabecalho-------------------------*/
 
@@ -65,7 +77,6 @@ body{
     position: absolute;
     left: 18px;
     color: #404040;
-    font-weight: 600;
 }
 .cabecalho .boxtexto .search-bar{
     height: 100%;
@@ -99,14 +110,18 @@ body{
     list-style: none;
     align-items: center;
     height: 100%;
-    width: 120px;
+    width: 170px;
 }
 .cabecalho .boxIcones ul li{
-    margin-left: 20px;
+    margin-left: 0px;
     height: 100%;
-    width: 50px;
+    width: 100%;
     display: flex;
+    justify-content: space-between;
     align-items: center;
+}
+.cabecalho .boxIcones ul .Ft{
+    margin-left: 20px;
 }
 .cabecalho .boxIcones ul li a {
     font-size: 20px;
@@ -171,8 +186,9 @@ body{
     display: flex;
 }
 .cabecalho .boxIcones ul li span img{
-    width: 100%;
+    height: 100%;
     border-radius: 50%;
+    padding: 5px;
 }
 
 /*-------------------------sidnav-------------------------*/
@@ -236,7 +252,7 @@ body{
     display: flex;
     width: 100%;
 }
-.sidnav ul li #caixaDeNot .caixaDeNot_Box h3{
+.sidnav ul li #caixaDeNot .caixaDeNot_Box button{
     width: 100%;
     padding: 6px;
     cursor: pointer;
@@ -244,10 +260,13 @@ body{
     background: rgb(254,215,116);
     background: linear-gradient(121deg, rgba(254,215,116,1) 0%, rgba(166,139,83,1) 50%, rgba(88,72,54,1) 100%);
 }
-.sidnav ul li #caixaDeNot #conteudoM {
+.sidnav ul li #caixaDeNot #ConteudoM {
+    display: contents;
+}
+.sidnav ul li #caixaDeNot #ConteudoN {
     display: none;
 }
-.sidnav ul li #caixaDeNot #conteudoM .conteudo{
+.sidnav ul li #caixaDeNot #ConteudoM .conteudo{
     height: 100%;
     padding: 20px;
     display: flex;
@@ -256,29 +275,28 @@ body{
     border-bottom: 1px solid white;
     margin-top: 10px;
 }
-.sidnav ul li #caixaDeNot #conteudoM .conteudo .Missao{
+.sidnav ul li #caixaDeNot #ConteudoM .conteudo .Missao{
     display: block;
     width: 75%;
     color: white;
 }
-.sidnav ul li #caixaDeNot #conteudoM .conteudo picture{
+.sidnav ul li #caixaDeNot #ConteudoM .conteudo picture{
     height: 100%;
 }
-.sidnav ul li #caixaDeNot #conteudoM .conteudo picture img{
+.sidnav ul li #caixaDeNot #ConteudoM .conteudo picture img{
     width: 100px;
 }
-.sidnav ul li #caixaDeNot #conteudoM .conteudo .Missao h5{
+.sidnav ul li #caixaDeNot #ConteudoM .conteudo .Missao h5{
     font-size: 20px;
     text-align: center;
     margin-bottom: 5px;
 }
-.sidnav ul li #caixaDeNot #conteudoM .conteudo .Missao h6{
+.sidnav ul li #caixaDeNot #ConteudoM .conteudo .Missao h6{
     font-size: 20px;
     text-align: end;
 }
-.sidnav ul li #caixaDeNot #conteudoM .conteudo .Missao p{
+.sidnav ul li #caixaDeNot #ConteudoM .conteudo .Missao p{
     font-size: 19px;
-    font-weight: 600;
     padding-left: 10px;
 }
 
@@ -417,7 +435,8 @@ body{
     min-height: 100vh;
     width: 100%;
     margin-top: 54px;
-    background-image: url(../image/backgroud.png);
+    background: linear-gradient(180deg, #181818 0%, rgba(24, 24, 24, 0) 100%);
+    
 }
 
 /*-------------------------Home-------------------------*/
@@ -459,13 +478,19 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 75px;
 }
 .home .titulo h1{
-    width: 30%;
+    width: 15%;
     display: flex;
     justify-content: center;
     padding: 10px;
-    margin-bottom: 7px;
+    border-bottom: 1px solid #404040;
+    font-weight: 600;
+}
+.home .titulo h2{
+    margin-top: 15px;
+    font-weight: 600;
 }
 .home .caixaDeFeed{
     display: flex;
@@ -690,7 +715,6 @@ body{
     width: 100%;
     height: 54px;
     color: #0E0E0E;
-    font-weight: 900;
 }
 .miniCaixa .miniCaixaDePub{
     display: flex;
@@ -874,14 +898,13 @@ body{
     .cabecalho .boxIcones ul {
         width: 100%;
     }
-    .cabecalho .boxIcones #tempo {
-        display: none;
+    .cabecalho .boxIcones ul li{
+
     }
     .cabecalho .boxIcones ul li span {
         width: 80%;
     }
     .cabecalho .boxIcones ul li #CaixaDeCoc {
-        right: -8px;
         width: 170%;
     }
     .sidnav{
@@ -985,7 +1008,7 @@ body{
         width: 60%;
     }
     .cabecalho .boxIcones ul li #CaixaDeCoc {
-        width: 145%;
+        width: 272%;
     }
     .home .boxCategoria ul li a {
         padding: 0px;

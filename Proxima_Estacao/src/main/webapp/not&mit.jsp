@@ -94,14 +94,16 @@
         </div>
     </div>
 
-    <div class="conteudo">
-        <picture>
-            <img src="../image/caio.png" alt="">
-        </picture>
-        <div class="notificacao">
-            <p>
-                Caio Emanuel fez uma doação de R$ 10,00!
-            </p>
+    <div class="ConteudoN">
+        <div class="conteudo">
+            <picture>
+                <img src="../image/caio.png" alt="">
+            </picture>
+            <div class="notificacao">
+                <p>
+                    Caio Emanuel fez uma doação de R$ 10,00!
+                </p>
+            </div>
         </div>
     </div>
 
