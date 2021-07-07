@@ -45,12 +45,7 @@ public class PublicacaoDAO {
 	}
 
 	public List<Publicacao> listarPublicacao() {
-		String sql = "SELECT DISTINCT vw_post_user.foto_perfil, vw_post_user.apelido, vw_post_user.conteudo, vw_post_user.descricao FROM seguidores"
-				+ " JOIN   publicacao "  
-				+ " JOIN   vw_post_user "
-				+ " ON    seguidores.id_artista = vw_post_user.id_artista" 
-				+ " AND    publicacao.id_artista = seguidores.id_artista"
-				+ " WHERE  seguidores.id_usuario = 2 ";
+		String sql = "SELECT vw.foto_perfil, vw.apelido, vw.conteudo, vw.descricao FROM vw_post_user AS vw";
 
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
@@ -84,6 +79,9 @@ public class PublicacaoDAO {
 	}
 	
 	public List<Publicacao> listarPublicacaoSeguidor(Usuario usuario) {
+		
+		if(usuario != null) {
+		
 		String sql = "SELECT DISTINCT vw_post_user.foto_perfil, vw_post_user.apelido, vw_post_user.conteudo, vw_post_user.descricao FROM seguidores"
 				+ " JOIN   publicacao "  
 				+ " JOIN   vw_post_user "
@@ -94,7 +92,7 @@ public class PublicacaoDAO {
 		PreparedStatement stmt = null;
 		ResultSet           rs = null;
 		List<Publicacao> publicacoes = new ArrayList<Publicacao>();
-
+		
 		try {
 			stmt = con.prepareStatement(sql);
 			rs = stmt.executeQuery(sql);
@@ -120,6 +118,9 @@ public class PublicacaoDAO {
 			ConnectionFactory.closeConnection(con, stmt, rs);
 		}
 		return publicacoes;
+		}else {
+			return listarPublicacao();
+		}
 	}
 	
 	

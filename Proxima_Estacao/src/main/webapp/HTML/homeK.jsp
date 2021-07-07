@@ -7,11 +7,12 @@
     <%@ page import= "model.dao.PublicacaoDAO" %>  
     <%@ page import= "java.util.ArrayList"  %>
     
-    	<%PublicacaoDAO pubdao = new PublicacaoDAO(); %>
-    	<%Artista artista = new Artista(); %>
-    	<%Usuario usuario = new Usuario(); %>
-		<%usuario.setIdUsuario(7);%>
-   
+    	<%PublicacaoDAO pubdao = new PublicacaoDAO(); 
+    		   Artista artista = new Artista(); 
+    		   Usuario usuario = new Usuario(); 
+    		    
+    		   
+    		  %>   		 
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -260,6 +261,8 @@
 
 			<!-- Aqui William -->
 			<%
+			int idUsuario = (Integer) (session.getAttribute("idUsuario"));
+			usuario.setIdUsuario(idUsuario);
 			
 			for (Publicacao pub: pubdao.listarPublicacaoSeguidor(usuario)){%>
             <section class="caixaDeFeed">
