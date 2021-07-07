@@ -36,8 +36,7 @@ AND p.id_artista = s.id_artista;
 select * from vw_public_seguidor;
 
 select * from usuario;
--- bom dia 
+
 
 -- deixa em uma hordem aleatoria
 select * from usuario order by rand();
-
