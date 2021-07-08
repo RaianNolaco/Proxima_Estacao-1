@@ -5,6 +5,7 @@
     padding: 0;
     border: 0;
     box-sizing: border-box;
+    font-family:'Raleway', sans-serif;
 }
 
 ::-webkit-scrollbar {
@@ -26,6 +27,7 @@ a{
 }
 body{
     width: 100%;
+    background: black;
 }
 header{
     display: flex;
@@ -66,7 +68,6 @@ header{
     padding:1em;
     color: rgb(255, 255, 255);
     font-size: 12px;
-    font-family:'Raleway', sans-serif;
     font-weight: bold;
     letter-spacing: 2px;
     border-radius:40px;
@@ -87,7 +88,6 @@ header{
     letter-spacing: 2px;
     color: #ffffff;
     font-size: 12px;
-    font-family:'Raleway', sans-serif;
     font-weight: bold;
     text-align: center;
     width:90px;
@@ -148,10 +148,12 @@ header{
 .animatin{
     height: 100%;
     display: flex;
+    animation: fadeIn 1.5s forwards;
+    transition-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
 .animatin div{
     width: 100%;
-    font-size: 40px;
+    font-size: 60px;
     font-weight: bolder;
     align-items: center;
     font-family: 'Raleway', sans-serif;
@@ -160,13 +162,106 @@ header{
 .animatin div:nth-child(1){
     display: flex;
     justify-content: flex-end;
+    animation: firstspan 1.5s forwards cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
 .animatin div:nth-child(2){
     display: flex;
     justify-content: flex-start;
+    animation: secondspan 1.5s forwards cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
 .animatin p:nth-child(1){
     background: black;
+    border-radius: 5px;
+}
+
+/*two*/
+
+.two{
+    position: relative;
+}
+.two img{
+    width: 100%;
+}
+.text-1{
+    font-size: 26px;
+    position: absolute;
+    right: 2%;
+    bottom: 30%;
+    color: white;
+    font-weight: bold;
+    width: 545px;
+    text-align: center;
+}
+.text-2{
+    font-size: 30px;
+    position: absolute;
+    left: 3%;
+    top: 10%;
+    color: white;
+    width: 360px;
+    text-align: center;
+}
+
+/*tree*/
+
+.three{
+    position: relative;
+}
+.three img{
+    width: 100%;
+}
+.fotos{
+    height: 100%;
+}
+.caixa {
+    height: 100%;
+    display: flex;
+}
+._1{
+    position: relative;
+}
+.caixa article{
+
+}
+.caixa article img{
+    width: 100%;
+}
+
+@keyframes fadeIn{
+    0%{
+        opacity:0;
+        transform: scale(1);
+    }
+    50%{
+        opacity: 1;
+        transform:scale(1);
+    }
+    100%{
+        opacity: 1;
+        transform:scale(1);
+    }
+}
+@keyframes firstspan{
+    0%{
+        transform: translateX(100%);
+    }
+    50%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+@keyframes secondspan{
+    0%{
+        transform: translateX(-100%);
+    }
+    50%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
 }
 
 @media screen and (max-width: 426px){
@@ -207,5 +302,16 @@ header{
         width: auto;
         font-size: 100%;
         margin-left: 5px;
+    }
+    .animatin div{
+        font-size: 200%;
+    }
+    .text-1{
+        font-size: 10px;
+        width: 210px;
+    }
+    .text-2{
+        font-size: 10px;
+        width: 120px;
     }
 }

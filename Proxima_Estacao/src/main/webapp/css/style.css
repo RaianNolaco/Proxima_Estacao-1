@@ -330,7 +330,7 @@ form [placeholder]{
     padding-left: 30px;
     padding-right: 30px;
 }
-.cadastro input[type="text"], input[type="password"],input[type="email"] {
+.cadastro input[type="text"], input[type="password"],input[type="email"], input[type = "date"], input[type = "tel"] {
     border-radius: 20px;
     background: #3E3E3E;
     outline: none;
