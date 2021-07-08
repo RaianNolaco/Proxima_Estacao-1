@@ -9,10 +9,11 @@
     
     	<%PublicacaoDAO pubdao = new PublicacaoDAO(); 
     		   Artista artista = new Artista(); 
-    		   Usuario usuario = new Usuario(); 
-    		    
+    		   Usuario usuario = new Usuario();
+    		   int idUsuario = (Integer) session.getAttribute("idUsuario");
+    		   usuario.setIdUsuario(idUsuario);
     		   
-    		  %>   		 
+    		   %>   		 
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -261,10 +262,10 @@
 
 			<!-- Aqui William -->
 			<%
-			int idUsuario = (Integer) (session.getAttribute("idUsuario"));
-			usuario.setIdUsuario(idUsuario);
 			
-			for (Publicacao pub: pubdao.listarPublicacaoSeguidor(usuario)){%>
+             
+               		
+            for (Publicacao pub : pubdao.listarPublicacaoSeguidor(usuario)){%>
             <section class="caixaDeFeed">
                 <div class="centro">
                     <div class="publicacao">

@@ -80,8 +80,6 @@ public class PublicacaoDAO {
 	
 	public List<Publicacao> listarPublicacaoSeguidor(Usuario usuario) {
 		
-		if(usuario != null) {
-		
 		String sql = "SELECT DISTINCT vw_post_user.foto_perfil, vw_post_user.apelido, vw_post_user.conteudo, vw_post_user.descricao FROM seguidores"
 				+ " JOIN   publicacao "  
 				+ " JOIN   vw_post_user "
@@ -118,14 +116,9 @@ public class PublicacaoDAO {
 			ConnectionFactory.closeConnection(con, stmt, rs);
 		}
 		return publicacoes;
-		}else {
-			return listarPublicacao();
-		}
+	
 	}
 	
-	
-	
-
 	// update publicação
 	public boolean alterarPublicacao(Publicacao publicacao) {
 		String sql = "UPDATE publicacao SET thumb = ?,descricao = ? WHERE id_publicacao = ?";
