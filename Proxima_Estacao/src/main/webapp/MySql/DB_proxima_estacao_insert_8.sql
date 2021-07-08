@@ -19,8 +19,6 @@ INSERT INTO usuario VALUES
 SELECT * from usuario;
 desc artista;
 
-
--- bom dia
 INSERT INTO artista VALUES 
 (DEFAULT,'Sou um artista show',1,'instagram: @caioManuel'),
 (DEFAULT,'Sou um artista Legal',2,'instagram: @maimai'),
