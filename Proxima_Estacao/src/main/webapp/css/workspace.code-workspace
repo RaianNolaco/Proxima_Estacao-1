@@ -1,0 +1,19 @@
+{
+    "folders": [
+        {
+            "name": "Proxima_Estacao",
+            "path": "../../../../.."
+        }
+    ],
+    "settings": {
+        "files.hotExit": "off",
+        "vsliveshare.join.reload.workspaceId": "9D93384156541B5150EAAA0E329C4DD47A96",
+        "vsliveshare.join.reload.workspaceFolder": "C:\\Users\\caio\\AppData\\Local\\Temp\\vsliveshare\\tmp-9D93384156541B5150EAAA0E329C4DD47A96",
+        "vsliveshare.join.correlationId": "",
+        "extensions.ignoreRecommendations": true,
+        "files.autoSave": "off",
+        "typescript.tsc.autoDetect": "off",
+        "debug.allowBreakpointsEverywhere": true,
+        "html.autoClosingTags": false
+    }
+}

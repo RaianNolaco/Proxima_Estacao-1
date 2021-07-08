@@ -73,4 +73,5 @@ function mit() {
         mis.style.display = "none";
         noti.style.display = "contents"
     }
-} 
+}
+ 
