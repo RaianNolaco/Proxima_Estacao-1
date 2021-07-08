@@ -40,3 +40,4 @@ select * from usuario;
 
 -- deixa em uma hordem aleatoria
 select * from usuario order by rand();
+-- bom dia
