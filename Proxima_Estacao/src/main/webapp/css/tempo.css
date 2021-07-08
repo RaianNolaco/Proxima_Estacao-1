@@ -62,7 +62,7 @@
     display: none !important;
 }
 .height{
-    height: 0px !important;
+    height: auto !important;
 }
 @media screen and (max-width: 426px){
     .cabecalho .boxIcones .card-body {

@@ -221,10 +221,12 @@ header{
     position: relative;
 }
 .caixa article{
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .caixa article img{
-    width: 100%;
+    width: 50%;
 }
 
 @keyframes fadeIn{
