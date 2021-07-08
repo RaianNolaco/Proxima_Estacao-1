@@ -388,30 +388,32 @@
                                     <div class="linha">
                                         <hr>
                                     </div>
-                                    <div class="boxDenuciar" id="Denunciar">
-                                        <p>
-                                            Em qual destas opções sua denuncia se encaixa ?
-                                        </p>
-                                        <form>
-                                            <input type="checkbox" name="plagio" id="plagio">
-                                            <label for="plagio">Plagio</label>
-                                            <input type="checkbox" name="NSFW" id="NFSFW">
-                                            <label for="NSFW">NSFW</label>
-                                            <input type="checkbox" name="Spam" id="Spam">
-                                            <label for="Spam">Spam</label>
-                                            <input type="checkbox" name="Dicurso de odio" id="DiscursoDeOdio">
-                                            <label for="DiscursoDeOdio">Discurso de odio</label>
-                                            <input type="checkbox" name="Falsa" id="Falsa">
-                                            <label for="Falsa">Falsa identidade</label>
-
-                                            <input type="submit" value="Denuciar">
-                                        </form>
-                                    </div>
+                                
                                     <button id="Salvar">
                                         Salvar inspiração 
                                     </button>
                                 </div>
                             </div>
+                        </div>
+
+                        <div class="boxDenuciar" id="Denunciar">
+                            <p>
+                                Em qual destas opções sua denuncia se encaixa ?
+                            </p>
+                            <form>
+                                <input type="checkbox" name="plagio" id="plagio">
+                                <label for="plagio">Plagio</label>
+                                <input type="checkbox" name="NSFW" id="NFSFW">
+                                <label for="NSFW">NSFW</label>
+                                <input type="checkbox" name="Spam" id="Spam">
+                                <label for="Spam">Spam</label>
+                                <input type="checkbox" name="Dicurso de odio" id="DiscursoDeOdio">
+                                <label for="DiscursoDeOdio">Discurso de odio</label>
+                                <input type="checkbox" name="Falsa" id="Falsa">
+                                <label for="Falsa">Falsa identidade</label>
+
+                                <input type="submit" value="Denuciar">
+                            </form>
                         </div>
 
                         <div class="PubImagem">
@@ -423,9 +425,29 @@
 
                             <i class="far fa-comment"></i>
 
-                            <i class="far fa-paper-plane">
-                                <div class="caixaDeCompartilhar">
+                            <i class="far fa-paper-plane" onclick="showC ()">
+                                <div class="caixaDeCompartilhar" id="caixaDeCompartilhar">
+                                    <article class="Rede_S">
+                                        <img src="../image/Twitter.png" alt="">
 
+                                        <p>
+                                            Compatilhar para Twitter
+                                        </p>
+                                    </article>
+                                    <article class="Rede_S">
+                                        <img src="../image/Facebook.png" alt="">
+
+                                        <p>
+                                            Compatilhar para Facebook
+                                        </p>
+                                    </article>
+                                    <article class="Rede_S">
+                                        <img src="../image/WhatsApp.png" alt="">
+
+                                        <p>
+                                            Compatilhar para WhatsApp
+                                        </p>
+                                    </article>
                                 </div>
                             </i>
                         </div>

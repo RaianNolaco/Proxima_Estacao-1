@@ -74,4 +74,14 @@ function mit() {
         noti.style.display = "contents"
     }
 }
- 
+function showC () {
+
+    var Conpa = document.getElementById("caixaDeCompartilhar");
+    if (Conpa.style.display != "block")
+    {
+        Conpa.style.display = "block";
+    } else
+    {
+        Conpa.style.display = "none";
+    }
+}  
