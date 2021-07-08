@@ -6,10 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/styleK.css">
+    <link rel="stylesheet" href="../css/tempo.css">
     <script src="https://kit.fontawesome.com/babea0d443.js" crossorigin="anonymous"></script>
     <link rel="icon" href='../image/logo-removebg-preview.png' type="image/x-icon">
     <title>Index_proxima_estação</title>
-    <script src="../jswiil.js"></script>
+    <script src="../js/jswiil.js"></script>
 </head>
 <body>
     <header class="cabecalho">
@@ -31,12 +32,22 @@
         <div class="boxIcones">
             <ul>
                 <li>
-                    <a href="" id="tempo">
-                        <i class="fas fa-cloud-sun"></i>
-                    </a>
+                    <div class="card-body">
+                        <div class="city"></div>
+                        <div class="date"></div>
+                        <div class="container-img">
+                          <img src="">
+                        </div>
+                        <div class="container-temp">
+                          <div class="height"></div>
+                          <span class="height"></span>
+                        </div>
+                        <div class="weather"></div>
+                        <div class="low-high"></div>
+                      </div>
                 </li>
                 <li>
-                    <span  onclick="showCaixa()">
+                    <span class="Ft"  onclick="showCaixa()">
                         <img src="../image/Kepler.jpg" alt="">
                     </span>
 
@@ -99,60 +110,112 @@
             <div id="caixaDeNot">
                 <article class="caixaDeNot_Box">
                     <div></div>
-                    <h3>notificações</h3>
+                    <button onclick="mit()">notificações</button>
                     <div></div>
-                    <h3>Missões</h3>
+                    <button onclick="mit()">Missões</button>
                 </article>
-                <div class="conteudo">
-                    <picture>
-                        <img src="../image/medalha_de_fogo" alt="">
-                    </picture>
-                    <div class="Missao">
-                        <h6>
-                            0/1
-                        </h6>
-                        <h5>
-                             Pegando Fogo!
-                        </h5>
-                        <p>
-                            Conquiste <span>5 seguidores</span>
-                        </p>
+            
+                <div id="ConteudoM">
+                    <div class="conteudo">
+                        <picture>
+                            <img src="../image/medalhaDeInspirado.png" alt="">
+                        </picture>
+                        <div class="Missao">
+                            <h6>
+                                0/3
+                            </h6>
+                            <h5>
+                                Comentas!
+                            </h5>
+                            <p>
+                                <span>Comente</span> em <span>3 publicações</span> de qualquer artista
+                            </p>
+                        </div>
+                    </div>
+    
+                    <div class="conteudo">
+                        <picture>
+                            <img src="../image/medelhaDeComentas.png" alt="">
+                        </picture>
+                        <div class="Missao">
+                            <h6>
+                                0/5
+                            </h6>
+                            <h5>
+                                Inspirado!
+                            </h5>
+                            <p>
+                                <span>Salve 5 publicações</span> de qualquer artista.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="conteudo">
+                        <picture>
+                            <img src="../image/dinheiro.png" alt="">
+                        </picture>
+                
+                        <div class="Missao">
+                            <h6>
+                                0/1
+                            </h6>
+                            <h5>
+                                O filantropo!
+                            </h5>
+                            <p>
+                                <span>Doe</span> para alguém
+                            </p>
+                        </div>
+                    </div>
+                
+                    <div class="conteudo">
+                        <picture>
+                            <img src="../image/medalha_de_feed_cheio" alt="">
+                        </picture>
+                
+                        <div class="Missao">
+                            <h6>
+                                0/1
+                            </h6>
+                            <h5>
+                                Bota no feed
+                            </h5>
+                            <p>
+                                faça uma<span> publicação </span> em qualquer categoria
+                            </p>
+                        </div>
+                    </div>
+                
+                    <div class="conteudo">
+                        <picture>
+                            <img src="../image/medalha_de_fogo" alt="">
+                        </picture>
+                        <div class="Missao">
+                            <h6>
+                                0/1
+                            </h6>
+                            <h5>
+                                 Pegando Fogo!
+                            </h5>
+                            <p>
+                                Conquiste <span>5 seguidores</span>
+                            </p>
+                        </div>
                     </div>
                 </div>
-                <div class="conteudo">
-                    <picture>
-                        <img src="../image/medalha_de_feed_cheio" alt="">
-                    </picture>
 
-                    <div class="Missao">
-                        <h6>
-                            0/1
-                        </h6>
-                        <h5>
-                             Pegando Fogo!
-                        </h5>
-                        <p>
-                            Conquiste <span>5 seguidores</span>
-                        </p>
+                <div id="ConteudoN">
+                    <div class="conteudo">
+                        <picture>
+                            <img src="../image/caio.png" alt="">
+                        </picture>
+                        <div class="notificacao">
+                            <p>
+                                Caio Emanuel fez uma doação de R$ 10,00!
+                            </p>
+                        </div>
                     </div>
                 </div>
-                <div class="conteudo">
-                    <picture>
-                        <img src="../image/dinheiro.png" alt="">
-                    </picture>
-
-                    <div class="Missao">
-                        <h6>
-                            0/1
-                        </h6>
-                        <h5>
-                             Pegando Fogo!
-                        </h5>
-                        <p>
-                            Conquiste <span>5 seguidores</span>
-                        </p>
-                    </div>
-                </div>
+            
             </div>
         </li>
         <li>
@@ -238,10 +301,6 @@
             <div class="titulo">
                 <h1>home</h1>
                 <h2>Conteúdo de pessoas que admira</h2>
-            </div>
-
-            <div class="linha">
-                <hr>
             </div>
 
             <section class="caixaDeFeed">
@@ -411,4 +470,6 @@
         </section>
     </main>
 </body>
+<script src="../js/script.js"></script>
+    <script src="https://kit.fontawesome.com/f0e17cbf2f.js" crossorigin="anonymous"></script>
 </html>

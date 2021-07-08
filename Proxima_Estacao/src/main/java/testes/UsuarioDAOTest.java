@@ -40,7 +40,7 @@ class UsuarioDAOTest {
 	@Ignore
 	public void atualizarUsuario() {
 		status.setId_status(1);
-		Usuario usuario = new Usuario("Raian", "Nolaço", "Raio", "raio@raio@raio", status, "123456", "7654453", "17/07/2002", "7656521");
+		Usuario usuario = new Usuario("Raian", "Nolaï¿½o", "Raio", "raio@raio@raio", status, "123456", "7654453", "17/07/2002", "7656521");
 		usuario.setIdUsuario(5);
 		if (dao.alterarUsuario(usuario)) {
 			System.out.println("deu certo");
@@ -68,7 +68,7 @@ class UsuarioDAOTest {
 		if(dao.login(usuario)) {
 			System.out.println("ID " + usuario.getIdUsuario());
 		}else{
-			System.err.println("Usuario não encontrado!");
+			System.err.println("Usuario nÃ£o encontrado!");
 		}
 	 }
 }

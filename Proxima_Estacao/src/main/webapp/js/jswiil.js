@@ -61,4 +61,16 @@ function showD () {
     {
         denu.style.display = "none";
     }
-}  
+} 
+function mit() {
+    var mis = document.getElementById("ConteudoM");
+    var noti = document.getElementById("ConteudoN");
+    if (mis.style.display != "contents" && noti.style.display === "contents"){
+        mis.style.display = "contents";
+        noti.style.display = "none"
+    }
+    else{
+        mis.style.display = "none";
+        noti.style.display = "contents"
+    }
+} 
