@@ -1,8 +1,8 @@
--- DROP DATABASE proxima_estacao_teste;
+-- DROP DATABASE proxima_estacao;
 
-CREATE DATABASE proxima_estacao_teste;
+CREATE DATABASE proxima_estacao;
 
-USE proxima_estacao_teste;
+USE proxima_estacao;
 
 #------------------------------------------------------------------------------------------------------------
 #Criações das tabelas 

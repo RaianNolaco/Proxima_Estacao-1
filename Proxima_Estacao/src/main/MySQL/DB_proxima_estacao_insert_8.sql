@@ -1,5 +1,5 @@
 
-USE proxima_estacao_teste;
+USE proxima_estacao;
 
 desc usuario;
 
@@ -14,7 +14,7 @@ INSERT INTO usuario VALUES
 (DEFAULT,null,'Jose','Maia','moioio','mio_332@gmai.com','Admin7','11980323127',DEFAULT,'2001-11-13','00000000007' ),
 (DEFAULT,null,'Marlete','Sanchez','Marlete','marlete@hotmail.com','Admin8','11980323228',DEFAULT,'1999-04-07','00000000008' ),
 (DEFAULT,null,'claudete','ferreira','Claudete','claudete@igmail.com','Admin9','11980323329',DEFAULT,'2000-09-09','00000000009' ),
-(DEFAULT,null,'Mario','Bros','Super Mario','Cladart@gmai.com','Admin10','11980323943',DEFAULT,'1998-12-24','00000000010' ),
+(DEFAULT,null,'Mario','Bros','Super Mario','Cladart2@gmai.com','Admin10','11980323943',DEFAULT,'1998-12-24','00000000010' ),
 (DEFAULT,null,'Caio','Emanoel','caio','caio@gmai.com','Admin11','21980120944',DEFAULT,'2002-12-24','00000000011' ),
 (DEFAULT,null,'keplin','vinicius','Malvadao','kepio@hotmai.com','Admin12','11235445944',DEFAULT,'2000-09-18','00000000012'),
 (DEFAULT,null,'Willian','Araujo','Shellos','spacewill@gmai.com','lindo','99999999999',DEFAULT,'2003-01-01','00000000013'),
@@ -28,11 +28,11 @@ INSERT INTO artista VALUES
 (DEFAULT,'Sou um artista Legal',2,'instagram: @maimai'),
 (DEFAULT,'Sou um artista bunito',3,'instagram: @carlos'),
 (DEFAULT,'Sou um artista delica',4,'instagram: @felipe'),
-(DEFAULT,'Sou um artista gatao',5,'instagram: @Rodrizera')
-(DEFAULT,'nao sei oq escrever',6,'instagram: @n')
-(DEFAULT,'helooooo guys',7,'instagram: @instaof')
-(DEFAULT,'Bom dia a todos e a todas',8,'instagram: @hi')
-(DEFAULT,'oiiiiiiiiiiiii',9,'instagram: @oi')
+(DEFAULT,'Sou um artista gatao',5,'instagram: @Rodrizera'),
+(DEFAULT,'nao sei oq escrever',6,'instagram: @n'),
+(DEFAULT,'helooooo guys',7,'instagram: @instaof'),
+(DEFAULT,'Bom dia a todos e a todas',8,'instagram: @hi'),
+(DEFAULT,'oiiiiiiiiiiiii',9,'instagram: @oi'),
 (DEFAULT,'vamo q vamo fml',10,'instagram: @zaaz');
 
 select * from artista;
@@ -79,10 +79,10 @@ INSERT INTO publicacao VALUES
 (DEFAULT, 'NOT FOUND','https://giphy.com/clips/rickandmorty-season-3-episode-6-rick-and-morty-2N7E1MUmbz812T4TDk',true,'Perfomance rodopiante',8,3),
 (DEFAULT, 'NOT FOUND','http://www.reactiongifs.us/category/sad/',false,'tristesa',8,4),
 (DEFAULT, 'NOT FOUND','https://media0.giphy.com/media/M28rUlcjueKUE/giphy.gif?cid=ecf05e47etq5mudu7u46qzkyyg74hh72v634fuf4esmdfq9m&rid=giphy.gif&ct=g',true,'A historia uma casa com telhado amarelado',8,5),
-(DEFAULT, 'NOT FOUND','https://media.giphy.com/media/3oriNZuNzeTbtJvKs8/giphy.gif',false,'bad',8,5);
-(DEFAULT, 'NOT FOUND','https://media.giphy.com/media/Txh1UzI7d0aqs/giphy.gif',false,'Sad',8,1);
-(DEFAULT, 'NOT FOUND','https://media.giphy.com/media/Ln3D55ky9z61G1v7eB/giphy.gif',false,'Bom dia triste',8,4);
-(DEFAULT, 'NOT FOUND','https://media.giphy.com/media/3oEjI8StnIv9YMtVnO/giphy.gif',false,'depresso',8,2);
+(DEFAULT, 'NOT FOUND','https://media.giphy.com/media/3oriNZuNzeTbtJvKs8/giphy.gif',false,'bad',8,5),
+(DEFAULT, 'NOT FOUND','https://media.giphy.com/media/Txh1UzI7d0aqs/giphy.gif',false,'Sad',8,1),
+(DEFAULT, 'NOT FOUND','https://media.giphy.com/media/Ln3D55ky9z61G1v7eB/giphy.gif',false,'Bom dia triste',8,4),
+(DEFAULT, 'NOT FOUND','https://media.giphy.com/media/3oEjI8StnIv9YMtVnO/giphy.gif',false,'depresso',8,2),
 (DEFAULT, 'NOT FOUND','https://media2.giphy.com/media/qQdL532ZANbjy/giphy.gif?cid=ecf05e47j8y8muj96ylwzhs7k57rzcxfz9kasa5y6sy2851u&rid=giphy.gif&ct=g',false,'Complicado',8,3);
 
 
