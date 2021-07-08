@@ -261,11 +261,7 @@
 
 
 			<!-- Aqui William -->
-			<%
-			
-             
-               		
-            for (Publicacao pub : pubdao.listarPublicacaoSeguidor(usuario)){%>
+			<%for (Publicacao pub : pubdao.listarPublicacaoSeguidor(usuario)){%>
             <section class="caixaDeFeed">
                 <div class="centro">
                     <div class="publicacao">
