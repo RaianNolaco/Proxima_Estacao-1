@@ -19,6 +19,8 @@ INSERT INTO usuario VALUES
 SELECT * from usuario;
 desc artista;
 
+
+-- bom dia
 INSERT INTO artista VALUES 
 (DEFAULT,'Sou um artista show',1,'instagram: @caioManuel'),
 (DEFAULT,'Sou um artista Legal',2,'instagram: @maimai'),
@@ -167,3 +169,12 @@ WHERE  p.id_artista = a.id_artista
 AND    s.id_artista = a.id_artista
 AND    s.id_usuario = u.id_usuario 
 AND    u.id_usuario = 2;
+
+SELECT distinct s.id_artista,pu.apelido,pu.foto_perfil, p.descricao FROM seguidores as s
+join publicacao as p 
+join vw_post_user as pu 
+where s.id_usuario = 9
+AND s.id_artista = pu.id_artista
+AND p.id_artista = s.id_artista;
+
+Select distinct * from publicacao;
