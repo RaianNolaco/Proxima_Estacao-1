@@ -45,18 +45,6 @@ public class UsuarioController extends HttpServlet {
 			loginUsuario(request, response);
 		}
 	}
-	
-	
-	protected void publicacoes(HttpServletRequest request, HttpServletResponse response) 
-			throws ServletException, IOException{
-		
-		List<Publicacao> listaPubs = pudao.listarPublicacao();
-		// Encaminhar a lista ao documento livro.jsp
-		request.setAttribute("publicacoes", listaPubs);
-		RequestDispatcher rd = request.getRequestDispatcher("HTML/loading.html");
-		rd.forward(request, response);
-	}
-
 	protected void loginUsuario(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException{
 		HttpSession session = request.getSession();	
@@ -64,16 +52,11 @@ public class UsuarioController extends HttpServlet {
 		usuario.setEmail(request.getParameter("usuarioEmail"));
 		usuario.setSenha(request.getParameter("usuarioSenha"));
 
-		
-		
 		if(dao.login(usuario)){
 			session.setAttribute("idUsuario", usuario.getIdUsuario());
 			response.sendRedirect("HTML/loading.html");
 		}else{
-			   System.out.println("<script type=\"text/javascript\">");
-			   System.out.println("alert('User or password incorrect');");
-			   System.out.println("location='index.jsp';");
-			   System.out.println("</script>");
+			response.sendRedirect("HTML/login.html");
 		}	
 	}
 	

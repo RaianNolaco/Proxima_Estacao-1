@@ -36,22 +36,23 @@ class PublicacaoDAOTest {
 	public void listarPublicacaoSeguidor() {
 		
 		Publicacao pub = new Publicacao();
-		usuario.setIdUsuario(null);
-		
+		usuario.setIdUsuario(2);
+
+		ArrayList<Publicacao> pubs = new ArrayList<Publicacao>();
+	
 		for (Publicacao pub2 : dao.listarPublicacaoSeguidor(usuario)) {
-			System.out.println(
-			  "\nFoto: " +      pub2.getId_artista().getId_usuario().getFotoPerfil()
-            + "\nApelido: "+    pub2.getId_artista().getId_usuario().getApelido()
-            + "\nConteudo: " +  pub2.getConteudo()
-            + "\nDescricao: " + pub2.getDescricao());	
+			pubs.add(pub2);
 		}
 		
+		
+		for(int i = 0; i < pubs.size(); i++)
+		{
+			System.out.println(pubs.get(i).getDescricao());
+			
+			pubs.
+		}
 
-	
 	}
-	
-
-	
 	
 	
 
