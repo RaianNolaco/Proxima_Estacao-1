@@ -21,8 +21,8 @@ public class UsuarioDAO {
 
 	// metodo responsável por dar insert no usuario
 	public boolean inserirUsuario(Usuario usuario) {
-		String sql = "INSERT INTO usuario (nome, sobrenome, apelido, email, senha, numero, id_status, data_nascimento, cpf)"
-				+ "VALUES (?,?,?,?,?,?,?,?,?)";
+		String sql = "INSERT INTO usuario (nome, sobrenome, apelido, email, senha, numero, id_status, data_nascimento)"
+				+ "VALUES (?,?,?,?,?,?,?,?)";
 
 		PreparedStatement stmt = null;
 		try {
@@ -36,8 +36,6 @@ public class UsuarioDAO {
 			stmt.setString(6, usuario.getNumero());
 			stmt.setInt(7, usuario.getIdStatus().getId_status());
 			stmt.setDate(8, new java.sql.Date(usuario.getData_nascimento().getTime()));
-			stmt.setString(9, usuario.getCpf());
-			
 			stmt.executeUpdate();
 			return true;
 

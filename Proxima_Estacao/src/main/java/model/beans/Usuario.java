@@ -38,12 +38,12 @@ public class Usuario {
 	}
 	
 	public Date converteData(String data) {
-		SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
+		SimpleDateFormat formatador = new SimpleDateFormat("dd-MM-yyyy");
 		Date dataFormatada = null;
 		try {
 			dataFormatada = formatador.parse(data);
 		} catch (ParseException e) {
-			System.err.print("Erro ao formatar");
+			System.err.print("Erro ao formatar a data");
 		}
 		return dataFormatada;
 	}
