@@ -237,28 +237,36 @@
                 <form method="POST" class="add">
                     <label for="file">
                         <p>
-                            digite algo
+                            +
                         </p>
-
-                        <hr>
-        
-                        <img src="../image/plus.png" alt="">
                     </label>
                     <input type="file" name="uploadfile" id="file" required>
         
                     <fieldset class="grupo" >
-                        <input type="checkbox" name="Musica" id=" Musica">
-                        <label for="Musica">Musica</label>
-                        <input type="checkbox" name="Dança" id=" Dança">
-                        <label for="Dança">Dança</label>
-                        <input type="checkbox" name="Teatro" id=" Teatro">
-                        <label for="Teatro">Teatro</label>
-                        <input type="checkbox" name="Cinema" id="Cinema">
-                        <label for="Cinema">Cinema</label>
-                        <input type="checkbox" name="Literatura" id="Literatura">
-                        <label for="Literatura">Literatura</label>
-                        <input type="checkbox" name="artes_visuais" id="artes_visuais">
-                        <label for="artes_visuais">Artes Visuais</label>
+                        <input type="text" name="descrição" id="" placeholder="Escreva uma descrição...">
+
+                        <div>
+                            <input type="checkbox" name="Musica" id=" Musica">
+                            <label for="Musica">Musica</label>
+
+                            <input type="checkbox" name="Dança" id=" Dança">
+                            <label for="Dança">Dança</label>
+
+                            <input type="checkbox" name="Teatro" id=" Teatro">
+                            <label for="Teatro">Teatro</label>
+                        </div>
+                        
+                        <div>
+                            <input type="checkbox" name="Cinema" id="Cinema">
+                            <label for="Cinema">Cinema</label>
+
+                            <input type="checkbox" name="Literatura" id="Literatura">
+                            <label for="Literatura">Literatura</label>
+
+                         
+                            <input type="checkbox" name="artes_visuais" id="artes_visuais">
+                            <label for="artes_visuais">Artes Visuais</label>
+                        </div>
                     </fieldset>
                     <input type="submit" value="enviar">
                     <input type="reset" value="cancelar">

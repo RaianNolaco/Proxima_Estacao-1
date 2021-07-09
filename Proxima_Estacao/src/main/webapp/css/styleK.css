@@ -50,7 +50,13 @@ body{
     display: flex;
     align-items: center;
 }
-.cabecalho .boxLogo{
+
+
+
+
+/*-------------------------boxLogo-------------------------*/
+
+.boxLogo{
     background: linear-gradient(180deg, #181818 100%, #181818 0%);
     width: 75px;
     position: absolute;
@@ -58,27 +64,34 @@ body{
     height: 54px;
     border-right: #c4c4c481 1px solid;
 }
-.cabecalho .boxLogo a{
+.boxLogo a{
     justify-content: center;
     display: flex;
     margin-top: 12px;
 }
-.cabecalho .boxLogo img {
+.boxLogo img {
     width: 52%;
 }
-.cabecalho .boxtexto{
+
+
+/*-------------------------boxtexto-------------------------*/
+
+.boxtexto{
     width: 50%;
     position: relative;
     display: flex;
     align-items: center;
     padding: 4px;
 }
-.cabecalho .boxtexto i {
+.boxtexto i {
     position: absolute;
     left: 18px;
     color: #404040;
 }
-.cabecalho .boxtexto .search-bar{
+
+/*-------------------------search-------------------------*/
+
+.search-bar{
     height: 100%;
     border-radius: 25px;
     display: flex;
@@ -100,34 +113,10 @@ body{
     padding-left: 40px;
     padding-right: 10px;
 }
-.cabecalho .boxIcones{
-    position: absolute;
-    right: 10px;
-    height: 100%;
-}
-.cabecalho .boxIcones ul{
-    display: flex;
-    list-style: none;
-    align-items: center;
-    height: 100%;
-    width: 170px;
-}
-.cabecalho .boxIcones ul li{
-    margin-left: 0px;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.cabecalho .boxIcones ul .Ft{
-    margin-left: 20px;
-}
-.cabecalho .boxIcones ul li a {
-    font-size: 20px;
-    color: aliceblue;
-}
-.cabecalho .boxIcones ul li #CaixaDeCoc{
+
+/*-------------------------CaixaDeCoc-------------------------*/
+
+#CaixaDeCoc{
     height: 0px;
     position: absolute;
     right:0px;
@@ -141,51 +130,81 @@ body{
     flex-direction: column;
     animation: configurações 0.2s forwards;
 }
-.cabecalho .boxIcones ul li #CaixaDeCoc ul {
+#CaixaDeCoc ul {
     display: flex;
     flex-direction: column;
     width: 100%;
     height: 43%;
     border-bottom: 1px solid wheat;
 }
-.cabecalho .boxIcones ul li #CaixaDeCoc ul:nth-child(2){
+#CaixaDeCoc ul:nth-child(2){
     height: 215px;
 }
-.cabecalho .boxIcones ul li #CaixaDeCoc ul li {
+#CaixaDeCoc ul li {
     width: 100%;
     padding-left: 20px;
 }
-.cabecalho .boxIcones ul li #CaixaDeCoc ul li a {
+#CaixaDeCoc ul li a {
     text-decoration: none;
     font-family: raleway;
     font-weight: bold;
     font-size: 100%;
 }
-.cabecalho .boxIcones ul li #CaixaDeCoc div{
+#CaixaDeCoc div{
     display: flex;
     flex-direction: column;
     justify-content: center;
     position: relative;
     height: 57px;
 }
-.cabecalho .boxIcones ul li #CaixaDeCoc div h5{
+#CaixaDeCoc div h5{
     color: white;
     padding: 5px;
     border: 0.7px solid white;
 }
-.cabecalho .boxIcones ul li #CaixaDeCoc div h6{
+#CaixaDeCoc div h6{
     position: absolute;
     bottom: 0;
     color: white;
 }
-.cabecalho .boxIcones ul li span {
+
+/*-------------------------boxIcones-------------------------*/
+
+.boxIcones{
+    position: absolute;
+    right: 10px;
+    height: 100%;
+}
+.boxIcones ul{
+    display: flex;
+    list-style: none;
+    align-items: center;
+    height: 100%;
+    width: 170px;
+}
+.boxIcones ul li{
+    margin-left: 0px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.boxIcones ul .Ft{
+    margin-left: 20px;
+}
+.boxIcones ul li a {
+    font-size: 20px;
+    color: aliceblue;
+}
+.boxIcones ul li span {
     height: 100%;
     cursor: pointer;
     width: 100%;
     align-items: center;
     display: flex;
 }
-.cabecalho .boxIcones ul li span img{
+.boxIcones ul li span img{
     height: 100%;
     border-radius: 50%;
     padding: 5px;
@@ -238,37 +257,45 @@ body{
     width: 35px;
 }
 
-.sidnav ul li #caixaDeNot {
+/*-------------------------caixaDeNot-------------------------*/
+
+#caixaDeNot {
     position: absolute;
     width: 664px;
     height: 400px;
     display: none;
-    top: 14px;
+    top: -115px;
     flex-direction: column;
     background: #0E0E0E;
     left: 100%;
     overflow-y: scroll;
     padding-bottom: 10px;
 }
-.sidnav ul li #caixaDeNot .caixaDeNot_Box {
+
+/*-------------------------caixaDeNot_box-------------------------*/
+
+.caixaDeNot_Box {
     display: flex;
     width: 100%;
 }
-.sidnav ul li #caixaDeNot .caixaDeNot_Box button{
+.caixaDeNot_Box button{
     width: 100%;
     padding: 6px;
+    height: 40px;
     cursor: pointer;
     text-align: center;
-    background: rgb(254,215,116);
-    background: linear-gradient(121deg, rgba(254,215,116,1) 0%, rgba(166,139,83,1) 50%, rgba(88,72,54,1) 100%);
+    background: linear-gradient(121deg, rgba(254,215,116,1) 0%, rgba(166,139,83,1) 50%, rgba(88,72,54,1) 100%) !important;
 }
-.sidnav ul li #caixaDeNot #ConteudoM {
+
+/*-------------------------ConteeudoM-------------------------*/
+
+#ConteudoM {
     display: contents;
 }
-.sidnav ul li #caixaDeNot #ConteudoN {
-    display: none;
-}
-.sidnav ul li #caixaDeNot #ConteudoM .conteudo{
+
+/*-------------------------Conteeudo-------------------------*/
+
+.conteudo{
     height: 100%;
     padding: 20px;
     display: flex;
@@ -277,65 +304,76 @@ body{
     border-bottom: 1px solid white;
     margin-top: 10px;
 }
-.sidnav ul li #caixaDeNot #ConteudoM .conteudo .Missao{
+.conteudo picture{
+    height: 100%;
+}
+.conteudo picture img{
+    width: 100px;
+}
+
+/*-------------------------Missao-------------------------*/
+
+.Missao{
     display: block;
     width: 75%;
     color: white;
 }
-.sidnav ul li #caixaDeNot #ConteudoM .conteudo picture{
-    height: 100%;
-}
-.sidnav ul li #caixaDeNot #ConteudoM .conteudo picture img{
-    width: 100px;
-}
-.sidnav ul li #caixaDeNot #ConteudoM .conteudo .Missao h5{
+.Missao h5{
     font-size: 20px;
     text-align: center;
     margin-bottom: 5px;
 }
-.sidnav ul li #caixaDeNot #ConteudoM .conteudo .Missao h6{
+.Missao h6{
     font-size: 20px;
     text-align: end;
 }
-.sidnav ul li #caixaDeNot #ConteudoM .conteudo .Missao p{
+.Missao p{
     font-size: 19px;
     padding-left: 10px;
 }
 
+/*-------------------------ConteudoN-------------------------*/
 
-.sidnav ul li #caixaDeAdd{
+#ConteudoN {
+    display: none;
+}
+
+/*-------------------------caixaDeAdd-------------------------*/
+
+#caixaDeAdd{
     position: absolute;
     width: 664px;
     height: 400px;
     display: none;
-    top: 14px;
+    top: -200px;
     flex-direction: column;
     background: #0E0E0E;
     left: -100%;
     animation: add .3s forwards;
 }
-.sidnav ul li #caixaDeAdd button {
+#caixaDeAdd button {
     position: absolute;
     top: 0px;
     right: 0px;
     color: white;
     font-size: 40px;
 }
-.sidnav ul li #caixaDeAdd h2{
+#caixaDeAdd h2{
     color: white;
-    font-weight: 100;
     padding-top: 30px;
     padding-left: 30px;
+    color: white;
+    font-weight: 700;
 }
-.sidnav ul li #caixaDeAdd form{
+#caixaDeAdd form{
     display: flex;
     height: 75%;
     padding: 10px;
 }
-.sidnav ul li #caixaDeAdd label {
+#caixaDeAdd label {
     padding: 15px 15px;
     width: 40%;
-    background-color: #878787;
+    background-color: #404040;
     color: #FFF;
     text-transform: uppercase;
     text-align: left;
@@ -348,37 +386,19 @@ body{
     border-radius: 15px;
     margin: 10px;
 }
-.sidnav ul li #caixaDeAdd label p{
-    height: 110px;
+#caixaDeAdd label p{
+    height: 100%;
+    font-size: 248px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: lighter;
+    color: #878787;
 }
-.sidnav ul li #caixaDeAdd label  hr {
-    background: #B0B0B0;
-    height: 1px;
-}
-.sidnav ul li #caixaDeAdd label img {
-    width: 50%;
-    margin: 10px auto;
-}
-.sidnav ul li #caixaDeAdd input[type = "file"]{
-   
+#caixaDeAdd input[type = "file"]{
     display: none;
 }
-.sidnav ul li  #caixaDeAdd .grupo{
-    top: 10px;
-    right: 50%;
-}
-.sidnav ul li #caixaDeAdd .grupo input[type = "checkbox"]{
-    display: none;
-}
-.sidnav ul li #caixaDeAdd .grupo label{
-    width: 100%;
-    padding: 8px;
-    background: linear-gradient(90deg, #FF055F 4.85%, #4E808B 100%);
-    border-radius: 10px;
-    text-transform: none;
-    text-align: center;
-}
-.sidnav ul li #caixaDeAdd input[type = "submit"]{
+#caixaDeAdd input[type = "submit"]{
     position: absolute;
     bottom: 15px;
     right: 20px;
@@ -390,7 +410,7 @@ body{
     z-index: 1;
     background: yellow;
 }
-.sidnav ul li #caixaDeAdd input[type = "reset" ]{
+#caixaDeAdd input[type = "reset" ]{
     position: absolute;
     bottom: 15px;
     right: 100px;
@@ -402,33 +422,46 @@ body{
     z-index: 1;
     background: red;
 }
-.sidnav ul li #caixaDeAdd .subCategorias{
-    position: absolute;
-    width: 100px;
-    height: auto;
-    right: 80px;
-    top: 100px;
-    padding: 5px;
-    display: none;
-}
-.sidnav ul li #caixaDeAdd .subCategorias input[type = "checkbox"]{
-    display: none;
-}
-.sidnav ul li #caixaDeAdd .subCategorias label{
-    height: 100%;
-    width: 100%;
-    margin: 0px;
-    text-align: center;
-    padding: 9px;
-    margin-top: 6px;
-    background: none;
-    border: 1px solid #878787;
-}
-#SubCinema{
-    top: 55px !important;
-    font-size: small;
-}
 
+/*-------------------------grupo-------------------------*/
+
+.grupo{
+    bottom: 68%;
+    right: 16%;
+    position: absolute;
+}
+.grupo input[type = "text"]{
+    display: block;
+    opacity: 1;
+    background: #404040;
+    height: 45px;
+    padding: 21px;
+    width: 268px;
+    color: white;
+}
+.grupo input[type = "checkbox"]{
+    display: none;
+}
+.grupo div{
+    width: 25%;
+    right: 57%;
+    bottom: -336%;
+    position: absolute;
+    height: 160px;
+    width: 113px;
+}
+.grupo div:nth-child(2){
+    right: 2%;
+}
+.grupo div label{
+    margin: 0px !important;
+    width: 100% !important;
+    margin-top: 10px !important;
+    padding: 8px !important;
+    font-size: 78%;
+    height: 34px;
+    border-radius: 8px !important;
+} 
 
 /*-------------------------principal-------------------------*/
 
@@ -447,9 +480,9 @@ body{
     display: block;
 }
 
-
 /*-------------------------BoxCategoria-------------------------*/
-.home .boxCategoria{
+
+.boxCategoria{
     height: 110px;
     background: #171717;
     margin-bottom: 20px;
@@ -458,19 +491,19 @@ body{
     display: flex;
     padding: none;
 }
-.home .boxCategoria ul{
+.boxCategoria ul{
     display: flex;
     list-style: none;
     justify-content: center;
     align-items: center;
     width: 100%;
 }
-.home .boxCategoria ul li{
+.boxCategoria ul li{
     width: 100%;
     display: flex;
     justify-content: center;
 }
-.home .boxCategoria ul li a{
+.boxCategoria ul li a{
     padding: 0.5rem;
     color: antiquewhite;
     text-decoration: none;
@@ -479,19 +512,16 @@ body{
     font-size: 16px;
 }
 
-
-
-
 /*-------------------------titulo-------------------------*/
 
-.home .titulo {
+.titulo {
     color: #B0B0B0;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 75px;
 }
-.home .titulo h1{
+.titulo h1{
     width: 15%;
     display: flex;
     justify-content: center;
@@ -501,12 +531,10 @@ body{
     font-size: 30px;
     letter-spacing: 3px;
 }
-.home .titulo h2{
+.titulo h2{
     margin-top: 15px;
     font-weight: 600;
 }
-
-
 
 /*-------------------------trio-------------------------*/
 
@@ -534,32 +562,37 @@ body{
     width: 1px;
 }
 
-
 /*-------------------------caixaDeFeed-------------------------*/
-.home .caixaDeFeed{
+
+.caixaDeFeed{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.home .caixaDeFeed .centro{
+
+/*-------------------------centro-------------------------*/
+
+.centro{
     width: 55%;
     background: #40404038 15%;
     border-radius: 15px;
     padding-bottom: 30px;
 }
-.home .caixaDeFeed .centro .linha{
+.centro .linha{
     width: 100%;
     padding: 0 50px;
     margin: 10px 0px;
 }
 
-
-
 /*-------------------------publicação-------------------------*/
-.home .caixaDeFeed .publicação{
+
+.publicação{
     position: relative;
 }
-.home .caixaDeFeed .publicação .headerDaPub{
+
+/*-------------------------headerDaPub-------------------------*/
+
+.headerDaPub{
     padding-left: 30px;
     padding-right: 20px;
     padding-top: 15px;
@@ -567,56 +600,39 @@ body{
     display: flex;
     justify-content: space-between;
 }
-.home .caixaDeFeed .publicação .headerDaPub .FotoDePerfil{
+
+/*-------------------------FotoDePerfil-------------------------*/
+
+.FotoDePerfil{
     width: 10%;
     position: relative;
 }
-.home .caixaDeFeed .publicação .headerDaPub .FotoDePerfil img{
+.FotoDePerfil img{
     width: 100%;
     border-radius: 50%;
     cursor: pointer;
 }
-.home .caixaDeFeed .publicação .headerDaPub .FotoDePerfil img:hover ~ .miniCaixa{
+.FotoDePerfil img:hover ~ .miniCaixa{
     display: block;
 }
-.home .caixaDeFeed .publicação .headerDaPub .headerNome{
+
+/*-------------------------headerNome-------------------------*/
+
+.headerNome{
     width: 90%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     margin-left: 2px;
 }
-.home .caixaDeFeed .publicação .headerDaPub .headerNome h3{
+.headerNome h3{
     width: 100%;
     color: white;
     margin-bottom: 5px;
     font-size: 18px;
     padding: 0px 8px;
 }
-.home .caixaDeFeed .publicação .headerDaPub .headerNome .descricao{
-    color: white;
-    position: relative;
-}
-.home .caixaDeFeed .publicação .headerDaPub .headerNome .descricao p {
-    font-size: 100%;
-    width: 80%;
-    padding: 0px 8px;
-}
-.home .caixaDeFeed .publicação .headerDaPub .headerNome #categorias{
-    margin-top: 2px;
-    height: auto;
-    margin-top: 10px;
-    margin-bottom: 3px;
-} 
-.home .caixaDeFeed .publicação .headerDaPub .headerNome #categorias a{
-    color: white;
-    border: 1px solid #4476D9;
-    padding: 5px;
-    border-radius: 10px;
-    text-decoration: none;
-    margin-right: 5px;
-}
-.home .caixaDeFeed .publicação .headerDaPub .headerNome i {
+.headerNome i {
     position: absolute;
     right: 20px;
     top: 18px;
@@ -626,9 +642,37 @@ body{
     cursor: pointer;
 }
 
+/*-------------------------descricao-------------------------*/
 
+.descricao{
+    color: white;
+    position: relative;
+}
+.descricao p {
+    font-size: 100%;
+    width: 80%;
+    padding: 0px 8px;
+}
+
+/*-------------------------#categorias-------------------------*/
+
+#categorias{
+    margin-top: 2px;
+    height: auto;
+    margin-top: 10px;
+    margin-bottom: 3px;
+} 
+#categorias a{
+    color: white;
+    border: 1px solid #4476D9;
+    padding: 5px;
+    border-radius: 10px;
+    text-decoration: none;
+    margin-right: 5px;
+}
 
 /*-------------------------boxOption-------------------------*/
+
 .boxOption{
     position: absolute;
     right: 20px;
@@ -659,10 +703,8 @@ body{
     margin-bottom: 15px !important;
 }
 
-
-
-
 /*-------------------------boxDenuciar-------------------------*/
+
 .boxDenuciar{
     display: none;
     background: linear-gradient(144.79deg, #404040 0%, #0E0E0E 0.01%, #0E0E0E 45.38%, #404040 99.18%);
@@ -721,26 +763,25 @@ body{
     color: white;
 }
 
-
-
 /*-------------------------PubImagem-------------------------*/
-.home .caixaDeFeed .publicação .PubImagem{
+
+.PubImagem{
     padding: 10px 55px;
 }
-.home .caixaDeFeed .publicação .PubImagem img{
+.PubImagem img{
     width: 100%;
     border-radius: 12px; 
 }
 
-
 /*-------------------------botões-------------------------*/
-.home .caixaDeFeed .publicação .botões{
+
+.botões{
     height: 30px;
     display: flex;
     justify-content: center;
     margin-top: 20px;
 }
-.home .caixaDeFeed .publicação .botões i {
+.botões i {
     font-size: 21px;
     color: #878787;
     width: 50%;
@@ -748,10 +789,9 @@ body{
     text-align: center;
 }
 
-
-
 /*-------------------------caixaDeCompartilhar-------------------------*/
-.home .caixaDeFeed .caixaDeCompartilhar{
+
+.caixaDeCompartilhar{
     display: none;
     height: 100px;
     position: absolute;
@@ -760,7 +800,10 @@ body{
     padding: 3px;
     background: linear-gradient(110.2deg, #404040 1.41%, #0E0E0E 92.05%);
 }
-.home .caixaDeFeed .caixaDeCompartilhar .Rede_S {
+
+/*-------------------------Rede_S-------------------------*/
+
+.Rede_S {
     width: 100%;
     height: 32%;
     display: flex;
@@ -768,11 +811,11 @@ body{
     justify-content: space-around;
     padding: 3px;
 }
-.home .caixaDeFeed .caixaDeCompartilhar .Rede_S img{
+.Rede_S img{
     height: 80%;
     cursor: pointer;
 }
-.home .caixaDeFeed .caixaDeCompartilhar .Rede_S p{
+.Rede_S p{
     width: 79%;
     height: 100%;
     display: flex;
@@ -783,12 +826,12 @@ body{
     justify-content: center;
     cursor: pointer;
 }
-.home .caixaDeFeed .caixaDeCompartilhar .Rede_S p:hover{
+.Rede_S p:hover{
     color: #ecdede;
 }
 
-
 /*-------------------------miniCaixa-------------------------*/
+
 .miniCaixa{
     position: absolute;
     background: rgb(233, 217, 217);
@@ -801,38 +844,46 @@ body{
 .miniCaixa:hover{
     display: block;
 }
-.miniCaixa .miniCaixaHeader{
+
+/*-------------------------miniCaixaHeader-------------------------*/
+
+.miniCaixaHeader{
     width: 100%;
     height: 100%;
     display: grid;
     grid-template-columns: 50px auto;
 }
-.miniCaixa .miniCaixaHeader .caixaDeFoto{
+
+/*-------------------------caixaDeFoto-------------------------*/
+
+.caixaDeFoto{
     height: 100%;
     width: 100%;
     padding: 5px;
 }
-.miniCaixa .miniCaixaHeader .caixaDeFoto img{
+.caixaDeFoto img{
     width: 100%;
     border-radius: 50%;
 }
-.miniCaixa .miniCaixaHeader .miniHeaderNome{
+
+/*-------------------------miniHeaderNome-------------------------*/
+
+.miniHeaderNome{
     color: rgb(15, 15, 15);
     padding-top: 7px;
     padding-left: 7px;
 }
-.miniCaixa .miniCaixaHeader .miniHeaderNome h3{
+.miniHeaderNome h3{
     font-size: 100%;
 }
 
-
 /*-------------------------caixaDeNumeros-------------------------*/
 
-.miniCaixa .caixaDeNumeros{
+.caixaDeNumeros{
     display: flex;
     width: 100%;
 }
-.miniCaixa .caixaDeNumeros span{
+.caixaDeNumeros span{
     font-size: 100%;
     text-align: center;
     width: 100%;
@@ -840,37 +891,40 @@ body{
     color: #0E0E0E;
 }
 
-
 /*-------------------------miniCaixaDePub-------------------------*/
 
-.miniCaixa .miniCaixaDePub{
+.miniCaixaDePub{
     display: flex;
     height: 130px;
     width: 100%;
 }
-.miniCaixa .miniCaixaDePub div{
+.miniCaixaDePub div{
     width: 100%;
 }
-.miniCaixa .miniCaixaDePub div a img{
+.miniCaixaDePub div a img{
     width: 100%;
     height: 100%;
     border-radius: 0px !important;
 }
-.miniCaixa .miniCaixaBtn{
+
+/*-------------------------miniCaixaBtn-------------------------*/
+
+.miniCaixaBtn{
     width: 100%;
     height: 40px;
     display: flex;
     justify-content: center;
     padding: 10px;
 }
-.miniCaixa .miniCaixaBtn button{
+.miniCaixaBtn button{
     width: 100%;
     cursor: pointer;
     background: none;
 }
 
 /*-------------------------Caixa de perfil-------------------------*/
-.principal .caixaDePerfil{
+
+.caixaDePerfil{
     height: 250px;
     width: 80%;
     display: flex;
@@ -879,124 +933,117 @@ body{
     position: relative;
     margin: 0 auto;
 }
-.principal .caixaDePerfil .imagem{
+
+/*-------------------------imagem-------------------------*/
+
+.imagem{
     width: 140px;
     left: 0;
     top: 22px;
     position: absolute;
 }
-.principal .caixaDePerfil .imagem img{
+.imagem img{
     border-radius: 100%;
     width: 100%;
 }
-.principal .caixaDePerfil .border{
+
+/*-------------------------border-------------------------*/
+
+.border{
     position: absolute;
     right: 0px;
 } 
 
-
 /*-------------------------Perfil-------------------------*/
 
-.principal .Perfil{
+.Perfil{
     display: flex;
     height: 50%;
     flex-direction: column;
     position: absolute;
     left: 160px;
 }
-.principal .Perfil h2{
+.Perfil h2{
     font-size: 2rem;
     color: antiquewhite;
     margin-bottom: 10px;
 }
-.principal .Perfil h3{
+.Perfil h3{
     color: antiquewhite;
     margin-bottom: 10px;
 }
-.principal .Perfil p{
+.Perfil p{
     color: antiquewhite;
     font-size: 20px;
 } 
 
-
-
-
 /*-------------------------edição-------------------------*/
 
-.principal .edicao{
+.edicao{
     background: aquamarine;
     position: absolute;
     right: 50px;
     top: 50px;
 }
-.principal .edicao a {
+.edicao a {
     text-decoration: none;
     color: #181818;
 }
 
-
-
 /*-------------------------caixaDelinks-------------------------*/
 
-.principal .caixaDeLinks {
+.caixaDeLinks {
     width: 229px;
     height: 49px;
     display: flex;
     position: absolute;
     bottom: 0px;
 }
-.principal .caixaDeLinks div {
+.caixaDeLinks div {
     height: 80%;
     width: 100%;
 }
-.principal .caixaDeLinks div a{
+.caixaDeLinks div a{
     height: 100%;
 }
-.principal .caixaDeLinks div a img{
+.caixaDeLinks div a img{
     height: 100%;
     border-radius: 50%;
 }
 
-
-
 /*-------------------------caixaDePub-------------------------*/
 
-.principal .caixaDePub {
+.caixaDePub {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     padding: 0 50px;
     margin-top: 50px;
 }
-.principal .caixaDePub div{
+.caixaDePub div{
     width: 100%;
     height: 291px;
     padding: 0px 14px;
     padding-top: 14px;
 }
-.principal .caixaDePub div img{
+.caixaDePub div img{
     width: 100%;
     height: 100%;
 }
 
-
-
 /*-------------------------linha-------------------------*/
 
-.principal .linha {
+.linha {
     width: 100%;
     padding: 0 50px;
     margin-bottom: 15px;
 }
-.principal .linha hr{
+.linha hr{
     background: #404040;
     width: 100%;
     height: 1px;
 }
 
-
-
 /*-------------------------bolinha-------------------------*/
-
 
 .bolinha{
     width: 5px;
@@ -1006,7 +1053,6 @@ body{
     right: 8px;
     border-radius: 50%;
 }
-
 
 /*-------------------------Keyframes-------------------------*/
 
@@ -1025,7 +1071,7 @@ body{
 /*-------------------------Media screen-------------------------*/
 
 @media screen and (max-width: 789px){
-    .home .caixaDeFeed .centro{
+    .centro{
         width: 65%;
     }
     .boxDenuciar p {
@@ -1043,32 +1089,32 @@ body{
     .cabecalho{
 
     }
-    .cabecalho .boxLogo{
+    .boxLogo{
         border: none;
         background: none;
     }
-    .cabecalho .boxLogo img {
+    .boxLogo img {
         width: 40%;
     }
-    .cabecalho .boxtexto{
+    .boxtexto{
         width: 70%;
     }
-    .cabecalho .boxtexto .search-bar {
+    .search-bar {
         height: 73%;
     }
-    .cabecalho .boxLogo a {
+    .boxLogo a {
         margin-top: 0px;
     }
-    .cabecalho .boxIcones ul {
+    .boxIcones ul {
         width: 100%;
     }
-    .cabecalho .boxIcones ul li{
+    .boxIcones ul li{
 
     }
-    .cabecalho .boxIcones ul li span {
+    .boxIcones ul li span {
         width: 80%;
     }
-    .cabecalho .boxIcones ul li #CaixaDeCoc {
+    #CaixaDeCoc {
         width: 170%;
     }
     .sidnav{
@@ -1090,27 +1136,58 @@ body{
     .sidnav ul li {
         margin-top: 0px;
         width: 100%;
+        position: inherit;
+    }
+    #caixaDeAdd{
+        width: 100%;
+        height: 411px;
+        top: inherit;
+        bottom: 48px;
+        right: 0px;
+        left: inherit;
+        animation: none;
+    }
+    #caixaDeAdd h2{
+        padding-top: 50px;
+        padding-left: 30px;
+    }
+    #caixaDeAdd form{
+        height: 72%;
+        padding-top: 25px;
+
+    }
+    .grupo{
+        top: 80px;
+        right: 8%;
+        position: absolute;
+    }
+    #caixaDeAdd label{
+        width: 50%;
+        margin: 5px;
+    }
+    #caixaDeAdd label div{
+        height: 50%;
+    }
+    #caixaDeAdd label div img{
+        height: 37%;
     }
     .principal{
         padding-bottom: 100px;
     }
-    .principal .caixaDePub {
+    .caixaDePub {
         padding: 0px;
     }
-    .principal .caixaDePub div {
+    .caixaDePub div {
         height: 180px;
         padding: 10px;
     }
-    .home .boxCategoria{
-        
-    }
-    .home .boxCategoria ul {
+    .boxCategoria ul {
         flex-wrap: wrap;
     }
-    .home .boxCategoria ul  li {
+    .boxCategoria ul  li {
         width: 33%;
     }
-    .home .boxCategoria ul li a {
+    .boxCategoria ul li a {
         padding: 0px;
         width: 110px;
         display: flex;
@@ -1118,38 +1195,38 @@ body{
         align-items: center;
         height: 30px;
     }
-    .home .titulo h1{
+    .titulo h1{
         width: 40%;
     }
-    .home .titulo h2{
+    .titulo h2{
         display: none;
     }
-    .home .caixaDeFeed .centro {
+    .centro {
         width: 100%;
         background: none;
     }    
-    .home .caixaDeFeed .publicação .headerDaPub {
+    .headerDaPub {
         padding: 10px 10px;
     }
-    .home .caixaDeFeed .publicação .headerDaPub .FotoDePerfil {
+    .FotoDePerfil {
         width: 15%;
     }
-    .home .caixaDeFeed .publicação .headerDaPub .headerNome i {
+    .headerNome i {
         margin-right: 5px;
         font-size: 20px;
     }
-    .home .caixaDeFeed .publicação .PubImagem {
+    .PubImagem {
         padding: 2px 20px;
     }
-    .home .caixaDeFeed .publicação .PubImagem img {
+    .PubImagem img {
         width: 100%;
         border-radius: 10px;
     }
-    .home .caixaDeFeed .publicação .botões i {
+    .botões i {
         width: 106px;
         display: block;
     }
-    .home .caixaDeFeed .centro .linha {
+    .linha {
         padding: 0 20px;
     }
     .boxOption{
@@ -1165,18 +1242,18 @@ body{
     .miniCaixa{
         width: 285px;
     }
-    .miniCaixa .miniCaixaDePub{
+    .miniCaixaDePub{
         height: 100px;
     }
 }
 @media screen and (max-width: 379px){
-    .cabecalho .boxtexto{
+    .boxtexto{
         width: 65%;
     }
-    .cabecalho .boxIcones ul li #CaixaDeCoc {
+    #CaixaDeCoc {
         width: 180%;
     }
-    .home .titulo h2{
+    .titulo h2{
         font-size: 100%;
     }
     .boxDenuciar p{
@@ -1188,13 +1265,13 @@ body{
     }
 }
 @media screen and (max-width: 320px){
-    .cabecalho .boxtexto{
+    .boxtexto{
         width: 60%;
     }
-    .cabecalho .boxIcones ul li #CaixaDeCoc {
+    #CaixaDeCoc {
         width: 272%;
     }
-    .home .boxCategoria ul li a {
+    .boxCategoria ul li a {
         padding: 0px;
         width: 92px;
         display: flex;
@@ -1202,7 +1279,7 @@ body{
         align-items: center;
         height: 30px;
     }
-    .sidnav ul li #caixaDeNot {
+    #caixaDeNot {
         width: 319px;
         height: 412px;
         top: -410px;
