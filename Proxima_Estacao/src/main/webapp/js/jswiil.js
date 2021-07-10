@@ -85,3 +85,14 @@ function showC () {
         Conpa.style.display = "none";
     }
 }  
+function clickM () {
+
+    var check = document.getElementById('myRadio').checked = true;
+    
+    if(check.valueOf){
+        la
+    }
+    else{
+
+    }
+}

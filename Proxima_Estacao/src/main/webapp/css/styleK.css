@@ -51,9 +51,6 @@ body{
     align-items: center;
 }
 
-
-
-
 /*-------------------------boxLogo-------------------------*/
 
 .boxLogo{
@@ -342,7 +339,7 @@ body{
 
 #caixaDeAdd{
     position: absolute;
-    width: 664px;
+    width: 650px;
     height: 400px;
     display: none;
     top: -200px;
@@ -408,7 +405,7 @@ body{
     width: 75px;
     opacity: 1;
     z-index: 1;
-    background: yellow;
+    background: linear-gradient(106deg , #A00C65, #E31B33);
 }
 #caixaDeAdd input[type = "reset" ]{
     position: absolute;
@@ -420,14 +417,14 @@ body{
     width: 75px;
     opacity: 1;
     z-index: 1;
-    background: red;
+    background: linear-gradient(108deg, #878787,#313131);
 }
 
 /*-------------------------grupo-------------------------*/
 
 .grupo{
     bottom: 68%;
-    right: 16%;
+    right: 12%;
     position: absolute;
 }
 .grupo input[type = "text"]{
@@ -440,7 +437,11 @@ body{
     color: white;
 }
 .grupo input[type = "checkbox"]{
-    display: none;
+    display: block;
+    opacity: 1;
+}
+.grupo input:checked {
+    background: #E31B33;
 }
 .grupo div{
     width: 25%;
@@ -451,7 +452,7 @@ body{
     width: 113px;
 }
 .grupo div:nth-child(2){
-    right: 2%;
+    right: 0%;
 }
 .grupo div label{
     margin: 0px !important;
@@ -787,6 +788,7 @@ body{
     width: 50%;
     display: block;
     text-align: center;
+    cursor: pointer;
 }
 
 /*-------------------------caixaDeCompartilhar-------------------------*/
@@ -852,6 +854,7 @@ body{
     height: 100%;
     display: grid;
     grid-template-columns: 50px auto;
+    padding: 0px 2px;
 }
 
 /*-------------------------caixaDeFoto-------------------------*/
@@ -882,13 +885,15 @@ body{
 .caixaDeNumeros{
     display: flex;
     width: 100%;
+    padding: 0px 2px;
 }
 .caixaDeNumeros span{
-    font-size: 100%;
+    font-size: 120%;
     text-align: center;
     width: 100%;
     height: 54px;
     color: #0E0E0E;
+    font-weight: 800;
 }
 
 /*-------------------------miniCaixaDePub-------------------------*/
@@ -906,12 +911,15 @@ body{
     height: 100%;
     border-radius: 0px !important;
 }
+.miniCaixaDePub div a img:hover{
+    filter: contrast(0.7);
+}
 
 /*-------------------------miniCaixaBtn-------------------------*/
 
 .miniCaixaBtn{
     width: 100%;
-    height: 40px;
+    height: 48px;
     display: flex;
     justify-content: center;
     padding: 10px;
@@ -920,6 +928,13 @@ body{
     width: 100%;
     cursor: pointer;
     background: none;
+    border: 0.6px solid #404040;
+    padding: 5px 0px;
+    margin: 1.5px;
+    font-weight: 500;
+}
+.miniCaixaBtn button:hover{
+    background: #554c47;
 }
 
 /*-------------------------Caixa de perfil-------------------------*/
@@ -1244,6 +1259,9 @@ body{
     }
     .miniCaixaDePub{
         height: 100px;
+    }
+    .caixaDeNumeros span{
+        font-size: 100%;
     }
 }
 @media screen and (max-width: 379px){
