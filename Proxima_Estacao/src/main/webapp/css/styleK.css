@@ -440,7 +440,7 @@ body{
     display: block;
     opacity: 1;
 }
-.grupo input:checked {
+.grupo input:checked> .grupo div label {
     background: #E31B33;
 }
 .grupo div{
