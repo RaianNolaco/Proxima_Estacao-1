@@ -9,7 +9,6 @@
     <%
 		@SuppressWarnings("unchecked")	
 		ArrayList<Publicacao> listaPubs = (ArrayList<Publicacao>) request.getAttribute("home");
-    
     %>
     		 
 <!DOCTYPE html>
