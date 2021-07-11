@@ -64,7 +64,7 @@ public class PublicacaoController extends HttpServlet {
 			} else {
 				response.sendRedirect("HTML/descubra.html");
 			}
-			
+		
 		} catch (Exception e) {
 			response.sendRedirect("login");
 		}
