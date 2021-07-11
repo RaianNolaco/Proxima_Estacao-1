@@ -48,17 +48,25 @@ public class PublicacaoController extends HttpServlet {
 
 	protected void publicacoes(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException{
-		HttpSession session = request.getSession();	
-		dao = new PublicacaoDAO();		
+		
+		
+		try {
+			HttpSession session = request.getSession();	
+			dao = new PublicacaoDAO();		
 
-		int idUsuario = (Integer) session.getAttribute("idUsuario");
-		usuario.setIdUsuario(idUsuario);
-		System.out.println(idUsuario);
-		List<Publicacao> listaPubs = dao.listarPublicacaoSeguidor(usuario);
-		// Encaminhar a lista ao documento homeK.jsp
-		request.setAttribute("home", listaPubs);
-		RequestDispatcher rd = request.getRequestDispatcher("HTML/homeK.jsp");
-		rd.forward(request, response);	
+			int idUsuario = (Integer) session.getAttribute("idUsuario");
+			
+			usuario.setIdUsuario(idUsuario);
+			System.out.println(idUsuario);
+			List<Publicacao> listaPubs = dao.listarPublicacaoSeguidor(usuario);
+			// Encaminhar a lista ao documento homeK.jsp
+			request.setAttribute("home", listaPubs);
+			RequestDispatcher rd = request.getRequestDispatcher("HTML/homeK.jsp");
+			rd.forward(request, response);	
+		} catch (Exception e) {
+			response.sendRedirect("login");
+		}
+		
 	}
 
 }

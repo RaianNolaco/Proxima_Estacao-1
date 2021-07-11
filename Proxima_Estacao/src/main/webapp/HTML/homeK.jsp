@@ -27,7 +27,7 @@
     <header class="cabecalho">
     
         <div class="boxLogo">
-            <a href="homeK.jsp">
+            <a href="home">
                 <img src="image/train.png" alt="">
              </a>
         </div>
