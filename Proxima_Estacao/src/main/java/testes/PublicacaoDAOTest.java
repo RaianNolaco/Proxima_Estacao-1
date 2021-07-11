@@ -2,7 +2,7 @@ package testes;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.util.ArrayList;
+
 
 import org.junit.jupiter.api.Test;
 
@@ -15,7 +15,7 @@ class PublicacaoDAOTest {
 	PublicacaoDAO dao = new PublicacaoDAO();
 	Usuario usuario = new Usuario();
 	
-	/*@Test
+	@Test
 	public void inserirPublicacao() {
 		
 	
@@ -30,15 +30,12 @@ class PublicacaoDAOTest {
 		}else {
 			fail("Erro ao inserir ao publicação");
 		}
-	}*/
+	}
 	
 	@Test
 	public void listarPublicacaoSeguidor() {
 		
-		Publicacao pub = new Publicacao();
 		usuario.setIdUsuario(2);
-
-		ArrayList<Publicacao> pubs = new ArrayList<Publicacao>();
 	
 		for (Publicacao pub2 : dao.listarPublicacao()) {
 			

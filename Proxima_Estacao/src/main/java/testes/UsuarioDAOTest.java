@@ -1,7 +1,6 @@
 package testes;
 
 import static org.junit.jupiter.api.Assertions.*;
-import javax.servlet.jsp.tagext.TryCatchFinally;
 import org.junit.jupiter.api.Test;
 import model.beans.Status;
 import model.beans.Usuario;
@@ -12,8 +11,7 @@ class UsuarioDAOTest {
 		Status status = new Status();
 		Usuario usuario = new Usuario();
 
-	/*@Test
-	@Ignore
+	@Test
 	public void InserirUsuario() {
 		status.setId_status(1);
 		Usuario usuario = new Usuario("Teste", "Teste", "T", "1", status, "1", "4343242", "17/07/2002", "535354");
@@ -24,9 +22,9 @@ class UsuarioDAOTest {
 		}
 	}
 	
-	*/
+	
 		
-	/*@Test
+	@Test
 	public void todosUsuarios() {
 		for (Usuario usuario : dao.listarUsuarios()) {
 			System.out.println("Id: " + usuario.getIdUsuario() + "\nNome: " + usuario.getNomeUsuario() + "\nSobrenome: "
@@ -35,9 +33,9 @@ class UsuarioDAOTest {
 					+ "\nStatus: " + usuario.getIdStatus().getId_status() + "\nData de Nascimento: "
 					+ usuario.getData_nascimento() + "\nCPF: " + usuario.getCpf());
 		}
-	}*/
-	/*@Test
-	@Ignore
+	}
+	
+	@Test
 	public void atualizarUsuario() {
 		status.setId_status(1);
 		Usuario usuario = new Usuario("Raian", "Nola�o", "Raio", "raio@raio@raio", status, "123456", "7654453", "17/07/2002", "7656521");
@@ -48,9 +46,9 @@ class UsuarioDAOTest {
 			fail("Deu erro");
 		}
 
-	}*/
-	/*@Test
-	@Ignore
+	}
+	
+	@Test
 	public void deletarUsuario() {
 		usuario.setIdUsuario(4);
 		if (dao.deletarUsuario(usuario)) {
@@ -59,7 +57,7 @@ class UsuarioDAOTest {
 			fail("Deu erro");
 		}
 
-	}*/
+	}
 		
 	 @Test
 	 public void testaLogin() {

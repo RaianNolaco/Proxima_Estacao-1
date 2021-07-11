@@ -2,7 +2,6 @@ package controller;
 
 import java.io.IOException;
 import java.util.List;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,7 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
 import model.beans.Publicacao;
 import model.beans.Usuario;
 import model.dao.PublicacaoDAO;
@@ -48,8 +46,7 @@ public class PublicacaoController extends HttpServlet {
 
 	protected void publicacoes(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException{
-		
-		
+	
 		try {
 			HttpSession session = request.getSession();	
 			dao = new PublicacaoDAO();		
@@ -57,7 +54,6 @@ public class PublicacaoController extends HttpServlet {
 			int idUsuario = (Integer) session.getAttribute("idUsuario");
 			
 			usuario.setIdUsuario(idUsuario);
-			System.out.println(idUsuario);
 			List<Publicacao> listaPubs = dao.listarPublicacaoSeguidor(usuario);
 			
 			if(!listaPubs.isEmpty()){

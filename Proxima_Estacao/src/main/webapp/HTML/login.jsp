@@ -9,10 +9,8 @@ if(session.getAttribute("erroUser") != null)
     out.println("alert('Senha ou Email invalidos!');");
     out.println("</script>");
     session.invalidate();
-    
 }
 %>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
