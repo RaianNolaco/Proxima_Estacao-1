@@ -59,10 +59,16 @@ public class PublicacaoController extends HttpServlet {
 			usuario.setIdUsuario(idUsuario);
 			System.out.println(idUsuario);
 			List<Publicacao> listaPubs = dao.listarPublicacaoSeguidor(usuario);
-			// Encaminhar a lista ao documento homeK.jsp
-			request.setAttribute("home", listaPubs);
-			RequestDispatcher rd = request.getRequestDispatcher("HTML/homeK.jsp");
-			rd.forward(request, response);	
+			
+			if(!listaPubs.isEmpty()){
+				// Encaminhar a lista ao documento homeK.jsp
+				request.setAttribute("home", listaPubs);
+				RequestDispatcher rd = request.getRequestDispatcher("HTML/homeK.jsp");
+				rd.forward(request, response);	
+			} else {
+				response.sendRedirect("HTML/descubra.html");
+			}
+			
 		} catch (Exception e) {
 			response.sendRedirect("login");
 		}
