@@ -40,8 +40,10 @@ class PublicacaoDAOTest {
 
 		ArrayList<Publicacao> pubs = new ArrayList<Publicacao>();
 	
-		for (Publicacao pub2 : dao.listarPublicacaoSeguidor(usuario)) {
-			pub2.getConteudo();
+		for (Publicacao pub2 : dao.listarPublicacao()) {
+			
+			
+			System.out.println(pub2.getConteudo());
 		}
 
 	}

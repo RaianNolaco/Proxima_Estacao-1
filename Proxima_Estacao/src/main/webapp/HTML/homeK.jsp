@@ -4,16 +4,14 @@
     <%@ page import= "model.beans.Usuario"  %> 
     <%@ page import= "model.beans.Publicacao"  %> 
     <%@ page import= "model.beans.Artista"  %> 
-    <%@ page import= "model.dao.PublicacaoDAO" %>  
     <%@ page import= "java.util.ArrayList"  %>
     
-    	<%PublicacaoDAO pubdao = new PublicacaoDAO(); 
-    		   Artista artista = new Artista(); 
-    		   Usuario usuario = new Usuario();
-    		   int idUsuario = (Integer) session.getAttribute("idUsuario");
-    		   usuario.setIdUsuario(idUsuario);
-    		   
-    		   %>   		 
+    <%
+		@SuppressWarnings("unchecked")	
+		ArrayList<Publicacao> listaPubs = (ArrayList<Publicacao>) request.getAttribute("home");
+    
+    %>
+    		 
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -21,17 +19,17 @@
     <meta name="theme-color" content="#9d4edd">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../css/styleK.css">
-    <link rel="icon" href='../image/logo-removebg-preview.png' type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="css/styleK.css">
+    <link rel="icon" href='image/logo-removebg-preview.png' type="image/x-icon">
     <title>Index_proxima_estação</title>
-    <script src="../js/jswiil.js"></script>
+    <script src="js/jswiil.js"></script>
 </head>
 <body>
     <header class="cabecalho">
     
         <div class="boxLogo">
             <a href="homeK.jsp">
-                <img src="../image/train.png" alt="">
+                <img src="image/train.png" alt="">
              </a>
         </div>
 
@@ -52,13 +50,13 @@
                 </li>
                 <li>
                     <span  onclick="showCaixa()">
-                        <img src="../image/Kepler.jpg" alt="">
+                        <img src="image/Kepler.jpg" alt="">
                     </span>
 
                     <div id="CaixaDeCoc">
                         <ul>
                             <li>
-                                <a href="perfil.html">
+                                <a href="HTML/perfil.html">
                                     Perfil
                                 </a>
                             </li>
@@ -103,13 +101,13 @@
 <nav class="sidnav">
     <ul>
         <li>
-            <a href="descubra.html">
-                <img src="../image/terra.png" alt="">
+            <a href="HTML/descubra.html">
+                <img src="image/terra.png" alt="">
             </a>
         </li>
         <li>
             <button onclick="showN()">
-                <img src="../image/notificacao.png" alt="">
+                <img src="image/notificacao.png" alt="">
             </button>
             <div id="caixaDeNot">
                 <article class="caixaDeNot_Box">
@@ -120,7 +118,7 @@
                 </article>
                 <div class="conteudo">
                     <picture>
-                        <img src="../image/medalha_de_fogo" alt="">
+                        <img src="image/medalha_de_fogo" alt="">
                     </picture>
                     <div class="Missao">
                         <h6>
@@ -136,7 +134,7 @@
                 </div>
                 <div class="conteudo">
                     <picture>
-                        <img src="../image/medalha_de_feed_cheio" alt="">
+                        <img src="image/medalha_de_feed_cheio" alt="">
                     </picture>
 
                     <div class="Missao">
@@ -153,7 +151,7 @@
                 </div>
                 <div class="conteudo">
                     <picture>
-                        <img src="../image/dinheiro.png" alt="">
+                        <img src="image/dinheiro.png" alt="">
                     </picture>
 
                     <div class="Missao">
@@ -171,13 +169,13 @@
             </div>
         </li>
         <li>
-            <a href="homeK.html">
-                <img src="../image/home.png" alt="">
+            <a href="home">
+                <img src="image/home.png" alt="">
             </a>
         </li>
         <li>
             <button onclick="showP()">
-                <img src="../image/plus.png" alt="">
+                <img src="image/plus.png" alt="">
             </button>
             <div id="caixaDeAdd">
                 <button onclick="showP()">
@@ -194,7 +192,7 @@
 
                         <hr>
         
-                        <img src="../image/plus.png" alt="">
+                        <img src="image/plus.png" alt="">	
                     </label>
                     <input type="file" name="uploadfile" id="file" required>
         
@@ -218,8 +216,8 @@
             </div>
         </li>
         <li>
-            <a href="inspirações.html">
-               <img src="../image/bookmark.png" alt="">
+            <a href="HTML/inspirações.html">
+               <img src="image/bookmark.png" alt="">
             </a>
         </li>
     </ul>
@@ -261,22 +259,22 @@
 
 
 			<!-- Aqui William -->
-			<%for (Publicacao pub : pubdao.listarPublicacaoSeguidor(usuario)){%>
+			<%for (int i = 0; i < listaPubs.size(); i++){%>
             <section class="caixaDeFeed">
                 <div class="centro">
                     <div class="publicacao">
                         <div class="headerDaPub">
                             <div class="FotoDePerfil">
-                                <img src="<%=pub.getId_artista().getId_usuario().getFotoPerfil()%>" alt="">
+                                <img src="<%=listaPubs.get(i).getId_artista().getId_usuario().getFotoPerfil()%>" alt="">
                                 <div class="miniCaixa">
                                    <header class="miniCaixaHeader">
                                         <div class="caixaDeFoto">
-                                            <img src="../image/Captura de tela 2021-05-27 225422 let.png" alt="">
+                                            <img src="image/Captura de tela 2021-05-27 225422 let.png" alt="">
                                         </div>
                                         <div class="miniHeaderNome">
 
                                             <h3>
-                                                <%=pub.getId_artista().getId_usuario().getApelido()%>
+                                                <%=listaPubs.get(i).getId_artista().getId_usuario().getApelido()%>
                                             </h3>
 
                                         </div>
@@ -300,17 +298,17 @@
                                     <div class="miniCaixaDePub">
                                         <div>
                                             <a href="">
-                                                <img src="../image/brisa.jpg" alt="">
+                                                <img src="image/brisa.jpg" alt="">
                                             </a>
                                         </div>
                                         <div>
                                             <a href="">
-                                                <img src="../image/7171.jpg" alt="">
+                                                <img src="image/7171.jpg" alt="">
                                             </a>
                                         </div>
                                         <div>
                                             <a href="">
-                                                <img src="../image/Caída del cabello, piel seca y otras señales de que tienes problemas de tiroides.jpg" alt="">
+                                                <img src="image/Caída del cabello, piel seca y otras señales de que tienes problemas de tiroides.jpg" alt="">
                                             </a>
                                         </div>
                                     </div>
@@ -326,11 +324,11 @@
                             </div>
                             <div class="headerNome">
                                 <h3>
-                                    <%=pub.getId_artista().getId_usuario().getApelido()%>
+                                    <%=listaPubs.get(i).getId_artista().getId_usuario().getApelido()%>
                                 </h3>
                                 <div class="descricao">
                                     <p id="descricao">
-                                        <%=pub.getDescricao()%>
+                                        <%=listaPubs.get(i).getDescricao()%>
                                     </p>
                                     <div id="categorias">
                                         <a href="">
@@ -374,7 +372,7 @@
                         </div>
 
                         <div class="PubImagem">
-                            <img src="<%=pub.getConteudo()%>" alt="">
+                            <img src="<%=listaPubs.get(i).getConteudo()%>" alt="">
                         </div>
 
                         <div class="botoes">

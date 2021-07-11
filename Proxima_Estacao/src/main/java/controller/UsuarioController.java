@@ -2,28 +2,21 @@ package controller;
 
 import java.io.IOException;
 import java.util.Date;
-import java.util.List;
-
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
-import com.mysql.cj.Session;
-
-import model.beans.Publicacao;
 import model.beans.Status;
 import model.beans.Usuario;
 import model.dao.PublicacaoDAO;
 import model.dao.UsuarioDAO;
 
-@WebServlet(urlPatterns = { "/UsuarioController", "/loginUsuario", "/cadastroUsuario"})
+@WebServlet(urlPatterns = { "/UsuarioController", "/loginUsuario", "/cadastroUsuario", "/login"})
 public class UsuarioController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
+	HttpSession session = null;	
 	Usuario usuario = new Usuario();
 	UsuarioDAO  dao = new UsuarioDAO();
 	PublicacaoDAO  pudao = new PublicacaoDAO();
@@ -35,7 +28,13 @@ public class UsuarioController extends HttpServlet {
     
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
+	
+		String action = request.getServletPath();
+		System.out.println(action);
+		if(action.equals("/login")) {
+			request.getRequestDispatcher("HTML/login.jsp").forward(request, response);
+		}
+	
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -52,28 +51,24 @@ public class UsuarioController extends HttpServlet {
 	
 	protected void loginUsuario(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException{
-		HttpSession session = request.getSession();	
 		
+		session = request.getSession();	
 		usuario.setEmail(request.getParameter("usuarioEmail"));
 		usuario.setSenha(request.getParameter("usuarioSenha"));
 
 		if(dao.login(usuario)){
 			session.setAttribute("idUsuario", usuario.getIdUsuario());
-			response.sendRedirect("HTML/loading.html");
+			response.sendRedirect("loading");
 		}else{
-			response.sendRedirect("HTML/login.html");
+			session.setAttribute("erroUser", "Senha ou email invalidos!");
+			response.sendRedirect("login");
 		}	
 	}
 	
 	protected void cadastroUsuario(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException{
-		HttpSession session = request.getSession();	
-		
-		
 		Status status = new Status();
 		status.setId_status(1);
-		
-		
 		usuario.setNomeUsuario(request.getParameter("nomeUsuario"));
 		usuario.setSobrenomeUsuario(request.getParameter("sobrenomeUsuario"));
 		usuario.setApelido(request.getParameter("apelidoUsuario"));
