@@ -24,8 +24,7 @@ public class PublicacaoController extends HttpServlet {
     public PublicacaoController() {
        super();
     }
-
-    
+   
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 	
@@ -36,8 +35,7 @@ public class PublicacaoController extends HttpServlet {
 			publicacoes(request,response);
 		}else if(action.equals("/loading")){
 			request.getRequestDispatcher("HTML/loading.html").forward(request, response);
-		}
-	
+		}	
 	}
     
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -63,12 +61,10 @@ public class PublicacaoController extends HttpServlet {
 				rd.forward(request, response);	
 			} else {
 				response.sendRedirect("HTML/descubra.html");
-			}
-		
+			}	
 		} catch (Exception e) {
 			response.sendRedirect("login");
-		}
-		
+		}	
 	}
 
 }

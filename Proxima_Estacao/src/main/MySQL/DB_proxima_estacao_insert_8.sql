@@ -72,18 +72,15 @@ INSERT INTO forma_pagamento VALUES
 (DEFAULT, 'Paypal'),
 (DEFAULT, 'Voucher');
 
+
 desc publicacao;
 INSERT INTO publicacao VALUES
-(DEFAULT, 'NOT FOUND','https://media4.giphy.com/media/26AHpVT1TrFsZKGrK/giphy.gif?cid=ecf05e47fjyge90nlgigkq7igo26w8cjxho07n9org6e2xrz&rid=giphy.gif&ct=g',true,'Uma aventura entre eu e os bonecos tristes',8,1),
-(DEFAULT, 'NOT FOUND','https://media.giphy.com/media/mXnu6HiBvOckU/giphy.gif',true,'Instrumental para acalmar',8,2),
-(DEFAULT, 'NOT FOUND','https://giphy.com/clips/rickandmorty-season-3-episode-6-rick-and-morty-2N7E1MUmbz812T4TDk',true,'Perfomance rodopiante',8,3),
-(DEFAULT, 'NOT FOUND','http://www.reactiongifs.us/category/sad/',false,'tristesa',8,4),
-(DEFAULT, 'NOT FOUND','https://media0.giphy.com/media/M28rUlcjueKUE/giphy.gif?cid=ecf05e47etq5mudu7u46qzkyyg74hh72v634fuf4esmdfq9m&rid=giphy.gif&ct=g',true,'A historia uma casa com telhado amarelado',8,5),
-(DEFAULT, 'NOT FOUND','https://media.giphy.com/media/3oriNZuNzeTbtJvKs8/giphy.gif',false,'bad',8,5),
 (DEFAULT, 'NOT FOUND','https://media.giphy.com/media/Txh1UzI7d0aqs/giphy.gif',false,'Sad',8,1),
 (DEFAULT, 'NOT FOUND','https://media.giphy.com/media/Ln3D55ky9z61G1v7eB/giphy.gif',false,'Bom dia triste',8,4),
 (DEFAULT, 'NOT FOUND','https://media.giphy.com/media/3oEjI8StnIv9YMtVnO/giphy.gif',false,'depresso',8,2),
 (DEFAULT, 'NOT FOUND','https://media2.giphy.com/media/qQdL532ZANbjy/giphy.gif?cid=ecf05e47j8y8muj96ylwzhs7k57rzcxfz9kasa5y6sy2851u&rid=giphy.gif&ct=g',false,'Complicado',8,3);
+SELECT * FROM publicacao;
+
 
 
 desc feedback;
@@ -188,5 +185,28 @@ join vw_post_user as pu
 where s.id_usuario = 9
 AND s.id_artista = pu.id_artista
 AND p.id_artista = s.id_artista;
+
+
+SELECT u.id_usuario, u.apelido, a.descricao, p.descricao, p.conteudo FROM usuario AS u 
+JOIN publicacao AS p
+JOIN artista    AS a
+ON u.id_usuario = a.id_usuario
+AND p.id_artista = a.id_artista
+WHERE u.id_usuario = 5;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Select distinct * from publicacao;
